@@ -1,7 +1,7 @@
-const Header = (props) => {
+const Header = ({tag: Tag, class: Class, content: Content}) => {
     return (
-        <header className="header_1">
-            {props.content}
+        <header className={`${Class}`}>
+            <Tag>{Content}</Tag>
         </header>
     );
 };

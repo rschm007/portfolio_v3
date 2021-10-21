@@ -1,2 +1,30 @@
-// colors
-$primary
+// base colors
+$white: #fff;
+$black: #000;
+
+// color pallete
+$peru: #da9e6e;
+$maroon: #7c1414;
+$moonSilver: #bdd6be;
+$lightGreen: #aee298;
+$dimGray: #678060;
+$darkSlateGray: #354d2b;
+$darkOliveGreen: #595440;
+$darkCyan: #081f26;
+$nightBlue: #031e25;
+
+// fire colors
+$fireBright: #ff7800;
+$fireMedium: #f36200;
+$fireDark: #d63603;
+
+// font families
+$heading: "Montserrat", sans-serif;
+$body: "UniversLT57CondensedRegular", sans-serif;
+
+// media breakpoints
+$media-small-phones: 600px;
+$media-tablet-portrait: 768px;
+$media-tablet-landscape: 1024px;
+$media-small-desktop: 1200px;
+$media-large-desktop: 1600px;
