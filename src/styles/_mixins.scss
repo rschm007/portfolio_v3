@@ -30,12 +30,28 @@
     @if $up {
         @media screen and (min-width: $size) {
             @content;
-    }
+        }
     }
     @else {
         @media screen and (max-width: $size) {
             @content;
+        }
     }
-    }
+}
 
+// borders & outlines
+@mixin border-outline($borderWidth: null, $borderStyle: null, $borderColor: null, $noBorder: false, $noOutline: false) {
+    border-width: $borderWidth;
+    border-style: $borderStyle;
+    border-color: $borderColor;
+
+    @if $noBorder {
+        border: none;
+    }
+    @else if $noOutline {
+        outline: none;
+    }
+    @else {
+        @error "border-outline";
+    }
 }

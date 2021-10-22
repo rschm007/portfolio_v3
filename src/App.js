@@ -10,10 +10,6 @@ import {
 
 import Main from "./pages/Main";
 
-import Campfire from './components/Animations/Campfire';
-import Header from "./components/Header";
-import Wrapper from './components/Wrapper';
-
 const App = () => {
   return (
     <Router>

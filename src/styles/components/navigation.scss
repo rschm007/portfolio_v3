@@ -1,0 +1,39 @@
+@import "../imports";
+
+nav {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+
+    .navigation {
+        @include flex(row);
+        float: right;
+        margin-right: 2vw;
+    
+        .nav_button {
+            margin: 0 4px;
+    
+            button {
+                @include width-height(32px, 32px);
+                @include border-outline($noBorder: true);
+                opacity: 0.8;
+                border-radius: 100%;
+            }
+    
+            &.home button {
+                background-color: $peru;
+            }
+            &.about button {
+                background-color: $maroon;
+    
+            }
+            &.portfolio button {
+                background-color: $lightGreen;
+    
+            }
+            &.contact button {
+                background-color: $darkOliveGreen;
+            }
+        }
+    }
+}
