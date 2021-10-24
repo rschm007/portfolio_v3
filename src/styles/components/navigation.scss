@@ -7,31 +7,47 @@ nav {
 
     .navigation {
         @include flex(row);
-        float: right;
-        margin-right: 2vw;
+        position: fixed;
+        left: 0;
+        margin-left: 2vw;
     
         .nav_button {
+            @include width-height(28px, 28px);
+            @include transition;
+            @include transform(scale(1));
+            @include box-shadow;
+            border: 1px solid $offBlack;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
             margin: 0 4px;
-    
-            a {
-                @include width-height(32px, 32px);
-                @include border-outline($noBorder: true);
-                opacity: 0.8;
-                border-radius: 100%;
+
+            &:hover {
+                @include transform(scale(1.2));
+                @include box-shadow($color: $moonSilver);
+                margin: 0 6px;
             }
+
+            a {
+                @include width-height($height: 85%);
+                > i {
+                    @include font($color: $offBlack, $size: 15px);
+                }
+            } 
     
-            &.home a {
+            &.home {
                 background-color: $peru;
             }
-            &.about a {
+            &.about {
                 background-color: $maroon;
     
             }
-            &.portfolio a {
+            &.portfolio {
                 background-color: $lightGreen;
     
             }
-            &.contact a {
+            &.contact {
                 background-color: $darkOliveGreen;
             }
         }

@@ -5,8 +5,8 @@ const Navigation = (props) => {
     return (
         <nav>
             <Wrapper class="navigation">
-                <NavButton class="home" href="/" icon="far fa-home" />
-                <NavButton class="about" href="/about" icon="far fa-user" />
+                <NavButton class="home" href="/" icon="fas fa-home" />
+                <NavButton class="about" href="/about" icon="fas fa-user" />
                 <NavButton class="portfolio" href="/portfolio" icon="fas fa-puzzle-piece" />
                 <NavButton class="contact" href="/contact" icon="fas fa-phone" />
             </Wrapper>
