@@ -1,0 +1,16 @@
+@import "../imports";
+
+.link_button {
+    @include flex($direction: row);
+
+    a {
+        @include font($color: $moonSilver, $size: 24px, $weight: 300);
+        text-underline-offset: 0.5rem;
+        text-decoration-color: $peru;
+    }
+
+    i {
+        @include font($color: $peru, $size: 24px);
+        padding: 0 0.5rem;
+    }
+}

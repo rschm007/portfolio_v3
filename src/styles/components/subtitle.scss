@@ -1,0 +1,5 @@
+@import "../imports";
+
+.subtitle {
+    @include font($size: 22px, $color: $peru, $weight: 100);
+}

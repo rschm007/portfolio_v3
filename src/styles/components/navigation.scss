@@ -13,25 +13,25 @@ nav {
         .nav_button {
             margin: 0 4px;
     
-            button {
+            a {
                 @include width-height(32px, 32px);
                 @include border-outline($noBorder: true);
                 opacity: 0.8;
                 border-radius: 100%;
             }
     
-            &.home button {
+            &.home a {
                 background-color: $peru;
             }
-            &.about button {
+            &.about a {
                 background-color: $maroon;
     
             }
-            &.portfolio button {
+            &.portfolio a {
                 background-color: $lightGreen;
     
             }
-            &.contact button {
+            &.contact a {
                 background-color: $darkOliveGreen;
             }
         }

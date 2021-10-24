@@ -1,9 +1,9 @@
 const NavButton = (props) => {
     return (
         <div className={`nav_button ${props.class}`}>
-            <button href={props.href}>
+            <a href={props.href}>
                 <i className={props.icon} />
-            </button>
+            </a>
         </div>
     );
 };
