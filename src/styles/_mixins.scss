@@ -25,6 +25,11 @@
     display: flex;
     flex-direction: $direction;
     flex-wrap: $wrap;
+
+    @if $direction == center {
+        align-items: center;
+        justify-items: center;
+    }
 }
 
 @mixin media($size, $up: false, $down: false) {
@@ -55,4 +60,18 @@
     @else {
         @error "border-outline";
     }
+}
+
+// transforms, translates, etc
+@mixin transition($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s) {
+    transition: $for $time-in $type $time-out;
+    -moz-transition: $for $time-in $type $time-out;
+    -webkit-transition: $for $time-in $type $time-out;
+    -o-transition: $for $time-in $type $time-out;
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
 }
