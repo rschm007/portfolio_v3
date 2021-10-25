@@ -1,14 +1,18 @@
+import { useState } from 'react';
+import Burger from "./Burger";
+import Menu from "./Menu";
 import Wrapper from '../Wrapper';
-import NavButton from './NavButton';
 
 const Navigation = (props) => {
+    const [open, setOpen] = useState(false);
+
     return (
         <nav>
             <Wrapper class="navigation">
-                <NavButton class="home" href="/" icon="fas fa-home" />
-                <NavButton class="about" href="/about" icon="fas fa-user" />
-                <NavButton class="portfolio" href="/portfolio" icon="fas fa-puzzle-piece" />
-                <NavButton class="contact" href="/contact" icon="fas fa-phone" />
+                <Wrapper className="navigation_content">
+                    <Burger className="menu_button" open={open} setOpen={setOpen} />
+                    <Menu className="menu_button" open={open} setOpen={setOpen} />
+                </Wrapper>
             </Wrapper>
         </nav>
     );
