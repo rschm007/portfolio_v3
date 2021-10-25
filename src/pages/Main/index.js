@@ -7,7 +7,7 @@ import LinkButton from '../../components/LinkButton';
 
 const Main = (props) => {
     return (
-        <Wrapper class="background">
+        <Wrapper class="background background_1">
             <Navigation />'     
 
             <Header tag="h1" content="Hi! I'm Robert." class="header_main__hero">
