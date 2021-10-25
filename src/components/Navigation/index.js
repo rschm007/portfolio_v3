@@ -1,21 +1,24 @@
-import { useState } from 'react';
-import Burger from "./Burger";
-import Menu from "./Menu";
-import Wrapper from '../Wrapper';
+import { useState } from "react";
+
+import Wrapper from "../Wrapper";
 
 const Navigation = (props) => {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    return (
-        <nav>
-            <Wrapper class="navigation">
-                <Wrapper className="navigation_content">
-                    <Burger className="menu_button" open={open} setOpen={setOpen} />
-                    <Menu className="menu_button" open={open} setOpen={setOpen} />
-                </Wrapper>
-            </Wrapper>
-        </nav>
-    );
+  return (
+    <nav>
+      <Wrapper class={`navigation ${open}`}>
+        <div className={`nav_button ${open}`} onClick={() => setOpen(!open)}>
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+      </Wrapper>
+    </nav>
+  );
 };
 
 export default Navigation;

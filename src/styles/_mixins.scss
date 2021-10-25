@@ -98,6 +98,8 @@
 @mixin transform($property) {
   -webkit-transform: $property;
   -ms-transform: $property;
+  -o-transform: $property;
+  -moz-transform: $property;
   transform: $property;
 }
 
@@ -122,11 +124,11 @@
 
 // filters, masks
 @mixin mask-image($parameter) {
-    -webkit-mask-image: $parameter;
-    mask-image: $parameter;
+  -webkit-mask-image: $parameter;
+  mask-image: $parameter;
 }
 
 @mixin filter($parameter) {
-    -webkit-filter: $parameter;
-    filter: $parameter;
+  -webkit-filter: $parameter;
+  filter: $parameter;
 }
