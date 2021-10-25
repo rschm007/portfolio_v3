@@ -17,8 +17,10 @@ const Campfire = () => {
         <div class="bottom">
           <div class="_main"></div>
         </div>
+        <div class="glow" />
       </div>
       <div class="logs">
+        <div class="log" />
         <div class="log" />
         <div class="log" />
         <div class="log" />
