@@ -63,10 +63,10 @@
 }
 .campfire {
   .fire {
-    @include width-height($width: 10vw, $height: 10vw);
+    @include width-height($width: 140px, $height: 140px);
     position: absolute;
-    top: calc(100vh - 50%);
-    left: calc(100vw - 30%);
+    top: 45%;
+    right: 260px;
     background-color: transparent;
     margin-left: auto;
     margin-right: auto;
@@ -95,10 +95,6 @@
         -webkit-gradient(linear, left top, left bottom, from(rgb(255, 120, 0)), to(rgba(212, 51, 34, 0.6)))
       );
       @include filter(drop-shadow(0 0 10px $fireShadow));
-
-      .glow {
-        
-      }
     }
 
     .main {
@@ -192,7 +188,7 @@
       @include width-height($width: 30%, $height: 0%);
       @include fireGlow();
       margin-left: 50%;
-      margin-top: 30%;
+      margin-top: 50%;
       z-index: 0;
       transform: scaleX(0.8) rotate(45deg);
       animation: scaleUpDown 3s ease-out;
@@ -204,8 +200,8 @@
   .logs {
     position: absolute;
     @include transform(scale(1.5));
-    top: calc(100vh - 25%);
-    left: calc(100vw - 40%);
+    top: 75%;
+    right: 550px;
     z-index: 0;
 
     .log {
