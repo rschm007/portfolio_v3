@@ -1,41 +1,47 @@
 @import "../imports";
 
 .link_button {
-    @include flex($direction: row);
+  @include flex($direction: row);
 
-    a {
-        @include flex($direction: center);
-        @include font($color: $moonSilver, $size: 24px, $weight: 300, $decoration: none);
+  a {
+    @include flex($direction: center);
+    @include font(
+      $color: $moonSilver,
+      $size: 24px,
+      $weight: 300,
+      $decoration: none
+    );
 
-        &:before {
-            @include width-height($width: 110px, $height: 2px);
-            @include transition;
-            position: absolute;
-            opacity: 0;
-            margin-top: 2.8rem;
-            margin-left: 5px;
-            content: "";
-            background-color: $peru;
-            }
-
-        &:hover {
-            i {
-                @include transition;
-                @include transform(scale(1.2));
-            }
-
-            &:before {
-                @include transition;
-                opacity: 1;
-            }
-        }
-
+    &:before {
+      @include width-height($width: 105px, $height: 2px);
+      @include transition($time-in: 0.25s);
+      position: absolute;
+      opacity: 0;
+      margin-top: 2.8rem;
+      margin-left: 5px;
+      content: "";
+      background-color: $peru;
     }
 
-    i {
-        @include font($color: $moonSilver);
+    &:hover {
+      @include hoverBrighten();
+
+      i {
         @include transition;
-        @include transform(scale(1));
-        padding: 0 0.5rem;
+        @include transform(scale(1.2));
+      }
+
+      &:before {
+        @include transition;
+        opacity: 1;
+      }
     }
+  }
+
+  i {
+    @include font($color: $moonSilver);
+    @include transition;
+    @include transform(scale(1));
+    padding: 0 0.5rem;
+  }
 }

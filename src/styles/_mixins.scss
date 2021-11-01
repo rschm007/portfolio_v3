@@ -132,3 +132,7 @@
   -webkit-filter: $parameter;
   filter: $parameter;
 }
+
+@mixin hoverBrighten($brightness: 125%) {
+  filter: brightness($brightness);
+}
