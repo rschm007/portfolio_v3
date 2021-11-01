@@ -5,5 +5,10 @@
     @include width-height($width: 100%, $height: 100%);
     justify-content: center;
     position: fixed;
-    background-color: $nightBlue;
+    background-color: #010b12;
+
+    &.background_1 {
+        background-image: url("../../assets/treeline.svg");
+        background-size: cover;
+    }
 }

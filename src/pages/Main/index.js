@@ -19,7 +19,7 @@ const Main = (props) => {
                 </Wrapper>
             </Header>
 
-            <Wrapper class="campfire">
+            <Wrapper class="campfire_container">
                 <Campfire />
             </Wrapper>
         </Wrapper>

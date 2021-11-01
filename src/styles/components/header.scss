@@ -5,10 +5,12 @@
         &__hero {
             @include font($color: $fireBright, $weight: 800, $align: left);
             width: calc(100vw - 60%);
-            margin-left: 12vw;
+            margin-left: 10vw;
+            margin-top: 5vh;
 
             h1 {
                 margin-bottom: 0;
+                line-height: 64px;
             }
 
             .buttons > .link_button:not(:first-child) {
