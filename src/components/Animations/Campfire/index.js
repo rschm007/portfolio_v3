@@ -30,13 +30,20 @@ const Campfire = () => {
       </div>
       <div className="rocks">
         <div className="rock_big_1" />
+        <div className="rock_big_1_glow" />
+        
         <div className="rock_big_2" />
+        <div className="rock_big_2_glow" />
+
         <div className="rock_big_3" />
+        <div className="rock_big_3_glow" />
+
         <div className="rock_big_4" />
+        <div className="rock_big_4_glow" />
+
         <div className="rock_big_5" />
-        <div className="rock_small_1">
-          <div className="rock" />
-        </div>
+        <div className="rock_big_5_glow" />
+
       </div>
     </div>
   );

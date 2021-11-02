@@ -1,10 +1,18 @@
 @import "../../imports";
 
-@mixin fireGlow {
+@mixin fireGlow() {
+    box-shadow: 
+    0 0 90px 50px rgba(255, 208, 0, 0.8),
+    0 0 120px 70px rgba(255, 136, 0, 0.9),
+    0 0 160px 100px rgb(185, 99, 0.4);
+    opacity: 0.8;
+}
+
+@mixin rockGlow($top: 0, $left: 0) {
   box-shadow: 
-  0 0 90px 50px rgba(255, 208, 0, 0.8),
-  0 0 120px 70px rgba(255, 136, 0, 0.9),
-  0 0 160px 100px rgb(185, 99, 0.4);
+  inset $top $left 12px rgba(255, 208, 0, 0.6),
+  inset $top $left 12px rgba(255, 136, 0, 0.4),
+  inset $top $left 12px rgb(185, 99, 0.2);
   opacity: 0.8;
 }
 
@@ -61,6 +69,18 @@
     background-color: $fireBright;
   }
 }
+
+@keyframes rockGlow {
+  0%, 100% {
+    background-color: radial-gradient(to bottom, #ef5a00, #d43322);
+    opacity: 0.4;
+  }
+  50% {
+    background-color: radial-gradient(to bottom, #ef5a00, #d43322);
+    opacity: 0.8;
+  }
+}
+
 .campfire {
   .fire {
     @include width-height($width: 140px, $height: 140px);
@@ -260,7 +280,6 @@
     right: 230px;
 
     .rock_big_1, .rock_big_2, .rock_big_3, .rock_big_4, .rock_big_5 {
-      @include box-shadow($inset: true);
       position: absolute;
       z-index: 3;
       top: 180px;
@@ -269,26 +288,53 @@
     }
 
     .rock_big {
-      &_1 {
+      &_5, &_4 {
+        @include box-shadow($top: 20px, $left: -30px, $blur: 26px, $inset: true);
+      }
+      &_1, &_2 {
+        @include box-shadow($top: -20px, $left: -30px, $blur: 26px, $inset: true);
+      }
+      &_3 {
+        @include box-shadow($left: -20px, $blur: 26px, $inset: true);
+      }
+      // &_5_glow, &_4_glow, &_3_glow, &_2_glow, &_1_glow {
+      //   position: absolute;
+      //   animation: rockGlow 3s ease-in-out;
+      //   animation-iteration-count: infinite;
+      //   animation-fill-mode: both;
+      //   border-radius: 95px 95px 0 0;
+      //   z-index: 3;
+      // }
+      // &_5_glow, &_4_glow {
+      //   @include rockGlow(-4px, 2px);
+      // }
+      // &_1_glow, &_2_glow {
+      //   @include rockGlow(4px, -2px);
+      // }
+      // &_3_glow {
+      //   @include rockGlow();
+      // }
+      &_1, &_1_glow {
         @include width-height($width: 95px, $height: 56px);
+        top: 180px;
         right: -140px;
       }
-      &_2 {
+      &_2, &_2_glow {
         @include width-height($width: 80px, $height: 45px);
         top: 190px;
         right: -65px;
       }
-      &_3 {
+      &_3, &_3_glow {
         @include width-height($width: 85px, $height: 58px);
         top: 176px;
         right: 10px;
       }
-      &_4 {
+      &_4, &_4_glow {
         @include width-height($width: 70px, $height: 48px);
         top: 185px;
         right: 80px;
       }
-      &_5 {
+      &_5, &_5_glow {
         @include width-height($width: 90px, $height: 54px);
         top: 179px;
         right: 145px;
