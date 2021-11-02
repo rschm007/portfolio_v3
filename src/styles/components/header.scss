@@ -18,4 +18,20 @@
             }
         }
     }
+
+    &_about {
+        &__hero {
+            @include font($color: $moonSilver, $weight: 800, $align: left);
+            width: calc(100vw - 60%);
+            margin-left: 10vw;
+            margin-top: -6vh;
+
+            h1 {
+                font-size: 100px;
+                margin-bottom: 0;
+                margin-left: -1rem;
+                line-height: 82px;
+            }
+        }
+    }
 }

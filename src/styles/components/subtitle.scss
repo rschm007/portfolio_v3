@@ -1,5 +1,10 @@
 @import "../imports";
 
 .subtitle {
-    @include font($size: 22px, $color: $peru, $weight: 100);
+    &.main {
+        @include font($size: 18px, $color: $peru, $weight: 100);
+    }
+    &.about {
+        @include font($size: 18px, $color: $moonSilver, $weight: 100);
+    }
 }
