@@ -3,7 +3,6 @@ import Subtitle from "../../components/Subtitle";
 import Navigation from '../../components/Navigation';
 import Wrapper from '../../components/Wrapper';
 import LinkButton from '../../components/LinkButton';
-import Ocean from "../../components/Animations/Ocean";
 
 const About = (props) => {
     return (
@@ -15,7 +14,7 @@ const About = (props) => {
             </Header>
 
             <Wrapper class="work_container">
-                <Ocean />
+
             </Wrapper>
         </Wrapper>
     );

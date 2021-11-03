@@ -33,6 +33,23 @@
   }
 }
 
+@keyframes scaleHeight {
+  0%,
+  100% {
+    height: 20px;
+  }
+  50%,
+  90% {
+    height: 22px;
+  }
+  75% {
+    height: 17px;
+  }
+  80% {
+    height: 19px;
+  }
+}
+
 @keyframes shake {
   0%,
   100% {
@@ -297,23 +314,46 @@
       &_3 {
         @include box-shadow($left: -20px, $blur: 26px, $inset: true);
       }
-      // &_5_glow, &_4_glow, &_3_glow, &_2_glow, &_1_glow {
-      //   position: absolute;
-      //   animation: rockGlow 3s ease-in-out;
-      //   animation-iteration-count: infinite;
-      //   animation-fill-mode: both;
-      //   border-radius: 95px 95px 0 0;
-      //   z-index: 3;
-      // }
-      // &_5_glow, &_4_glow {
-      //   @include rockGlow(-4px, 2px);
-      // }
-      // &_1_glow, &_2_glow {
-      //   @include rockGlow(4px, -2px);
-      // }
-      // &_3_glow {
-      //   @include rockGlow();
-      // }
+      &_1:before, &_2:before, &_3:before, &_4:before, &_5:before {
+        @include box-shadow($blur: 30px, $color: #000);
+        content: "";
+        position: absolute;
+        background-color: #000;
+        opacity: 0.6;
+        border-radius: 0 0 95px 95px;
+        animation: scaleHeight 3s ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+      }
+      &_1:before {
+          @include width-height($width: 76px, $height: 18px);
+          @include transform(skewX(70deg));
+          margin-top: 56px;
+          left: 42px;
+      }
+      &_2:before {
+        @include width-height($width: 74px, $height: 18px);
+        @include transform(skewX(60deg));
+        margin-top: 46px;
+        left: 21px;
+    }
+    &_3:before {
+      @include width-height($width: 74px, $height: 18px);
+      margin-top: 58px;
+      left: 12px;
+    }
+    &_4:before {
+      @include width-height($width: 75px, $height: 18px);
+      @include transform(skewX(-35deg));
+      margin-top: 49px;
+      left: -9px;
+    }
+    &_5:before {
+      @include width-height($width: 95px, $height: 18px);
+      @include transform(skewX(-65deg));
+      margin-top: 54px;
+      left: -19px;
+    }
       &_1, &_1_glow {
         @include width-height($width: 95px, $height: 56px);
         top: 180px;
