@@ -59,6 +59,7 @@ const Campfire = () => {
         <div className="rock_big_5_glow" />
 
       </div>
+      <div className="ground" />
     </div>
   );
 };
