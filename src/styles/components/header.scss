@@ -20,7 +20,7 @@
         }
     }
 
-    &_about {
+    &_work {
         &__hero {
             @include font($color: $moonSilver, $weight: 800, $align: left);
             width: calc(100vw - 60%);
@@ -28,6 +28,7 @@
             margin-top: -6vh;
 
             h1 {
+                text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
                 font-size: 100px;
                 margin-bottom: 0;
                 margin-left: -1rem;

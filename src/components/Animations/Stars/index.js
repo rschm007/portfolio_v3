@@ -1,8 +1,8 @@
-const Stars = () => {
+const Stars = (props) => {
     return (
-        <div className="stars_container">
+        <section className="stars_container">
             <div className="stars" />
-        </div>
+        </section>
     );
 };
 

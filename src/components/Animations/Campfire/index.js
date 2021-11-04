@@ -1,6 +1,6 @@
 const Campfire = () => {
   return (
-    <div className="campfire">
+    <section className="campfire">
       <div className="smoke">
         <svg>
           <path d="M 150 0 Q 200 100 100 250 C 0 450 120 400 50 600  " />
@@ -60,7 +60,7 @@ const Campfire = () => {
 
       </div>
       <div className="ground" />
-    </div>
+    </section>
   );
 };
 

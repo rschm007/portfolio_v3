@@ -5,6 +5,8 @@
 @import "./styles/components/linkButton.scss";
 @import "./styles/components/navigation.scss";
 
+@import "./styles/components/Cards/contentcard.scss";
+
 @import "./styles/components/animations/campfire.scss";
 @import "./styles/components/animations/stars.scss";
 
@@ -23,6 +25,14 @@ h1, h2, h3, h4 {
 
 h5, h6, p, ul, li {
   @include font($family: $body);
+}
+
+.flex_row {
+  @include flex(row);
+}
+
+.flex_column {
+  @include flex(column);
 }
 
 .App {

@@ -102,7 +102,7 @@
     transform: skewX(5deg) scale(0.9);
     position: absolute;
     bottom: 30%;
-    right: -20%;
+    right: -200px;
     -webkit-mask-image: linear-gradient(to top, rgb(255, 255, 255) 30%, rgba(112, 112, 112, 0));
     mask-image: linear-gradient(to top, rgb(255, 255, 255) 30%, rgba(112, 112, 112, 0));
     -webkit-mask-size: 100% 100%;
@@ -164,7 +164,7 @@
     @include width-height($width: 140px, $height: 140px);
     position: absolute;
     top: 58%;
-    right: 19%;
+    right: 288px;
     background-color: transparent;
     margin-left: auto;
     margin-right: auto;
@@ -299,7 +299,7 @@
     position: absolute;
     @include transform(scale(1.5));
     top: 91%;
-    right: 43%;
+    right: 585px;
     z-index: 2;
 
     .log {
@@ -355,7 +355,7 @@
   .rocks {
     position: absolute;
     top: 60%;
-    right: 19%;
+    right: 280px;
 
     .rock_big_1, .rock_big_2, .rock_big_3, .rock_big_4, .rock_big_5 {
       position: absolute;

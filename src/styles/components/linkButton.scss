@@ -2,6 +2,8 @@
 
 .link_button {
   @include flex($direction: row);
+  @include border-outline($noBorder: true, $noOutline: true);
+  background-color: transparent;
 
   a {
     @include flex($direction: center);
@@ -43,5 +45,27 @@
     @include transition;
     @include transform(scale(1));
     padding: 0 0.5rem;
+  }
+
+  &.card_button {
+    align-items: center;
+
+    a {
+      @include font($size: 16px, $color: $moonSilver, $weight: 400, $align: left);
+    }
+
+    i.fa-github {
+      font-size: 21px;
+    }
+    i.fa-external-link {
+      font-size: 20px;
+    }
+
+    &.github a:hover::before {
+      width: 80px;
+    }
+    &.link a:hover::before {
+      width: 130px;
+    }
   }
 }

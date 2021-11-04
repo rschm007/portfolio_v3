@@ -1,8 +1,8 @@
 const Wrapper = (props) => {
     return (
-        <div className={`wrapper ${props.class}`}>
+        <section className={`wrapper ${props.class}`}>
             {props.children}
-        </div>
+        </section>
     );
 };
 
