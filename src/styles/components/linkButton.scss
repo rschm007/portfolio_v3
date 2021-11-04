@@ -64,8 +64,11 @@
     &.github a:hover::before {
       width: 80px;
     }
-    &.link a:hover::before {
+    &.app a:hover::before {
       width: 130px;
+    }
+    &.site a:hover::before {
+      width: 90px;
     }
   }
 }

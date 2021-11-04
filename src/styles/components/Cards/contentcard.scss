@@ -1,9 +1,11 @@
 @import "../../imports";
 
 .card {
-    @include box-shadow();
-    backdrop-filter: blur(3px) brightness(90%);
+    @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+    @include width-height(400px, 110px);
+    backdrop-filter: blur(3px) brightness(130%); 
     padding: 2rem 1.75rem;
+    margin: 1rem;
     
     h3 {
         @include font($size: 30px, $color: $moonSilver, $weight: 800, $align: left);

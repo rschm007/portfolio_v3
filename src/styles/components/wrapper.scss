@@ -17,13 +17,21 @@
     // work page
     &.background_3 {
         .work_container {
-            @include flex(row);
+            @include flex(column);
+            margin: 1rem;
+            margin-left: -3rem;
+            max-height: 300px;
 
-            .cards_work {
-                @include flex(column);
-                @include width-height(100%, 100%);
+            .cards_work_1, .cards_work_2 {
+                @include flex(row);
+                @include width-height(100%, 40%);
                 justify-content: center;
                 align-items: center;
+            }
+
+            .cards_work_2 {
+                margin-top: 6.5rem;
+                margin-right: 20%;
             }
         }
     }
