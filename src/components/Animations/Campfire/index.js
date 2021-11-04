@@ -1,6 +1,20 @@
 const Campfire = () => {
   return (
     <div className="campfire">
+      <div className="smoke">
+        <svg>
+          <path d="M 150 0 Q 200 100 100 250 C 0 450 120 400 50 600  " />
+        </svg>
+        <svg>
+          <path d="M 150 0 Q 200 100 100 250 C 0 450 120 400 50 600  " />
+        </svg>
+        <svg>
+          <path d="M 150 0 Q 200 100 100 250 C 0 450 120 400 50 600  " />
+        </svg>
+        <svg>
+          <path d="M 150 0 Q 200 100 100 250 C 0 450 120 400 50 600  " />
+        </svg>
+      </div>
       <div className="fire">
         <div className="left">
           <div className="main_fire"></div>
@@ -31,7 +45,7 @@ const Campfire = () => {
       <div className="rocks">
         <div className="rock_big_1" />
         <div className="rock_big_1_glow" />
-        
+
         <div className="rock_big_2" />
         <div className="rock_big_2_glow" />
 

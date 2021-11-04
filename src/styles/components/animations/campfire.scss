@@ -98,7 +98,79 @@
   }
 }
 
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 600;
+  }
+}
+
 .campfire {
+  .smoke {
+    @include width-height(630px, 400px);
+    transform: skewX(5deg) scale(0.9);
+    position: absolute;
+    bottom: 40%;
+    right: 1%;
+    -webkit-mask-image: linear-gradient(to top, rgb(255, 255, 255) 30%, rgba(112, 112, 112, 0));
+    mask-image: linear-gradient(to top, rgb(255, 255, 255) 30%, rgba(112, 112, 112, 0));
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center bottom;
+    mask-position: center bottom;
+
+    svg {
+      @include width-height(600px, 400px);
+      position: absolute;
+      top: 0;
+
+      &:first-child {
+        top: 20%;
+        right: 18%;
+
+        path {
+          animation: dash 3s linear infinite;
+        }
+      }
+      *:nth-child(2) {
+        top: 20%;
+
+        path {
+          animation: dash 2s linear infinite;
+        }
+      }
+      &:nth-child(3) {
+        top: 20%;
+        right: 6%;
+
+        path {
+          animation: dash 3s linear infinite;
+        }
+      }
+      &:nth-child(4) {
+        top: 5%;
+        right: 9%;
+
+        path {
+          animation: dash 2s linear infinite;
+        }
+      }
+
+      path {
+        fill: none;
+        stroke: white;
+        opacity: 0.3;
+        stroke-width: 5px;
+        stroke-dasharray: 500 100;
+        stroke-linecap: round;
+      }
+    }
+  }
+
   .fire {
     @include width-height($width: 140px, $height: 140px);
     position: absolute;
