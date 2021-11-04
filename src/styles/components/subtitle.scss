@@ -3,6 +3,7 @@
 .subtitle {
     &.main {
         @include font($size: 18px, $color: $peru, $weight: 100);
+        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
     }
     &.about {
         @include font($size: 18px, $color: $moonSilver, $weight: 100);

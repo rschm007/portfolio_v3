@@ -102,8 +102,8 @@
   .fire {
     @include width-height($width: 140px, $height: 140px);
     position: absolute;
-    top: 65%;
-    right: 230px;
+    top: 50%;
+    right: 500px;
     background-color: transparent;
     margin-left: auto;
     margin-right: auto;
@@ -237,8 +237,8 @@
   .logs {
     position: absolute;
     @include transform(scale(1.5));
-    top: 95%;
-    right: 520px;
+    top: 77%;
+    right: 795px;
     z-index: 0;
 
     .log {
@@ -293,8 +293,8 @@
 
   .rocks {
     position: absolute;
-    top: 65%;
-    right: 230px;
+    top: 52%;
+    right: 500px;
 
     .rock_big_1, .rock_big_2, .rock_big_3, .rock_big_4, .rock_big_5 {
       position: absolute;

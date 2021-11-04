@@ -5,10 +5,11 @@
         &__hero {
             @include font($color: $fireBright, $weight: 800, $align: left);
             width: calc(100vw - 60%);
-            margin-left: 10vw;
-            margin-top: 5vh;
+            margin-left: 7%;
+            margin-top: 17%;
 
             h1 {
+                text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
                 margin-bottom: 0;
                 line-height: 64px;
             }

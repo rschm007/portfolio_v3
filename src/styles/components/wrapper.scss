@@ -7,13 +7,10 @@
     position: fixed;
     background-color: #010b12;
 
-    &.background_1 {
+    .wrapper.background_1 {
+        @include width-height($width: 100%, $height: 100%);
         background-image: url("../../assets/treeline.svg");
         background-size: cover;
-    }
-
-    &.background_2 {
-        background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
-        background: #015871;
+        z-index: 1;
     }
 }
