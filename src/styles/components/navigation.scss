@@ -102,6 +102,10 @@ nav {
     &.true .nav_menu {
       opacity: 1;
 
+      .link_button i {
+        display: none;
+      }
+
       .link_button:hover {
         a:before {
           left: 12px;
@@ -127,3 +131,19 @@ nav {
     }
   }
 }
+
+.background_3 nav .navigation {
+  .nav_button span {
+    background-color: $maroon !important;
+  }
+
+  .nav_menu .link_button a {
+    @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+    background-color: #010e17;
+    backdrop-filter: blur(6px) brightness(130%); 
+    margin-top: -5px;
+    padding: 5px 10px;
+  }
+}
+
+

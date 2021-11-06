@@ -9,6 +9,7 @@ import ContentCard from "../../components/Cards/ContentCard";
 const Work = (props) => {
     return (
         <Wrapper class="background background_3">
+            <div class="moon" />
             <Stars />
             <Navigation />
 
