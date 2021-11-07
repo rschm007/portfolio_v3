@@ -111,21 +111,15 @@ nav {
           left: 12px;
         }
 
-        &:nth-child(1),
-        &:nth-child(2) {
-          a:before {
-            @include width-height($width: 60px, $height: 2px);
-          }
+        &:nth-child(1) a:before,
+        &:nth-child(2) a:before {
+          @include width-height($width: 60px, $height: 2px);
         }
-        &:nth-child(3) {
-          a:before {
-            @include width-height($width: 50px, $height: 2px);
-          }
+        &:nth-child(3) a:before {
+          @include width-height($width: 50px, $height: 2px);
         }
-        &:nth-child(4) {
-          a:before {
-            @include width-height($width: 75px, $height: 2px);
-          }
+        &:nth-child(4) a:before {
+          @include width-height($width: 75px, $height: 2px);
         }
       }
     }
@@ -137,12 +131,29 @@ nav {
     background-color: $maroon !important;
   }
 
-  .nav_menu .link_button a {
-    @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
-    background-color: #010e17;
-    backdrop-filter: blur(6px) brightness(130%); 
-    margin-top: -5px;
-    padding: 5px 10px;
+  .nav_menu .link_button {
+    a {
+      @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+      background-color: #010e17;
+      backdrop-filter: blur(6px) brightness(130%); 
+      margin-top: -5px;
+      padding: 5px 10px;
+  
+      &::before {
+        margin-top: 2.4rem;
+        margin-left: -12px;
+      }
+    }
+    &:nth-child(1) a:before,
+    &:nth-child(2) a:before {
+      width: 80px !important;
+    }
+    &:nth-child(3) a:before {
+      width: 71px !important;
+    }
+    &:nth-child(4) a:before {
+      width: 98px !important;
+    }
   }
 }
 
