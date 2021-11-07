@@ -1,0 +1,51 @@
+@import "../../imports";
+
+.about_card {
+    @include flex(row);
+    @include width-height(150px, 150px);
+    @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+    @include transition($time-in: 250ms, $time-out: 250ms);
+    @include transform(scale(100%));
+    border: 6px solid $maroon;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: $peru;
+
+    .about_card__icon {
+        @include flex(column);
+        align-self: center;
+        align-items: center;
+
+        i {
+            font-size: 58px;
+            color: $maroonDark;
+        }
+
+        h3 {
+            @include font($color: $maroonDark, $align: center, $weight: 600, $transform: uppercase);
+            margin: 8px 0 0 0;
+        }
+    }
+
+    .about_card__container {
+        display: none;
+        padding: 0.75rem 0.75rem 0.75rem 1.75rem;
+    }
+
+    &:hover {
+        @include transform(scale(105%));
+    }
+
+    &.open {
+        width: 325px;
+
+        .about_card__icon {
+            margin-left: 2.5rem;
+        }
+
+        .about_card__container {
+            display: flex;
+            padding: 0.75rem 0.75rem 0.75rem 1.75rem;
+        }
+    }
+}

@@ -15,7 +15,7 @@ const Main = (props) => {
                 <Navigation />
 
                 <Header tag="h1" content="Hi! I'm Robert." class="header_main__hero">
-                    <Subtitle tag="p" content="I'm a Web Developer and Designer from California." class="main" />
+                    <Subtitle tag="p" content="I'm a Web Developer and Designer from California." class="about" />
 
                     <Wrapper class="flex_row buttons">
                         <LinkButton href="https://github.com/rschm007" icon="fab fa-github" content="Github" />

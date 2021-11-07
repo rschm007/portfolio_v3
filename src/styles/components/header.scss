@@ -20,6 +20,21 @@
         }
     }
 
+    &_about {
+        &__hero {
+            @include font($color: $fireBright, $weight: 800, $align: left);
+            width: calc(100vw - 60%);
+            margin-left: 10%;
+            margin-top: 13%;
+
+            h1 {
+                text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+                margin-bottom: 0;
+                line-height: 64px;
+            }
+        }
+    }
+
     &_work {
         &__hero {
             @include font($color: $moonSilver, $weight: 800, $align: left);

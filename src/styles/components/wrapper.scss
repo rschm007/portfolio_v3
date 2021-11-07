@@ -8,12 +8,27 @@
     background-color: #010b12;
 
     // main page    
-    .wrapper.background_1 {
+    .background_1 {
         @include width-height($width: 100%, $height: 100%);
         background-image: url("../../assets/treeline.svg");
         background-size: cover;
         z-index: 1;
     }
+
+    // about page
+    .background_2 {
+        @include width-height($width: 100%, $height: 100%);
+        background-image: url("../../assets/treeline_2.svg");
+        background-size: cover;
+        z-index: 1;
+
+        .about_container {
+            @include flex(row);
+            margin-top: 5rem;
+            margin-left: 10%;
+        }
+    }
+
     // work page
     &.background_3 {
         .moon {

@@ -8,6 +8,7 @@
     backdrop-filter: blur(3px) brightness(130%); 
     padding: 2rem 1.75rem;
     margin: 1rem;
+    border-radius: 10px;
     
     h3 {
         @include font($size: 30px, $color: $moonSilver, $weight: 800, $align: left);
