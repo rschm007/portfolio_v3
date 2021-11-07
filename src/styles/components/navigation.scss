@@ -108,7 +108,7 @@ nav {
 
       .link_button:hover {
         a:before {
-          left: 12px;
+          left: -4px;
         }
 
         &:nth-child(1) a:before,
@@ -141,7 +141,7 @@ nav {
   
       &::before {
         margin-top: 2.4rem;
-        margin-left: -12px;
+        margin-left: 4px;
       }
     }
     &:nth-child(1) a:before,
