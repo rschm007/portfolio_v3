@@ -4,7 +4,7 @@ import LinkButton from "../LinkButton";
 import Wrapper from "../Wrapper";
 
 const Navigation = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <nav>

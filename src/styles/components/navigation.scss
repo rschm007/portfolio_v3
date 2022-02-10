@@ -8,9 +8,10 @@ nav {
   z-index: 10;
 
   .navigation {
+    @include flex($direction: row);
+
     .nav_button {
       @include width-height($width: 3rem, $height: 3.5rem);
-      position: relative;
       @include transform(rotate(0deg));
       @include transition($time-in: 0.5s);
       cursor: pointer;
@@ -53,6 +54,10 @@ nav {
       }
 
       &.true {
+        ~ .nav_menu {
+          left: 5rem;
+        }
+
         span {
           &:nth-child(1),
           &:nth-child(6) {
@@ -92,11 +97,16 @@ nav {
 
     .nav_menu {
       @include flex($direction: row);
-      @include transition($time-in: 0.25s, $time-out: 0.25s);
+      @include transition($for: opacity, $time-in: 0.2s, $time-out: 0.2s);
       position: absolute;
-      top: 0;
       left: 4rem;
+      padding: 0.25rem 0;
       opacity: 0;
+
+      .link_button {
+        max-width: 60px;
+        width: 60px;
+      }
     }
 
     &.true .nav_menu {
@@ -135,11 +145,11 @@ nav {
     a {
       @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
       background-color: #010e17;
-      backdrop-filter: blur(6px) brightness(130%); 
+      backdrop-filter: blur(6px) brightness(130%);
       margin-top: -5px;
       padding: 5px 10px;
       border-radius: 4px;
-  
+
       &::before {
         margin-top: 2.4rem;
         margin-left: 4px;
@@ -158,5 +168,3 @@ nav {
     }
   }
 }
-
-

@@ -6,13 +6,14 @@
   background-color: transparent;
 
   a {
-    @include flex($direction: center);
+    @include flex($direction: row);
     @include font(
       $color: $moonSilver,
-      $size: 24px,
+      $size: 18px,
       $weight: 300,
       $decoration: none
     );
+    align-items: baseline;
 
     &:before {
       @include width-height($width: 105px, $height: 2px);
@@ -41,7 +42,7 @@
   }
 
   i {
-    @include font($color: $moonSilver);
+    @include font($color: $moonSilver, $size: 24px);
     @include transition;
     @include transform(scale(1));
     padding: 0 0.5rem;

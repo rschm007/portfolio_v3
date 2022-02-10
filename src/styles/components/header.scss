@@ -14,8 +14,12 @@
                 line-height: 64px;
             }
 
-            .buttons > .link_button:not(:first-child) {
-                padding-left: 1rem;
+            .buttons {
+                margin-left: -0.5rem;
+
+                > .link_button:not(:first-child) {
+                    padding-left: 1rem;
+                }
             }
         }
     }
