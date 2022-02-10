@@ -6,7 +6,7 @@ const ContentCard = (props) => {
         <article className={`card ${props.class}`}>
             {props.img && props.imgSrc && props.imgAlt && props.imgClass ?
                 <Wrapper class="flex_row card_1__content">
-                    <Wrapper class="flex_column">
+                    <Wrapper class="flex_column card_1__img">
                         <img src={props.imgSrc} alt={props.imgAlt} className={props.imgClass} />
                     </Wrapper>
                     <Wrapper class="flex_column">
@@ -30,7 +30,7 @@ export default ContentCard;
 
 ContentCard.propTypes = {
     class: PropTypes.string,
-    img: PropTypes.string,
+    img: PropTypes.bool,
     imgSrc: PropTypes.string,
     imgAlt: PropTypes.string,
     imgClass: PropTypes.string,

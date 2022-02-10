@@ -31,20 +31,22 @@
 
     // work page
     &.background_3 {
+        overflow-y: scroll;
+        overflow-x: hidden;
+
         .moon {
             @include width-height(300px, 300px);
             background-image: url("../../assets/moon-full.svg");
             background-repeat: no-repeat;
             position: absolute;
             top: -125px;
-            left: -75px;
+            right: -75px;
             z-index: -1;
             filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.7));
         }
 
         .work_container {
             @include flex(column);
-            margin: 1rem;
             margin-left: -3rem;
             max-height: 300px;
 
@@ -52,7 +54,7 @@
                 @include flex(row);
                 @include width-height(100%, 40%);
                 justify-content: center;
-                align-items: center;
+                align-items: baseline;
             }
 
             .cards_work_2 {

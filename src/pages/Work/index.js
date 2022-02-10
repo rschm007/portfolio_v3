@@ -5,8 +5,12 @@ import Wrapper from '../../components/Wrapper';
 import LinkButton from '../../components/LinkButton';
 import Stars from '../../components/Animations/Stars';
 import ContentCard from "../../components/Cards/ContentCard";
+import BavelImg from "../../assets/bavel.jfif";
+import CashCommandsImg from "../../assets/cashcommands.jpg";
+import ForbesAndersenImg from "../../assets/forbesandersen.png";
+import ExpressImg from "../../assets/expressinfo.png";
 
-const Work = (props) => {
+const Work = () => {
     return (
         <Wrapper class="background background_3">
             <div class="moon" />
@@ -14,7 +18,7 @@ const Work = (props) => {
             <Navigation />
 
             <Header tag="h1" content="Work" class="header_work__hero">
-                <Subtitle tag="p" content="Here's some samples of my projects." class="work" />
+                <Subtitle tag="p" content="Some samples of my projects." class="work" />
             </Header>
 
             <Wrapper class="work_container">
@@ -22,6 +26,7 @@ const Work = (props) => {
                     <ContentCard
                         header="Babelbox"
                         description="Play a game of Liar Liar live with your friends."
+                        img={true} imgSrc={BavelImg} imgAlt="Bavel Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
                             <LinkButton href="https://github.com/https-github-com-steversonTong/BabelBox" icon="fab fa-github" content="Github" class="card_button github" />
@@ -30,12 +35,12 @@ const Work = (props) => {
                     </ContentCard>
 
                     <ContentCard
-                        header="Recipe Generator"
-                        description="Find recipes based on inputted ingredients."
+                        header="Cash Commands"
+                        description="Shopify site built for a local dog trainer."
+                        img={true} imgSrc={CashCommandsImg} imgAlt="Cash Commands Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton href="https://https-github-com-steversontong.github.io/Recipe-Generatorf/" icon="fab fa-github" content="Github" class="card_button github" />
-                            <LinkButton href="https://bavel-technology.github.io/Recipe-Generatorf/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button app" />
+                            <LinkButton href="https://www.cashcommandsdogtraining.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button app" />
                         </div>
                     </ContentCard>
                 </Wrapper>
@@ -44,6 +49,7 @@ const Work = (props) => {
                     <ContentCard
                         header="Forbes Andersen"
                         description="Wordpress site built with Elementor Plugin."
+                        img={true} imgSrc={ForbesAndersenImg} imgAlt="Forbes Andersen Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
                             <LinkButton href="https://www.faisi.ca/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
@@ -53,6 +59,7 @@ const Work = (props) => {
                     <ContentCard
                         header="Express Info Systems"
                         description="Wordpress site built with Laravel framework."
+                        img={true} imgSrc={ExpressImg} imgAlt="Express Information Systems Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
                             <LinkButton href="https://www.expressinfo.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button site" />

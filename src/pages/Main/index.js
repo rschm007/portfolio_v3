@@ -6,7 +6,7 @@ import Wrapper from '../../components/Wrapper';
 import LinkButton from '../../components/LinkButton';
 import Stars from '../../components/Animations/Stars';
 
-const Main = (props) => {
+const Main = (rops) => {
     return (
         <Wrapper class="background">
             <Stars />

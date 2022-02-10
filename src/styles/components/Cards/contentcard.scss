@@ -2,16 +2,28 @@
 
 .card {
     @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
-    @include width-height(400px, 110px);
-    @include transition;
+    @include width-height(360px, min-content);
+    @include transition($time-in: 0.1s, $time-out: 0.2s);
     @include transform(scale(100%));
-    backdrop-filter: blur(3px) brightness(130%); 
+    backdrop-filter: blur(3px) brightness(130%);
     padding: 2rem 1.75rem;
     margin: 1rem;
     border-radius: 10px;
-    
+
+    .card_1__img {
+        @include width-height($width: 90px, $maxWidth: 90px, $height: 90px, $maxHeight: 90px);
+        position: absolute;
+        right: -0.75rem;
+        top: -0.75rem;
+
+        img {
+            border-radius: 100%;
+        }
+    }
+
     h3 {
         @include font($size: 30px, $color: $moonSilver, $weight: 800, $align: left);
+        width: 95%;
         filter: brightness(105%);
         margin: 0;
     }
@@ -22,10 +34,24 @@
 
     .card_buttons {
         margin-left: -1rem;
+
+        a:first-child {
+            i.fas.fa-external-link-alt {
+                @include font($size: 21px);
+            }
+
+            &::before {
+                width: 81px;
+            }
+        }
+
+        a:nth-child(2)::before {
+            width: 135px;
+        }
     }
 
     &:hover {
-        @include transform(scale(105%));
+        @include transform(scale(102%));
         backdrop-filter: blur(3px) brightness(150%);
     }
 }

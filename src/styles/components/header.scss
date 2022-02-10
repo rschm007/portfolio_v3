@@ -49,7 +49,7 @@
         &__hero {
             @include font($color: $moonSilver, $weight: 800, $align: left);
             margin-bottom: 1rem;
-            margin-left: 250px;
+            margin-left: 10%;
             margin-top: -5rem;
 
             h1 {
