@@ -1,4 +1,6 @@
-const Subtitle = ({tag: Tag, class: Class, content: Content}) => {
+import PropTypes from "prop-types";
+
+const Subtitle = ({ tag: Tag, class: Class, content: Content }) => {
     return (
         <div className={`subtitle ${Class}`}>
             <Tag>{Content}</Tag>
@@ -6,4 +8,16 @@ const Subtitle = ({tag: Tag, class: Class, content: Content}) => {
     );
 };
 
-export default Subtitle
+export default Subtitle;
+
+Subtitle.propTypes = {
+    class: PropTypes.string,
+    content: PropTypes.string,
+    tag: PropTypes.string,
+}
+
+Subtitle.defaultProps = {
+    class: "",
+    content: "",
+    tag: "h2"
+}

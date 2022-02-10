@@ -3,7 +3,7 @@ import LinkButton from "../LinkButton";
 
 import Wrapper from "../Wrapper";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const [open, setOpen] = useState(false);
 
   return (

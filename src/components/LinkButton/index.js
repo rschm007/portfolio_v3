@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const LinkButton = (props) => {
     return (
         <button className={`link_button ${props.class}`}>
@@ -10,3 +12,17 @@ const LinkButton = (props) => {
 };
 
 export default LinkButton;
+
+LinkButton.propTypes = {
+    class: PropTypes.string,
+    href: PropTypes.string,
+    icon: PropTypes.string,
+    content: PropTypes.string
+}
+
+LinkButton.defaultProps = {
+    class: "",
+    href: "#",
+    icon: "",
+    content: ""
+}

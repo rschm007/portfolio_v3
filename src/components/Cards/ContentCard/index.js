@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Wrapper from "../../Wrapper";
 
 const ContentCard = (props) => {
@@ -26,3 +27,24 @@ const ContentCard = (props) => {
 };
 
 export default ContentCard;
+
+ContentCard.propTypes = {
+    class: PropTypes.string,
+    img: PropTypes.string,
+    imgSrc: PropTypes.string,
+    imgAlt: PropTypes.string,
+    imgClass: PropTypes.string,
+    header: PropTypes.string,
+    description: PropTypes.string,
+    children: PropTypes.node,
+}
+
+ContentCard.defaultProps = {
+    class: "",
+    img: "",
+    imgSrc: "",
+    imgAlt: "",
+    imgClass: "",
+    header: "",
+    description: "",
+}

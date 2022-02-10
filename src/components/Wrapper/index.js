@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Wrapper = (props) => {
     return (
         <section className={`wrapper ${props.class}`}>
@@ -6,4 +8,13 @@ const Wrapper = (props) => {
     );
 };
 
-export default Wrapper
+export default Wrapper;
+
+Wrapper.propTypes = {
+    class: PropTypes.string,
+    children: PropTypes.node,
+}
+
+Wrapper.defaultProps = {
+    class: "",
+}

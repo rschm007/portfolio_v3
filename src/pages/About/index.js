@@ -5,7 +5,7 @@ import Wrapper from '../../components/Wrapper';
 import Stars from "../../components/Animations/Stars";
 import AboutCard from "../../components/Cards/AboutCard";
 
-const About = (props) => {
+const About = () => {
     return (
         <Wrapper class="background">
             <Stars />

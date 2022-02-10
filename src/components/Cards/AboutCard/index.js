@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Wrapper from "../../Wrapper";
 import { useState } from "react";
 
@@ -25,3 +26,19 @@ const AboutCard = (props) => {
 };
 
 export default AboutCard;
+
+AboutCard.propTypes = {
+    class: PropTypes.string,
+    href: PropTypes.string,
+    icon: PropTypes.string,
+    header: PropTypes.string,
+    content: PropTypes.string
+}
+
+AboutCard.defaultProps = {
+    class: "",
+    href: "#",
+    icon: "",
+    header: "",
+    content: ""
+}
