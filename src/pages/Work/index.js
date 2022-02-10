@@ -25,7 +25,7 @@ const Work = () => {
                 <Wrapper class="cards_work_1">
                     <ContentCard
                         header="Babelbox"
-                        description="Play a game of Liar Liar live with your friends."
+                        description="Play a game of Liar Liar live with your friends. Built in React."
                         img={true} imgSrc={BavelImg} imgAlt="Bavel Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
@@ -36,11 +36,11 @@ const Work = () => {
 
                     <ContentCard
                         header="Cash Commands"
-                        description="Shopify site built for a local dog trainer."
+                        description="Shopify site built for a local dog training business."
                         img={true} imgSrc={CashCommandsImg} imgAlt="Cash Commands Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton href="https://www.cashcommandsdogtraining.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button app" />
+                            <LinkButton href="https://www.cashcommandsdogtraining.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button app" />
                         </div>
                     </ContentCard>
                 </Wrapper>
@@ -48,7 +48,7 @@ const Work = () => {
                 <Wrapper class="cards_work_2">
                     <ContentCard
                         header="Forbes Andersen"
-                        description="Wordpress site built with Elementor Plugin."
+                        description="Wordpress site built with Elementor."
                         img={true} imgSrc={ForbesAndersenImg} imgAlt="Forbes Andersen Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
@@ -58,11 +58,11 @@ const Work = () => {
 
                     <ContentCard
                         header="Express Info Systems"
-                        description="Wordpress site built with Laravel framework."
+                        description="Wordpress site built in Laravel framework."
                         img={true} imgSrc={ExpressImg} imgAlt="Express Information Systems Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton href="https://www.expressinfo.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button site" />
+                            <LinkButton href="https://www.expressinfo.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
                         </div>
                     </ContentCard>
                 </Wrapper>

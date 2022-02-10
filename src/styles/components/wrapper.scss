@@ -46,19 +46,20 @@
         }
 
         .work_container {
-            @include flex(column);
-            margin-left: -3rem;
-            max-height: 300px;
+            @include flex(row);
+            margin: -5.5rem 0 -5.5rem 9rem;
+            align-items: center;
+            flex-wrap: wrap;
 
             .cards_work_1, .cards_work_2 {
-                @include flex(row);
-                @include width-height(100%, 40%);
-                justify-content: center;
+                @include flex(column);  
+                width: 40%;
+                justify-content: end;
                 align-items: baseline;
             }
 
             .cards_work_2 {
-                margin-top: 6.5rem;
+                margin-top: 8.5rem;
                 margin-right: 20%;
             }
         }
