@@ -112,24 +112,45 @@ nav {
     &.true .nav_menu {
       opacity: 1;
 
-      .link_button i {
-        display: none;
-      }
-
-      .link_button:hover {
-        a:before {
-          left: -4px;
+      .link_button {
+        a {
+          &:before {
+            margin-top: 1.4rem;
+            margin-left: 0;
+          }
         }
 
-        &:nth-child(1) a:before,
+        &:first-child a:before {
+          width: 48px;
+        }
+
         &:nth-child(2) a:before {
-          @include width-height($width: 60px, $height: 2px);
+          width: 47px;
         }
+
         &:nth-child(3) a:before {
-          @include width-height($width: 50px, $height: 2px);
+          width: 40px;
         }
+
         &:nth-child(4) a:before {
-          @include width-height($width: 75px, $height: 2px);
+          width: 60px;
+        }
+
+        i {
+          display: none;
+        }
+
+        &:hover {
+          &:nth-child(1)::before,
+          &:nth-child(2)::before {
+            @include width-height($width: 60px, $height: 2px);
+          }
+          &:nth-child(3)::before {
+            @include width-height($width: 50px, $height: 2px);
+          }
+          &:nth-child(4)::before {
+            @include width-height($width: 75px, $height: 2px);
+          }
         }
       }
     }
@@ -149,22 +170,6 @@ nav {
       margin-top: -5px;
       padding: 5px 10px;
       border-radius: 4px;
-
-      &::before {
-        margin-top: 2.4rem;
-        margin-left: 4px;
-        border-radius: 0px 0px 4px 4px;
-      }
-    }
-    &:nth-child(1) a:before,
-    &:nth-child(2) a:before {
-      width: 80px !important;
-    }
-    &:nth-child(3) a:before {
-      width: 71px !important;
-    }
-    &:nth-child(4) a:before {
-      width: 98px !important;
     }
   }
 }
