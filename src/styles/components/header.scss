@@ -17,8 +17,14 @@
             .buttons {
                 margin-left: -0.5rem;
 
-                > .link_button:not(:first-child) {
-                    padding-left: 1rem;
+                > .link_button {
+                    &:first-child a:before {
+                        width: 91px;
+                    }
+                    
+                    &:not(:first-child) {
+                        padding-left: 1rem;
+                    }
                 }
             }
         }
