@@ -1,6 +1,5 @@
 import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
-import Navigation from '../../components/Navigation';
 import Wrapper from '../../components/Wrapper';
 import LinkButton from '../../components/LinkButton';
 import Stars from '../../components/Animations/Stars';
@@ -13,9 +12,8 @@ import ExpressImg from "../../assets/expressinfo.png";
 const Work = () => {
     return (
         <Wrapper class="background background_3">
-            <div class="moon" />
+            <div className="moon" />
             <Stars />
-            <Navigation />
 
             <Header tag="h1" content="Work" class="header_work__hero">
                 <Subtitle tag="p" content="Some samples of my projects." class="work" />
@@ -30,7 +28,7 @@ const Work = () => {
                     >
                         <div className="flex_row card_buttons">
                             <LinkButton href="https://github.com/https-github-com-steversonTong/BabelBox" icon="fab fa-github" content="Github" class="card_button github" />
-                            <LinkButton href="https://babelbox-react.herokuapp.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button link" />
+                            <LinkButton href="https://babelbox-react.herokuapp.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button app" />
                         </div>
                     </ContentCard>
 
@@ -40,7 +38,7 @@ const Work = () => {
                         img={true} imgSrc={CashCommandsImg} imgAlt="Cash Commands Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton href="https://www.cashcommandsdogtraining.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button app" />
+                            <LinkButton href="https://www.cashcommandsdogtraining.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
                         </div>
                     </ContentCard>
                 </Wrapper>
@@ -67,8 +65,6 @@ const Work = () => {
                     </ContentCard>
                 </Wrapper>
             </Wrapper>
-
-
         </Wrapper>
     );
 };

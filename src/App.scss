@@ -12,6 +12,10 @@
 @import "./styles/components/animations/stars.scss";
 
 // globals
+body {
+  overflow: auto;
+}
+
 h1 {
   @include font($size: 75px);
 }
@@ -20,11 +24,18 @@ h2 {
   @include font($size: 60px);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @include font($tracking: 0.8px, $family: $heading);
 }
 
-h5, h6, p, ul, li {
+h5,
+h6,
+p,
+ul,
+li {
   @include font($family: $body);
 }
 

@@ -22,14 +22,7 @@
 }
 
 // div sizing
-@mixin width-height(
-  $width: null,
-  $height: null,
-  $minWidth: null,
-  $maxWidth: null,
-  $minHeight: null,
-  $maxHeight: null
-) {
+@mixin width-height($width: null, $height: null, $minWidth: null, $maxWidth: null, $minHeight: null, $maxHeight: null) {
   width: $width;
   height: $height;
   min-width: $minWidth;
@@ -88,16 +81,12 @@
 }
 
 // transforms, translates, etc
-@mixin transition(
-  $for: all,
-  $time-in: 250ms,
-  $type: ease-in-out,
-  $time-out: 0s
-) {
+@mixin transition($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s, $delay: 0s) {
   transition: $for $time-in $type $time-out;
   -moz-transition: $for $time-in $type $time-out;
   -webkit-transition: $for $time-in $type $time-out;
   -o-transition: $for $time-in $type $time-out;
+  transition-delay: $delay;
 }
 
 @mixin transform($property) {
@@ -109,13 +98,7 @@
 }
 
 // shadows
-@mixin box-shadow(
-  $top: 0,
-  $left: 0px,
-  $blur: 12px,
-  $color: rgba(0, 0, 0, 0.4),
-  $inset: false
-) {
+@mixin box-shadow($top: 0, $left: 0px, $blur: 12px, $color: rgba(0, 0, 0, 0.4), $inset: false) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $color;
     -moz-box-shadow: inset $top $left $blur $color;
@@ -142,17 +125,50 @@
   filter: brightness($brightness);
 }
 
+// scrollbars
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
 // media queries
 @mixin for-size($size) {
   @if $size == phone-only {
-    @media (max-width: 599px) { @content; }
+    @media (max-width: 599px) {
+      @content;
+    }
   } @else if $size == tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
+    @media (min-width: 600px) {
+      @content;
+    }
   } @else if $size == tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
+    @media (min-width: 900px) {
+      @content;
+    }
   } @else if $size == desktop-up {
-    @media (min-width: 1200px) { @content; }
+    @media (min-width: 1200px) {
+      @content;
+    }
   } @else if $size == big-desktop-up {
-    @media (min-width: 1800px) { @content; }
+    @media (min-width: 1800px) {
+      @content;
+    }
   }
 }

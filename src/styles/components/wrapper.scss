@@ -2,12 +2,13 @@
 
 .wrapper.background {
     @include flex($direction: column);
-    @include width-height($width: 100%, $height: 100%);
+    @include width-height($width: 100%, $height: 100%, $maxHeight: min-content);
+    @include scrollbars(0.5em, slategray);
     justify-content: center;
     position: fixed;
     background-color: #010b12;
 
-    // main page    
+    // main page
     .background_1 {
         @include width-height($width: 100%, $height: 100%);
         background-image: url("../../assets/treeline.svg");
@@ -32,13 +33,12 @@
     // work page
     &.background_3 {
         overflow-y: scroll;
-        overflow-x: hidden;
 
         .moon {
             @include width-height(300px, 300px);
             background-image: url("../../assets/moon-full.svg");
             background-repeat: no-repeat;
-            position: absolute;
+            position: fixed;
             top: -125px;
             right: -75px;
             z-index: -1;
@@ -48,13 +48,15 @@
         .work_container {
             @include flex(row);
             margin: -5.5rem 0 -5.5rem 9rem;
+            padding-bottom: 5rem;
             align-items: center;
             flex-wrap: wrap;
 
-            .cards_work_1, .cards_work_2 {
-                @include flex(column);  
+            .cards_work_1,
+            .cards_work_2 {
+                @include flex(column);
                 width: 40%;
-                justify-content: end;
+                justify-content: flex-end;
                 align-items: baseline;
             }
 

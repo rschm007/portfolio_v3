@@ -41,14 +41,6 @@
             i.fas.fa-external-link-alt {
                 @include font($size: 21px);
             }
-
-            &::before {
-                width: 81px;
-            }
-        }
-
-        a:nth-child(2)::before {
-            width: 135px;
         }
     }
 

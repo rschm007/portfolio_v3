@@ -1,30 +1,35 @@
 @import "../../imports";
 
 @keyframes animStar {
-    from  {
-        transform: translateY(0px)
-
+    from {
+        transform: translateY(0px);
     }
     to {
-        transform: translateY(2px)
+        transform: translateY(2px);
     }
 }
 
 // n is number of stars required
 @function multiple-box-shadow($n) {
-    $value: '#{random(2000)}px #{random(2000)}px #FFF';
+    $xValue: 1500;
+    $yValue: 1000;
+
+    $value: "#{random($xValue)}px #{random($yValue)}px #FFF";
 
     @for $i from 2 through $n {
-        $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+        $value: "#{$value} , #{random($xValue)}px #{random($yValue)}px #FFF";
     }
     @return unquote($value);
 }
 
-$shadows-small:  multiple-box-shadow(700);
+$shadows-small: multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
-$shadows-big:    multiple-box-shadow(100);
+$shadows-big: multiple-box-shadow(100);
 
 .stars_container {
+    position: fixed;
+    top: 0;
+
     .stars {
         @include width-height(1px, 1px);
         position: absolute;

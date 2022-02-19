@@ -66,10 +66,13 @@
       width: 80px;
     }
     &.app a:hover::before {
-      width: 130px;
+      width: 135px;
     }
     &.site a:hover::before {
-      width: 90px;
+      width: 95px;
+    }
+    &.link a:hover::before {
+      width: 90px;  
     }
   }
 }

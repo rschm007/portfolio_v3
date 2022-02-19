@@ -2,7 +2,7 @@
 
 nav {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 2rem;
   left: 2rem;
   z-index: 10;
@@ -53,7 +53,7 @@ nav {
         }
       }
 
-      &.true {
+      &.open {
         ~ .nav_menu {
           left: 5rem;
         }
@@ -109,7 +109,7 @@ nav {
       }
     }
 
-    &.true .nav_menu {
+    &.open .nav_menu {
       opacity: 1;
 
       .link_button {
