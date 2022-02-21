@@ -48,4 +48,9 @@ $shadows-big: multiple-box-shadow(100);
             box-shadow: $shadows-small;
         }
     }
+
+    
+  @include for-size(desktop-up) {
+    @include transform(scale(1.3));
+  }
 }
