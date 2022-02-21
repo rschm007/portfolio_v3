@@ -9,7 +9,7 @@ import Main from "./pages/Main";
 import About from './pages/About';
 import Work from "./pages/Work";
 import Navigation from './components/Navigation';
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 // import Contact from "./pages/Contact";
 
 const App = () => {
