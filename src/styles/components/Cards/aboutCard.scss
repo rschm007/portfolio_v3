@@ -1,14 +1,39 @@
 @import "../../imports";
 
+// keyframe animation for text fading in
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .about_card {
-    @include flex(row);
-    @include width-height(150px, 150px);
+    @include flex(column);
+    @include width-height(150px, 90px);
     @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
     @include transition($time-in: 250ms, $time-out: 250ms);
     @include transform(scale(100%));
+    padding: 2rem 0rem;
     border: 6px solid $maroon;
     border-radius: 10px;
-    justify-content: center;
     background-color: $peru;
 
     .about_card__icon {
@@ -32,16 +57,22 @@
         padding: 0.75rem 0.75rem 0.75rem 1.75rem;
     }
 
+    .about_card__content {
+        transition: 2s;
+        opacity: 0;
+    }
+
     &:hover {
         @include transform(scale(105%));
+
+        .about_card__content {
+            opacity: 1;
+        }
     }
 
     &.open {
-        width: 325px;
-
-        .about_card__icon {
-            margin-left: 2.5rem;
-        }
+        height: 200px;
+        justify-content: flex-start;
 
         .about_card__container {
             display: flex;

@@ -8,7 +8,7 @@ const Navigation = (props) => {
 
   return (
     <nav>
-      <Wrapper class={`navigation ${open ? "open" : "closed"} ${props.onScroll}`}>
+      <Wrapper class={`navigation ${open ? "open" : "closed"}`}>
         <div className={`nav_button ${open ? "open" : "closed"}`} onClick={() => setOpen(!open)}>
           <span />
           <span />

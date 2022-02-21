@@ -3,8 +3,11 @@ import Subtitle from "../../components/Subtitle";
 import Wrapper from '../../components/Wrapper';
 import Stars from "../../components/Animations/Stars";
 import AboutCard from "../../components/Cards/AboutCard";
+import List from "../../components/List/List";
 
 const About = () => {
+    const tools = ["Javascript", "C#", "PHP", "Blazor", "React", "NextJS", "Node", "ASP.net", "ThreeJS", "MongoDB", "MySQL", "Laravel"];
+
     return (
         <Wrapper class="background">
             <Stars />
@@ -15,8 +18,9 @@ const About = () => {
                 </Header>
 
                 <Wrapper class="about_container">
-                    <AboutCard class="tools" icon="fas fa-tools" header="Tools"
-                        content="Javascript, C#, PHP, Blazor, React, Laravel." />
+                    <AboutCard class="tools" icon="fas fa-tools" header="Tools">
+                        <List list={tools} />
+                    </AboutCard>
                 </Wrapper>
             </Wrapper>
 
