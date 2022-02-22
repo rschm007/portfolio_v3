@@ -45,7 +45,7 @@
     }
 
     &:hover {
-        @include transform(scale(102%));
+        @include transform(scale(102%), $important: true);
         backdrop-filter: blur(3px) brightness(150%);
     }
 }

@@ -1,10 +1,11 @@
+import { motion } from "framer-motion/dist/framer-motion";
 import PropTypes from "prop-types";
 
 const Wrapper = (props) => {
     return (
-        <section className={`wrapper ${props.class}`}>
+        <motion.section className={`wrapper ${props.class}`} exit={{ opacity: props.exitOpacity}}>
             {props.children}
-        </section>
+        </motion.section>
     );
 };
 
@@ -13,8 +14,10 @@ export default Wrapper;
 Wrapper.propTypes = {
     class: PropTypes.string,
     children: PropTypes.node,
+    exitOpacity: PropTypes.number,
 }
 
 Wrapper.defaultProps = {
     class: "",
+    exitOpacity: 0
 }

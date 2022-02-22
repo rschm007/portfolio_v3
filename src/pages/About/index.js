@@ -4,6 +4,7 @@ import Wrapper from "../../components/Wrapper";
 import Stars from "../../components/Animations/Stars";
 import AboutCard from "../../components/Cards/AboutCard";
 import List from "../../components/List/List";
+import Campfire from "../../components/Animations/Campfire";
 
 const About = () => {
   const code = ["HTML", "CSS/SCSS", "Javascript", "C#", "PHP", "Liquid"];
@@ -20,7 +21,13 @@ const About = () => {
     "Laravel",
   ];
 
-  const programs = ["Figma", "Adobe Creative Suite", "VSCode", "Insomnia", "Git"];
+  const programs = [
+    "Figma",
+    "Adobe Creative Suite",
+    "VSCode",
+    "Insomnia",
+    "Git",
+  ];
 
   const fun = [
     "Hiking",
@@ -35,7 +42,7 @@ const About = () => {
     <Wrapper class="background">
       <Stars />
 
-      <Wrapper class="background_2">
+      <Wrapper class="background_1">
         <Header tag="h1" content="About" class="header_about__hero">
           <Subtitle
             tag="p"
@@ -65,6 +72,11 @@ const About = () => {
             <List list={fun} />
           </AboutCard>
         </Wrapper>
+
+        <Wrapper class="campfire_container">
+          <Campfire />
+        </Wrapper>
+
       </Wrapper>
     </Wrapper>
   );

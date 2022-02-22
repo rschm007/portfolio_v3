@@ -61,7 +61,7 @@
   }
 
   &:hover {
-    @include transform(scale(105%));
+    @include transform(scale(105%), $important: true);
   }
 
   &.open {

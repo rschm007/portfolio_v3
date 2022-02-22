@@ -1,3 +1,8 @@
+// important helper function
+@function if-important($important) {
+  @return #{if($important, "!important", "")};
+}
+
 // fonts
 @mixin font(
   $size: null,
@@ -22,7 +27,14 @@
 }
 
 // div sizing
-@mixin width-height($width: null, $height: null, $minWidth: null, $maxWidth: null, $minHeight: null, $maxHeight: null) {
+@mixin width-height(
+  $width: null,
+  $height: null,
+  $minWidth: null,
+  $maxWidth: null,
+  $minHeight: null,
+  $maxHeight: null
+) {
   width: $width;
   height: $height;
   min-width: $minWidth;
@@ -81,7 +93,13 @@
 }
 
 // transforms, translates, etc
-@mixin transition($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s, $delay: 0s) {
+@mixin transition(
+  $for: all,
+  $time-in: 250ms,
+  $type: ease-in-out,
+  $time-out: 0s,
+  $delay: 0s
+) {
   transition: $for $time-in $type $time-out;
   -moz-transition: $for $time-in $type $time-out;
   -webkit-transition: $for $time-in $type $time-out;
@@ -89,16 +107,22 @@
   transition-delay: $delay;
 }
 
-@mixin transform($property) {
-  -webkit-transform: $property;
-  -ms-transform: $property;
-  -o-transform: $property;
-  -moz-transform: $property;
-  transform: $property;
+@mixin transform($property, $important: false) {
+  -webkit-transform: ($property) if-important($important);
+  -ms-transform: ($property) if-important($important);
+  -o-transform: ($property) if-important($important);
+  -moz-transform: ($property) if-important($important);
+  transform: ($property) if-important($important);
 }
 
 // shadows
-@mixin box-shadow($top: 0, $left: 0px, $blur: 12px, $color: rgba(0, 0, 0, 0.4), $inset: false) {
+@mixin box-shadow(
+  $top: 0,
+  $left: 0px,
+  $blur: 12px,
+  $color: rgba(0, 0, 0, 0.4),
+  $inset: false
+) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $color;
     -moz-box-shadow: inset $top $left $blur $color;
@@ -126,7 +150,11 @@
 }
 
 // scrollbars
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
   // For Google Chrome
   &::-webkit-scrollbar {
     width: $size;
