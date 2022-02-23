@@ -1,17 +1,23 @@
 @import "../imports";
 
 .subtitle {
-    &.main {
-        @include font($size: 18px, $color: $peru, $weight: 100);
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-    }
-    &.about {
-        @include font($size: 18px, $color: $peru, $weight: 100);
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);  
-    }
-    &.work {
-        @include font($size: 18px, $color: $moonSilver, $weight: 100);
-        text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
-        margin-left: 1rem;
-    }
+  &.main {
+    @include font($size: 18px, $color: $peru, $weight: 100);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  }
+  &.about,
+  &.contact {
+    @include font($size: 18px, $color: $peru, $weight: 100);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  }
+  &.work {
+    @include font($size: 18px, $color: $moonSilver, $weight: 100);
+    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+    margin-left: 1rem;
+  }
+
+  &.contact_subtitle__links {
+    @include font($size: 18px, $color: $peru, $weight: 100);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  }
 }

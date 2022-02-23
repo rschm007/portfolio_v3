@@ -23,6 +23,32 @@
     column-gap: 5rem;
   }
 
+  // contact page
+  .contact_container {
+    @include flex(column);
+    margin: 5rem 10%;
+    column-gap: 5rem;
+
+    form {
+      @include flex(column);
+      width: 40%;
+
+      input[type="submit"] {
+        @include flex($direction: row);
+        @include font(
+          $color: $moonSilver,
+          $size: 18px,
+          $weight: 300,
+          $decoration: none
+        );
+        @include border-outline($noBorder: true, $noOutline: true);
+
+        align-items: baseline;
+        background-color: transparent;
+      }
+    }
+  }
+
   // work page
   &.background_3 {
     overflow-y: scroll;
