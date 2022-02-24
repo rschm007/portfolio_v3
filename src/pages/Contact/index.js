@@ -42,69 +42,83 @@ const Contact = () => {
 
   return (
     <Wrapper id="contact">
-      <Wrapper class="background_1">
-        <Wrapper class="contact_container">
-          <Header tag="h1" content="Contact" class="header_contact__hero">
-            <Subtitle
-              tag="p"
-              content={
-                formSubmitted
-                  ? "Thanks, talk to you soon!"
-                  : "You can write me a message if you want."
-              }
-              class="contact"
-            />
+      <Wrapper class="contact_container">
+        <Header tag="h1" content="Contact" class="header_contact__hero">
+          <Subtitle
+            tag="p"
+            content={
+              formSubmitted
+                ? "Thanks, talk to you soon!"
+                : "You can write me a message."
+            }
+            class="contact"
+          />
 
-            {!formSubmitted && (
-              <form id="contact_form" onSubmit={handleSubmit(onSubmit)}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  {...register("name", { required: true, maxLength: 30 })}
-                />
-                {errors.name && <span>This field is required</span>}
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  {...register("email", {
-                    required: true,
-                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  })}
-                />
-                {errors.email && <span>This field is required</span>}
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  maxLength={1500}
-                  {...register("message", { required: true, maxLength: 1500 })}
-                />
-                {errors.message && <span>This field is required</span>}
+          {!formSubmitted && (
+            <form id="contact_form" onSubmit={handleSubmit(onSubmit)}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                {...register("name", { required: true, maxLength: 30 })}
+              />
+              {errors.name && <span>This field is required</span>}
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                {...register("email", {
+                  required: true,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
+              />
+              {errors.email && <span>This field is required</span>}
+              <textarea
+                name="message"
+                placeholder="Message"
+                maxLength={1500}
+                {...register("message", { required: true, maxLength: 1500 })}
+              />
+              {errors.message && <span>This field is required</span>}
 
-                <p className="message-chars-left">{messageCharactersLeft}</p>
+              <span className="message-chars-left">{messageCharactersLeft}</span>
+              <button className="submit_button">
                 <input type="submit" value="Send" />
-              </form>
-            )}
-          </Header>
+                <i class="fa-solid fa-envelope" />
+              </button>
 
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-          >
-            {" "}
-            <Subtitle
-              tag="p"
-              content="Or find me online."
-              class="contact_subtitle__links"
+            </form>
+          )}
+        </Header>
+
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+        >
+          {" "}
+          <Subtitle
+            tag="p"
+            content="Find me online."
+            class="contact_subtitle__links"
+          />
+          <Wrapper class="flex_column buttons">
+            <LinkButton
+              href="https://github.com/rschm007"
+              icon="fab fa-github"
+              content="Github"
             />
-          </motion.div>
-        </Wrapper>
+            <LinkButton
+              href="https://www.linkedin.com/in/robert-schmahl/"
+              icon="fab fa-linkedin-in"
+              content="LinkedIn"
+            />
+          </Wrapper>
+        </motion.div>
+      </Wrapper>
 
-        <Wrapper class="campfire_container">
-          <Campfire />
-        </Wrapper>
+      <Wrapper class="campfire_container">
+        <Campfire />
       </Wrapper>
     </Wrapper>
   );

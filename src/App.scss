@@ -35,7 +35,11 @@ h5,
 h6,
 p,
 ul,
-li {
+li,
+span,
+input,
+input::placeholder,
+textarea {
   @include font($family: $body);
 }
 
