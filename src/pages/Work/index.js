@@ -2,7 +2,6 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import Wrapper from '../../components/Wrapper';
 import LinkButton from '../../components/LinkButton';
-import Stars from '../../components/Animations/Stars';
 import ContentCard from "../../components/Cards/ContentCard";
 import BavelImg from "../../assets/bavel.jfif";
 import CashCommandsImg from "../../assets/cashcommands.jpg";

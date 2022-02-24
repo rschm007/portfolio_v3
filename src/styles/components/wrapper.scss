@@ -19,8 +19,8 @@
   // about page
   .about_container {
     @include flex(row);
-    margin: 5rem 10%;
-    column-gap: 5rem;
+    margin: 2rem 10%;
+    column-gap: 2rem;
   }
 
   // contact page
@@ -29,7 +29,7 @@
     margin: 5rem 10%;
     width: 60%;
     column-gap: 4rem;
-    min-height: 33rem;
+    min-height: 40rem;
 
     form {
       @include flex(column);
@@ -107,7 +107,7 @@
       @include flex(column);
       min-width: 350px;
       align-self: center;
-      margin-bottom: 15px;
+      margin-top: 5.5rem;
 
       .buttons {
         row-gap: 1rem;

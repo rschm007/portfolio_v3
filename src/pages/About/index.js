@@ -10,13 +10,11 @@ const About = () => {
 
   const tech = [
     "React",
-    "NextJS",
     "Git",
     "Blazor",
     "Node",
     "ThreeJS",
     "MongoDB",
-    "MySQL",
     "Laravel",
   ];
 

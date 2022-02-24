@@ -49,7 +49,7 @@ const Contact = () => {
             content={
               formSubmitted
                 ? "Thanks, talk to you soon!"
-                : "You can write me a message."
+                : "Let's get in touch."
             }
             class="contact"
           />
@@ -107,11 +107,25 @@ const Contact = () => {
               href="https://github.com/rschm007"
               icon="fab fa-github"
               content="Github"
+              class="github"
             />
             <LinkButton
               href="https://www.linkedin.com/in/robert-schmahl/"
               icon="fab fa-linkedin-in"
               content="LinkedIn"
+            />
+          </Wrapper>
+          <Subtitle
+            tag="p"
+            content="Check out my resume."
+            class="contact_subtitle__links"
+          />
+          <Wrapper class="flex_column buttons">
+            <LinkButton
+              href="https://github.com/rschm007"
+              icon="fa-solid fa-file-arrow-down"
+              content="Download"
+              class="download"
             />
           </Wrapper>
         </motion.div>
