@@ -11,9 +11,7 @@ import ExpressImg from "../../assets/expressinfo.png";
 
 const Work = () => {
     return (
-        <Wrapper class="background background_3">
-            <div className="moon" />
-            <Stars />
+        <Wrapper id="work">
 
             <Header tag="h1" content="Work" class="header_work__hero">
                 <Subtitle tag="p" content="Some samples of my projects." class="work" />

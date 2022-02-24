@@ -1,14 +1,13 @@
 @import "../../imports";
 
 @mixin fireGlow() {
-  box-shadow: 0 0 90px 50px rgba(255, 208, 0, 0.8),
-    0 0 120px 70px rgba(255, 136, 0, 0.9), 0 0 160px 100px rgb(185, 99, 0.4);
+  box-shadow: 0 0 90px 50px rgba(255, 208, 0, 0.8), 0 0 120px 70px rgba(255, 136, 0, 0.9),
+    0 0 160px 100px rgb(185, 99, 0.4);
   opacity: 0.8;
 }
 
 @mixin rockGlow($top: 0, $left: 0) {
-  box-shadow: inset $top $left 12px rgba(255, 208, 0, 0.6),
-    inset $top $left 12px rgba(255, 136, 0, 0.4),
+  box-shadow: inset $top $left 12px rgba(255, 208, 0, 0.6), inset $top $left 12px rgba(255, 136, 0, 0.4),
     inset $top $left 12px rgb(185, 99, 0.2);
   opacity: 0.8;
 }
@@ -107,16 +106,8 @@
     position: absolute;
     bottom: 30%;
     right: -200px;
-    -webkit-mask-image: linear-gradient(
-      to top,
-      rgb(255, 255, 255) 30%,
-      rgba(112, 112, 112, 0)
-    );
-    mask-image: linear-gradient(
-      to top,
-      rgb(255, 255, 255) 30%,
-      rgba(112, 112, 112, 0)
-    );
+    -webkit-mask-image: linear-gradient(to top, rgb(255, 255, 255) 30%, rgba(112, 112, 112, 0));
+    mask-image: linear-gradient(to top, rgb(255, 255, 255) 30%, rgba(112, 112, 112, 0));
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -213,11 +204,7 @@
       animation-fill-mode: both;
 
       .main_fire {
-        background-image: radial-gradient(
-          farthest-corner at 10px 0,
-          $fireShadow 0%,
-          $fireEmber 95%
-        );
+        background-image: radial-gradient(farthest-corner at 10px 0, $fireShadow 0%, $fireEmber 95%);
         transform: scaleX(0.8) rotate(45deg);
         border-radius: 0 40% 60% 40%;
       }
@@ -313,6 +300,7 @@
     top: 91%;
     right: 585px;
     z-index: 2;
+    margin-top: 14rem;
 
     .log {
       @include width-height($width: 21px, $height: 120px);
@@ -377,32 +365,18 @@
       position: absolute;
       z-index: 3;
       top: 180px;
-      background-image: radial-gradient(
-        circle at bottom right,
-        $rockLight,
-        $rockDark
-      );
+      background-image: radial-gradient(circle at bottom right, $rockLight, $rockDark);
       border-radius: 95px 95px 0 0;
     }
 
     .rock_big {
       &_5,
       &_4 {
-        @include box-shadow(
-          $top: 20px,
-          $left: -30px,
-          $blur: 26px,
-          $inset: true
-        );
+        @include box-shadow($top: 20px, $left: -30px, $blur: 26px, $inset: true);
       }
       &_1,
       &_2 {
-        @include box-shadow(
-          $top: -20px,
-          $left: -30px,
-          $blur: 26px,
-          $inset: true
-        );
+        @include box-shadow($top: -20px, $left: -30px, $blur: 26px, $inset: true);
       }
       &_3 {
         @include box-shadow($left: -20px, $blur: 26px, $inset: true);
@@ -493,8 +467,5 @@
 
   @include for-size(desktop-up) {
     @include transform(scale(1.2));
-    .logs {
-      margin-top: 14rem;
-    }
   }
 }

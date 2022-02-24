@@ -35,12 +35,7 @@
 
       input[type="submit"] {
         @include flex($direction: row);
-        @include font(
-          $color: $moonSilver,
-          $size: 18px,
-          $weight: 300,
-          $decoration: none
-        );
+        @include font($color: $moonSilver, $size: 18px, $weight: 300, $decoration: none);
         @include border-outline($noBorder: true, $noOutline: true);
 
         align-items: baseline;
@@ -50,19 +45,8 @@
   }
 
   // work page
-  &.background_3 {
+  .background_2 {
     overflow-y: scroll;
-
-    .moon {
-      @include width-height(300px, 300px);
-      background-image: url("../../assets/moon-full.svg");
-      background-repeat: no-repeat;
-      position: fixed;
-      top: -125px;
-      right: -75px;
-      z-index: -1;
-      filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.7));
-    }
 
     .work_container {
       @include flex(row);
@@ -84,5 +68,17 @@
         margin-right: 20%;
       }
     }
+  }
+
+  // moon
+  .moon {
+    @include width-height(300px, 300px);
+    background-image: url("../../assets/moon-full.svg");
+    background-repeat: no-repeat;
+    position: fixed;
+    top: -125px;
+    right: -75px;
+    z-index: -1;
+    filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.7));
   }
 }

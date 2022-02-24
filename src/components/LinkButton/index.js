@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion/dist/framer-motion";
 import PropTypes from "prop-types";
 
@@ -9,10 +10,10 @@ const LinkButton = (props) => {
       animate={{ opacity: props.animateOpacity, y: props.animateY }}
       exit={{ opacity: props.exitOpacity, y: props.exitY }}
     >
-      <a href={props.href}>
+      <Link to={props.href}>
         <i className={props.icon} />
         {props.content}
-      </a>
+      </Link>
     </motion.button>
   );
 };

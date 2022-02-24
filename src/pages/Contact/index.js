@@ -2,7 +2,6 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import Wrapper from "../../components/Wrapper";
 import LinkButton from "../../components/LinkButton";
-import Stars from "../../components/Animations/Stars";
 import Campfire from "../../components/Animations/Campfire";
 import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
@@ -42,9 +41,7 @@ const Contact = () => {
   const messageCharactersLeft = 1500 - message.length;
 
   return (
-    <Wrapper class="background">
-      <Stars />
-
+    <Wrapper id="contact">
       <Wrapper class="background_1">
         <Wrapper class="contact_container">
           <Header tag="h1" content="Contact" class="header_contact__hero">
