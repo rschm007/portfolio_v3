@@ -35,6 +35,13 @@
         z-index: 50;
     }
 
+    h3::selection,
+    p::selection,
+    a::selection {
+        background: $moonSilver;
+        color: $offBlack;
+    }
+
     .card_buttons {
         margin-left: -1rem;
 

@@ -67,6 +67,11 @@
         font-size: 100px;
         margin-bottom: 0;
         line-height: 82px;
+
+        &::selection {
+          background: $moonSilver;
+          color: $offBlack;
+        }
       }
     }
   }

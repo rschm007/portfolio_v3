@@ -19,6 +19,10 @@ body {
 
 h1 {
   @include font($size: 75px);
+  &::selection {
+    background: $fireBright;
+    color: $offBlack;
+  }
 }
 
 h2 {

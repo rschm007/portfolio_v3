@@ -220,8 +220,8 @@
 
           &:hover {
             transform: unset !important;
-            -webkit-backdrop-filter: unset;
-            backdrop-filter: unset;
+            -webkit-backdrop-filter: unset!important;
+            backdrop-filter: unset!important;
           }
 
           .card_1__img {

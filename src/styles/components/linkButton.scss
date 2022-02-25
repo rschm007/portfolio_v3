@@ -15,6 +15,11 @@
     );
     align-items: baseline;
 
+    &::selection {
+      background: $moonSilver;
+      color: $offBlack;
+    }
+
     &:before {
       @include width-height($width: 105px, $height: 2px);
       @include transition($time-in: 0.25s);
