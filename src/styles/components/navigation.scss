@@ -162,6 +162,11 @@ nav {
 
 @include for-size(phone-only) {
   nav .navigation {
+
+    .nav_menu .link_button {
+      max-width: 55px;
+    }
+    
     .nav_button {
       background-color: #010b12;
       border-radius: 10px;
@@ -181,16 +186,11 @@ nav {
             top: 2.1rem !important;
           }
         }
-      }
 
-      // &.closed {
-      //   span {
-      //     &:nth-child(1),
-      //     &:nth-child(2) {
-      //       top: 22px !important;
-      //     }
-      //   }
-      // }
+        ~ .nav_menu {
+          left: 3.5rem;
+        }
+      }
     }
 
     .nav_menu {

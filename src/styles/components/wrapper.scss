@@ -220,15 +220,19 @@
 
           &:hover {
             transform: unset !important;
-            -webkit-backdrop-filter: unset!important;
-            backdrop-filter: unset!important;
+            -webkit-backdrop-filter: unset !important;
+            backdrop-filter: unset !important;
           }
 
           .card_1__img {
             right: 0;
             top: unset;
-            margin-right: 1rem;
+            margin-right: 0;
             margin-top: -2rem;
+
+            img {
+              max-width: 60px;
+            }
           }
         }
       }
