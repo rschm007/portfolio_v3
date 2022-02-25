@@ -1,4 +1,3 @@
-import Campfire from "../../components/Animations/Campfire";
 import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import Wrapper from "../../components/Wrapper";
@@ -27,10 +26,6 @@ const Main = () => {
           />
         </Wrapper>
       </Header>
-
-      <Wrapper class="campfire_container">
-        <Campfire />
-      </Wrapper>
     </Wrapper>
   );
 };

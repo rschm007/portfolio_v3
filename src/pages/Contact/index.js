@@ -2,12 +2,12 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import Wrapper from "../../components/Wrapper";
 import LinkButton from "../../components/LinkButton";
-import Campfire from "../../components/Animations/Campfire";
 import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
 import { init, sendForm } from "@emailjs/browser";
+import DownloadButton from "../../components/DownloadButton";
 init("user_eYHjyB5qJUnnw935hh5vz");
 
 // using react-hook-form https://react-hook-form.com
@@ -39,6 +39,8 @@ const Contact = () => {
 
   const message = watch("message") || "";
   const messageCharactersLeft = 1500 - message.length;
+
+  const resumeDownloadLink = "https://drive.google.com/uc?export=download&id=15yvztbG6WnozG75UNdfJ4kF4Cny9-wFd";
 
   return (
     <Wrapper id="contact">
@@ -121,18 +123,14 @@ const Contact = () => {
             class="contact_subtitle__links"
           />
           <Wrapper class="flex_column buttons">
-            <LinkButton
-              href="https://github.com/rschm007"
+            <DownloadButton
+              href={resumeDownloadLink}
               icon="fa-solid fa-file-arrow-down"
               content="Download"
               class="download"
             />
           </Wrapper>
         </motion.div>
-      </Wrapper>
-
-      <Wrapper class="campfire_container">
-        <Campfire />
       </Wrapper>
     </Wrapper>
   );

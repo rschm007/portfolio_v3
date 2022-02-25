@@ -99,7 +99,10 @@
   bottom: 45%;
 }
 
-.campfire {
+.campfire { 
+  @include transition($time-in: 1.2s, $time-out: 1.2s);
+  @include transform(translateY(0%));
+
   .smoke {
     @include width-height(630px, 400px);
     transform: skewX(5deg) scale(0.9);

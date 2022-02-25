@@ -3,7 +3,6 @@ import Subtitle from "../../components/Subtitle";
 import Wrapper from "../../components/Wrapper";
 import AboutCard from "../../components/Cards/AboutCard";
 import List from "../../components/List/List";
-import Campfire from "../../components/Animations/Campfire";
 
 const About = () => {
   const code = ["HTML", "CSS/SCSS", "Javascript", "C#", "PHP", "Liquid"];
@@ -66,11 +65,6 @@ const About = () => {
           <List list={fun} />
         </AboutCard>
       </Wrapper>
-
-      <Wrapper class="campfire_container">
-        <Campfire />
-      </Wrapper>
-
     </Wrapper>
   );
 };

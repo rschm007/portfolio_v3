@@ -8,12 +8,20 @@
   position: fixed;
   background-color: #010b12;
 
-  // main page
-  .background_1 {
+  > .wrapper[id] {
+    position: relative;
+    z-index: 10;
+  }
+
+  // trees background
+  .trees {
     @include width-height($width: 100%, $height: 100%);
+    @include transition($time-in: 1.2s, $time-out: 1.2s);
+    @include transform(translateY(0%));
+    position: fixed;
     background-image: url("../../assets/treeline.svg");
     background-size: cover;
-    z-index: 1;
+    z-index: 0;
   }
 
   // about page
@@ -60,6 +68,7 @@
         align-items: baseline;
         max-width: min-content;
         cursor: pointer;
+        margin-top: 1rem;
 
         * {
           cursor: pointer;
@@ -116,7 +125,7 @@
   }
 
   // work page
-  .background_2 {
+  #work {
     overflow-y: scroll;
 
     .work_container {
@@ -139,11 +148,25 @@
         margin-right: 20%;
       }
     }
+
+    ~ .trees{
+      @include transform(translateY(100%));
+    }
+
+    ~ .campfire_container .campfire {
+      @include transform(translateY(1000px));
+    }
+
+    ~ .moon {
+      @include transform(translateY(-0%));
+    }
   }
 
   // moon
   .moon {
     @include width-height(300px, 300px);
+    @include transition($time-in: 1.2s, $time-out: 1.2s);
+    @include transform(translateY(-100%));
     background-image: url("../../assets/moon-full.svg");
     background-repeat: no-repeat;
     position: fixed;

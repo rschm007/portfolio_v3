@@ -17,6 +17,7 @@ const AboutCard = (props) => {
       initial={{ opacity: props.initalOpacity, y: props.initialY }}
       animate={{ opacity: props.animateOpacity, y: props.animateY }}
       exit={{ opacity: props.exitOpacity, y: props.exitY }}
+      transition={props.transition}
     >
       <Wrapper class="about_card__icon">
         <i className={props.icon} />
@@ -37,6 +38,7 @@ AboutCard.propTypes = {
   icon: PropTypes.string,
   header: PropTypes.string,
   children: PropTypes.node,
+  transition: PropTypes.object,
   initalOpacity: PropTypes.number,
   animateOpacity: PropTypes.number,
   exitOpacity: PropTypes.number,
@@ -50,6 +52,7 @@ AboutCard.defaultProps = {
   href: "#",
   icon: "",
   header: "",
+  transition: { delay: 2 },
   initalOpacity: 0,
   animateOpacity: 1,
   exitOpacity: 0,

@@ -6,7 +6,6 @@
       @include font($color: $fireBright, $weight: 800, $align: left);
       width: calc(100vw - 60%);
       margin-left: 10%;
-      margin-top: 20%;
 
       h1 {
         text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
@@ -35,7 +34,6 @@
       @include font($color: $fireBright, $weight: 800, $align: left);
       width: calc(100vw - 60%);
       margin-left: 10%;
-      margin-top: 13%;
 
       h1 {
         text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
@@ -63,7 +61,6 @@
       @include font($color: $moonSilver, $weight: 800, $align: left);
       margin-bottom: 1rem;
       margin-left: 10%;
-      margin-top: 5%;
 
       h1 {
         text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);

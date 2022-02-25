@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Wrapper = (props) => {
     return (
-        <motion.section className={`wrapper ${props.class}`} exit={{ opacity: props.exitOpacity}}>
+        <motion.section id={props.id} className={`wrapper ${props.class}`} exit={{ opacity: props.exitOpacity}}>
             {props.children}
         </motion.section>
     );
@@ -12,6 +12,7 @@ const Wrapper = (props) => {
 export default Wrapper;
 
 Wrapper.propTypes = {
+    id: PropTypes.string,
     class: PropTypes.string,
     children: PropTypes.node,
     exitOpacity: PropTypes.number,
