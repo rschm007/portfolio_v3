@@ -86,7 +86,7 @@ const Contact = () => {
               <span className="message-chars-left">{messageCharactersLeft}</span>
               <button className="submit_button">
                 <input type="submit" value="Send" />
-                <i class="fa-solid fa-envelope" />
+                <i className="fa-solid fa-envelope" />
               </button>
 
             </form>

@@ -31,7 +31,7 @@ const App = () => {
         </Switch>
 
         <div className="moon" />
-        <div class="trees" />
+        <div className="trees" />
         <Campfire />
 
       </Wrapper>
