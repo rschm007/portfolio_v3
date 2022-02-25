@@ -1,6 +1,6 @@
 import "./App.scss";
 
-import { Route, useLocation, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Main from "./pages/Main";
 import About from "./pages/About";
@@ -15,9 +15,6 @@ import { React } from "react";
 import { AnimatePresence } from "framer-motion/dist/framer-motion";
 
 const App = () => {
-  // get current url
-  const location = useLocation().pathname;
-
   return (
     <AnimatePresence>
       <Wrapper class="background">

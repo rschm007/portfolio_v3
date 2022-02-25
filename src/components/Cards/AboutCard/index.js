@@ -52,7 +52,7 @@ AboutCard.defaultProps = {
   href: "#",
   icon: "",
   header: "",
-  transition: { delay: 2 },
+  transition: { delay: 0 },
   initalOpacity: 0,
   animateOpacity: 1,
   exitOpacity: 0,
