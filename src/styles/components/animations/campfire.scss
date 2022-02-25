@@ -476,9 +476,9 @@
 
 @include for-size(phone-only) {
   .campfire_container {
-    transform: scale(0.8);
-    bottom: 16rem;
-    right: 6rem;
+    transform: scale(0.6);
+    bottom: 12rem;
+    right: 7rem;
 
     .campfire {
       .smoke {
@@ -510,6 +510,7 @@
   }
 
   #contact ~ .campfire_container .campfire {
-    transform: scale(0.8) translateX(80px);
+    @include transition($time-in: 0.8 s, $time-out: 0.8  s);
+    transform: scale(0.8) translateX(500px);
   }
 }
