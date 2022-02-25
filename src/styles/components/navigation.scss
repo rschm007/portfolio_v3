@@ -167,20 +167,30 @@ nav {
       border-radius: 10px;
       transform: translateY(-12px);
 
-      span {
-        &:nth-child(1) {
-          top: 18px!important;
-        }
-        &:nth-child(2) {
-          top: 18px!important;
-        }
-        &:nth-child(5) {
-          top: 38px!important;
-        }
-        &:nth-child(5), &:nth-child(6) {
-          top: 2.1rem!important;
+      &.open {
+        span {
+          &:nth-child(1),
+          &:nth-child(2) {
+            top: 18px !important;
+          }
+          &:nth-child(5) {
+            top: 38px !important;
+          }
+          &:nth-child(5),
+          &:nth-child(6) {
+            top: 2.1rem !important;
+          }
         }
       }
+
+      // &.closed {
+      //   span {
+      //     &:nth-child(1),
+      //     &:nth-child(2) {
+      //       top: 22px !important;
+      //     }
+      //   }
+      // }
     }
 
     .nav_menu {
