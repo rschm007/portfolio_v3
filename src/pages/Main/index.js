@@ -9,7 +9,7 @@ const Main = () => {
       <Header tag="h1" content="Hi! I'm Robert." class="header_main__hero">
         <Subtitle
           tag="p"
-          content="I'm a Web Developer and Designer from California."
+          content="I'm a Web Developer and from California."
           class="about"
         />
 

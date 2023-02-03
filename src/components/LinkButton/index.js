@@ -10,10 +10,20 @@ const LinkButton = (props) => {
       animate={{ opacity: props.animateOpacity, y: props.animateY }}
       exit={{ opacity: props.exitOpacity, y: props.exitY }}
     >
-      <Link to={props.href}>
-        <i className={props.icon} />
-        {props.content}
-      </Link>
+      {props.relativeLink && (
+        <Link to={props.href}>
+          <i className={props.icon} />
+          {props.content}
+        </Link>
+      )}
+
+      {!props.relativeLink && (
+        <a href={props.href}>
+          <i className={props.icon} />
+          {props.content}
+        </a>
+      )}
+
     </motion.button>
   );
 };
@@ -31,6 +41,7 @@ LinkButton.propTypes = {
   initialY: PropTypes.number,
   animateY: PropTypes.number,
   exitY: PropTypes.number,
+  relativeLink: PropTypes.bool
 };
 
 LinkButton.defaultProps = {
@@ -44,4 +55,5 @@ LinkButton.defaultProps = {
   initalY: -50,
   animateY: 0,
   exitY: -50,
+  relativeLink: true
 };

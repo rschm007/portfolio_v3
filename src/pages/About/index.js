@@ -5,23 +5,23 @@ import AboutCard from "../../components/Cards/AboutCard";
 import List from "../../components/List/List";
 
 const About = () => {
-  const code = ["HTML", "CSS/SCSS", "Javascript", "C#", "PHP", "Liquid"];
+  const code = ["HTML", "CSS/SCSS", "Typescript", "Javascript", "PHP", "C#"];
 
   const tech = [
+    "Next.js",
+    "Remix",
+    "Tailwind",
+    "MySQL",
+    "Laravel",
     "React",
     "Git",
-    "Blazor",
-    "Node",
-    "ThreeJS",
-    "MongoDB",
-    "Laravel",
   ];
 
   const programs = [
     "Figma",
     "Adobe Creative Suite",
     "VSCode",
-    "Insomnia",
+    "Postman",
     "Git",
   ];
 
@@ -31,7 +31,7 @@ const About = () => {
     "Woodworking",
     "Aquascaping",
     "Art & design",
-    "Weightlifting",
+    "Powerlifting",
   ];
 
   return (
