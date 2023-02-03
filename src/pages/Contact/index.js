@@ -40,7 +40,7 @@ const Contact = () => {
   const message = watch("message") || "";
   const messageCharactersLeft = 1500 - message.length;
 
-  const resumeDownloadLink = "https://drive.google.com/uc?export=download&id=15yvztbG6WnozG75UNdfJ4kF4Cny9-wFd";
+  const resumeDownloadLink = "https://docs.google.com/document/d/e/2PACX-1vRrBnr4E3nIssXRgYscO1-N9C9TSz14cNVtsPnZiAbQSk_n47ggxFmvKdT1TCfC2A/pub";
 
   return (
     <Wrapper id="contact">
