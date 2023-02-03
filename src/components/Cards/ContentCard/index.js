@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import Wrapper from "../../Wrapper";
-import { motion } from "framer-motion/dist/framer-motion";
-
+import { motion } from "framer-motion";
 const ContentCard = (props) => {
   return (
     <motion.article

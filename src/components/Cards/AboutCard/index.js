@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import Wrapper from "../../Wrapper";
 import { useState } from "react";
-import { motion } from "framer-motion/dist/framer-motion";
-
+import { motion } from "framer-motion";
 const AboutCard = (props) => {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);

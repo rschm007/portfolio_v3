@@ -12,7 +12,7 @@ import Stars from "./components/Animations/Stars";
 import Campfire from "./components/Animations/Campfire";
 
 import { React } from "react";
-import { AnimatePresence } from "framer-motion/dist/framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   return (

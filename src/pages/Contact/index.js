@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import Wrapper from "../../components/Wrapper";
 import LinkButton from "../../components/LinkButton";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
 const DownloadButton = (props) => {
@@ -14,8 +14,8 @@ const DownloadButton = (props) => {
             exit={{ opacity: props.exitOpacity, y: props.exitY }}
             href={props.href} onClick={downloadFile} download
         >
-                <i className={props.icon} />
-                {props.content}
+            <i className={props.icon} />
+            {props.content}
         </motion.button>
     );
 };
