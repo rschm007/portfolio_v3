@@ -106,14 +106,12 @@ const Contact = () => {
           />
           <Wrapper class="flex_column buttons">
             <LinkButton
-              relativeLink={false}
               href="https://github.com/rschm007"
               icon="fab fa-github"
               content="Github"
               class="github"
             />
             <LinkButton
-              relativeLink={false}
               href="https://www.linkedin.com/in/robert-schmahl/"
               icon="fab fa-linkedin-in"
               content="LinkedIn"

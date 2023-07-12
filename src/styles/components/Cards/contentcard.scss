@@ -12,8 +12,9 @@
     border-radius: 10px;
 
     .card_1__img {
+        @include width-height($width: 90px, $maxWidth: 90px, $height: 90px, $maxHeight: 90px);
         position: absolute;
-        right: -2rem;
+        right: -0.75rem;
         top: -0.75rem;
 
         img {
@@ -22,7 +23,7 @@
     }
 
     .logo_bg {
-        @include width-height($width: 130px, $maxWidth: 130px, $minWidth: 130px, $height: 130px, $maxHeight: 130px, $minHeight: 130px);
+        @include width-height($width: 100px, $height: 100px);
         min-height: 100px;
         border-radius: 100%;
         background: white;
@@ -33,7 +34,6 @@
         width: 95%;
         filter: brightness(105%);
         margin: 0;
-        margin-top: 15%;
     }
 
     p {
@@ -62,12 +62,6 @@
     &:hover {
         @include transform(scale(102%), $important: true);
         backdrop-filter: blur(3px) brightness(150%);
-    }
-}
-
-@include for-size(tablet-landscape-up) {
-    .card .card_1__img {
-        @include width-height($width: 130px, $maxWidth: 130px, $minWidth: 130px, $height: 130px, $maxHeight: 130px, $minHeight: 130px);
     }
 }
 

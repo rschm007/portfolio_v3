@@ -8,8 +8,6 @@ import CashCommandsImg from "../../assets/cashcommands.jpg";
 import ForbesAndersenImg from "../../assets/forbesandersen.png";
 import ExpressImg from "../../assets/expressinfo.png";
 import TecLogo from "../../assets/tec_logo.svg";
-import JemLDLogo from "../../assets/JQlogo-color.jpg";
-import SoundandStageLogo from "../../assets/soundandstage.png";
 
 const Work = () => {
     return (
@@ -43,35 +41,12 @@ const Work = () => {
                     </ContentCard>
 
                     <ContentCard
-                        header="JemLD"
-                        description="A lighting design portfolio site for designer Jacqueline Malenke. Built with Next.js and Firebase."
-                        img={true} imgSrc={JemLDLogo} imgAlt="JemLD logo" imgClass="project_logo logo_bg"
+                        header="Cash Commands"
+                        description="Shopify site built for a local dog training business."
+                        img={true} imgSrc={CashCommandsImg} imgAlt="Cash Commands Logo" imgClass="project_logo"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton relativeLink={false} href="https://jemld.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button app" />
-                            <LinkButton relativeLink={false} href="https://github.com/rschm007/jemld" icon="fa-brands fa-github" content="Github" class="card_button app" />
-                        </div>
-                    </ContentCard>
-
-                    <ContentCard
-                        header="SoundandStage"
-                        description="A custom Wordpress site for sound designer Vincent Olivieri."
-                        img={true} imgSrc={SoundandStageLogo} imgAlt="SoundandStage" imgClass="project_logo logo_bg"
-                    >
-                        <div className="flex_row card_buttons">
-                            <LinkButton relativeLink={false} href="https://theeventcommunity.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button app" />
-                            <LinkButton relativeLink={false} href="https://github.com/rschm007/soundandstage" icon="fa-brands fa-github" content="Github" class="card_button app" />
-                        </div>
-                    </ContentCard>
-
-                    <ContentCard
-                        header="Southwest Dog Training"
-                        description="Shopify ecommerce site for a Canadian dog training business."
-                        img={true} imgSrc={CashCommandsImg} imgAlt="Southwest Dog Training Logo" imgClass="project_logo"
-                    >
-                        <div className="flex_row card_buttons">
-                            <LinkButton relativeLink={false} href="https://www.southwestdogtraining.ca/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
-                            <LinkButton relativeLink={false} href="https://github.com/rschm007/CashCommandsDogTraining" icon="fa-brands fa-github" content="Github" class="card_button app" />
+                            <LinkButton relativeLink={false} href="https://www.cashcommandsdogtraining.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
                         </div>
                     </ContentCard>
                 </Wrapper>

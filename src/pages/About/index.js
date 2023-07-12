@@ -5,16 +5,16 @@ import AboutCard from "../../components/Cards/AboutCard";
 import List from "../../components/List/List";
 
 const About = () => {
-  const code = ["HTML", "CSS/SCSS", "TS/JS", "PHP", "C#"];
+  const code = ["HTML", "CSS/SCSS", "Typescript", "Javascript", "PHP", "C#"];
 
   const tech = [
     "Next.js",
     "Remix",
+    "Tailwind",
+    "MySQL",
+    "Laravel",
     "React",
-    "TailwindCSS",
-    "Shopify",
-    "Firebase",
-    "MySQL"
+    "Git",
   ];
 
   const programs = [
@@ -39,22 +39,12 @@ const About = () => {
       <Header tag="h1" content="About" class="header_about__hero">
         <Subtitle
           tag="p"
-          content="My name is Robert Schmahl. I'm a full stack Software Engineer based in Orange County, CA."
-          class="about"
-        />
-        <Subtitle
-          tag="p"
-          content="I have developed many types of front-end applications through varying platforms including custom React applications, Shopify ecommerce sites, artist portfolios, and Wordpress multi-page sites."
-          class="about"
-        />
-        <Subtitle
-          tag="p"
-          content="I'm passionate about building elegant, intuitive application interfaces that are a joy to use."
+          content="I love animals, the outdoors, and building cool things."
           class="about"
         />
       </Header>
 
-      {/* <Wrapper class="about_container">
+      <Wrapper class="about_container">
         <AboutCard class="code" icon="fa-solid fa-laptop-code" header="Code">
           <List list={code} />
         </AboutCard>
@@ -74,7 +64,7 @@ const About = () => {
         <AboutCard class="fun" icon="fa-solid fa-face-smile" header="Fun">
           <List list={fun} />
         </AboutCard>
-      </Wrapper> */}
+      </Wrapper>
     </Wrapper>
   );
 };
