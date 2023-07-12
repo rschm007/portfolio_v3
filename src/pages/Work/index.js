@@ -48,7 +48,7 @@ const Work = () => {
                         img={true} imgSrc={JemLDLogo} imgAlt="JemLD logo" imgClass="project_logo logo_bg"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton relativeLink={false} href="https://jemld.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button app" />
+                            <LinkButton relativeLink={false} href="https://jemld.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
                             <LinkButton relativeLink={false} href="https://github.com/rschm007/jemld" icon="fa-brands fa-github" content="Github" class="card_button app" />
                         </div>
                     </ContentCard>
@@ -59,7 +59,7 @@ const Work = () => {
                         img={true} imgSrc={SoundandStageLogo} imgAlt="SoundandStage" imgClass="project_logo logo_bg"
                     >
                         <div className="flex_row card_buttons">
-                            <LinkButton relativeLink={false} href="https://theeventcommunity.com/" icon="fas fa-external-link-alt" content="Visit site" class="card_button app" />
+                            <LinkButton relativeLink={false} href="https://www.soundandstage.net/" icon="fas fa-external-link-alt" content="Visit site" class="card_button site" />
                             <LinkButton relativeLink={false} href="https://github.com/rschm007/soundandstage" icon="fa-brands fa-github" content="Github" class="card_button app" />
                         </div>
                     </ContentCard>

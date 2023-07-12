@@ -39,12 +39,12 @@ const About = () => {
       <Header tag="h1" content="About" class="header_about__hero">
         <Subtitle
           tag="p"
-          content="My name is Robert Schmahl. I'm a full stack Software Engineer based in Orange County, CA."
+          content="My name is Robert Schmahl. I'm a full stack engineer based in Orange County, CA."
           class="about"
         />
         <Subtitle
           tag="p"
-          content="I have developed many types of front-end applications through varying platforms including custom React applications, Shopify ecommerce sites, artist portfolios, and Wordpress multi-page sites."
+          content="I have developed many types of web applications through varying platforms including custom React applications, Shopify ecommerce sites, artist portfolios, and Wordpress multi-page sites."
           class="about"
         />
         <Subtitle

@@ -18,7 +18,7 @@ const LinkButton = (props) => {
       )}
 
       {!props.relativeLink && (
-        <a href={props.href}>
+        <a href={props.href} target="_blank">
           <i className={props.icon} />
           {props.content}
         </a>
