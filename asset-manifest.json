@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.98864755.css",
+    "main.js": "/static/js/main.6626051b.js",
+    "static/media/treeline.svg": "/static/media/treeline.a0277f7088181ac1f5f4.svg",
+    "static/media/tec_logo.svg": "/static/media/tec_logo.93218b121feafa08465f0eb472f30ece.svg",
+    "static/media/moon-full.svg": "/static/media/moon-full.021316468a964c5e66b8.svg",
+    "static/media/forbesandersen.png": "/static/media/forbesandersen.712ef9eb4f3496680c65.png",
+    "static/media/cashcommands.jpg": "/static/media/cashcommands.6f5c96fcd13324893441.jpg",
+    "static/media/bavel.jfif": "/static/media/bavel.1ab1b96c79c311ff7fa7.jfif",
+    "index.html": "/index.html",
+    "main.98864755.css.map": "/static/css/main.98864755.css.map",
+    "main.6626051b.js.map": "/static/js/main.6626051b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98864755.css",
+    "static/js/main.6626051b.js"
+  ]
+}
