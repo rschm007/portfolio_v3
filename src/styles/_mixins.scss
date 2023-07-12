@@ -1,0 +1,183 @@
+// important helper function
+@function if-important($important) {
+  @return #{if($important, "!important", "")};
+}
+
+// fonts
+@mixin font(
+  $size: null,
+  $color: null,
+  $weight: null,
+  $leading: null,
+  $tracking: null,
+  $family: null,
+  $align: null,
+  $decoration: null,
+  $transform: null
+) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  line-height: $leading;
+  letter-spacing: $tracking;
+  font-family: $family;
+  text-align: $align;
+  text-decoration: $decoration;
+  text-transform: $transform;
+}
+
+// div sizing
+@mixin width-height($width: null, $height: null, $minWidth: null, $maxWidth: null, $minHeight: null, $maxHeight: null) {
+  width: $width;
+  height: $height;
+  min-width: $minWidth;
+  max-width: $maxWidth;
+  min-height: $minHeight;
+  max-height: $maxHeight;
+}
+
+// flexbox classes
+@mixin flex($direction: null, $wrap: null) {
+  display: flex;
+  flex-wrap: $wrap;
+
+  @if $direction == center {
+    align-items: center;
+    justify-items: center;
+  } @else {
+    flex-direction: $direction;
+  }
+}
+
+// media queries
+@mixin media($size, $up: false, $down: false) {
+  @if $up {
+    @media screen and (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $size) {
+      @content;
+    }
+  }
+}
+
+// borders & outlines
+@mixin border-outline(
+  $borderWidth: null,
+  $borderStyle: null,
+  $borderColor: null,
+  $borderRadius: null,
+  $noBorder: false,
+  $noOutline: false
+) {
+  border-width: $borderWidth;
+  border-style: $borderStyle;
+  border-color: $borderColor;
+  border-radius: $borderRadius;
+
+  @if $noBorder {
+    border: none;
+  } @else if $noOutline {
+    outline: none;
+  } @else {
+    @error "border-outline";
+  }
+}
+
+// transforms, translates, etc
+@mixin transition($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s, $delay: 0s) {
+  transition: $for $time-in $type $time-out;
+  -moz-transition: $for $time-in $type $time-out;
+  -webkit-transition: $for $time-in $type $time-out;
+  -o-transition: $for $time-in $type $time-out;
+  transition-delay: $delay;
+}
+
+@mixin transform($property, $important: false) {
+  -webkit-transform: ($property) if-important($important);
+  -ms-transform: ($property) if-important($important);
+  -o-transform: ($property) if-important($important);
+  -moz-transform: ($property) if-important($important);
+  transform: ($property) if-important($important);
+}
+
+// shadows
+@mixin box-shadow($top: 0, $left: 0px, $blur: 12px, $color: rgba(0, 0, 0, 0.4), $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+// filters, masks
+@mixin mask-image($parameter) {
+  -webkit-mask-image: $parameter;
+  mask-image: $parameter;
+}
+
+@mixin filter($parameter) {
+  -webkit-filter: $parameter;
+  filter: $parameter;
+}
+
+@mixin hoverBrighten($brightness: 125%) {
+  filter: brightness($brightness);
+}
+
+// scrollbars
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+// media queries
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) and (max-width: 1100px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop-down {
+    @media (max-width: 1100px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
