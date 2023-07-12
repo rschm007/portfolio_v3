@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import Wrapper from "../../components/Wrapper";
 import LinkButton from "../../components/LinkButton";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
@@ -106,12 +106,14 @@ const Contact = () => {
           />
           <Wrapper class="flex_column buttons">
             <LinkButton
+              relativeLink={false}
               href="https://github.com/rschm007"
               icon="fab fa-github"
               content="Github"
               class="github"
             />
             <LinkButton
+              relativeLink={false}
               href="https://www.linkedin.com/in/robert-schmahl/"
               icon="fab fa-linkedin-in"
               content="LinkedIn"
