@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.52556a32.css",
-    "main.js": "/static/js/main.7e75bf15.js",
+    "main.css": "/static/css/main.3f34cb1b.css",
+    "main.js": "/static/js/main.ac01a7cf.js",
     "static/media/JQlogo-color.jpg": "/static/media/JQlogo-color.7ab7c286980f6620c54f.jpg",
     "static/media/soundandstage.png": "/static/media/soundandstage.61ece3ba144df797e591.png",
     "static/media/treeline.svg": "/static/media/treeline.a0277f7088181ac1f5f4.svg",
-    "static/media/tec_logo.svg": "/static/media/tec_logo.93218b121feafa08465f0eb472f30ece.svg",
+    "static/media/tec_logo.svg": "/static/media/tec_logo.968db4eae8c125415745c4497d7efbe9.svg",
     "static/media/moon-full.svg": "/static/media/moon-full.021316468a964c5e66b8.svg",
     "static/media/forbesandersen.png": "/static/media/forbesandersen.712ef9eb4f3496680c65.png",
     "static/media/cashcommands.jpg": "/static/media/cashcommands.6f5c96fcd13324893441.jpg",
     "static/media/bavel.jfif": "/static/media/bavel.1ab1b96c79c311ff7fa7.jfif",
     "index.html": "/index.html",
-    "main.52556a32.css.map": "/static/css/main.52556a32.css.map",
-    "main.7e75bf15.js.map": "/static/js/main.7e75bf15.js.map"
+    "main.3f34cb1b.css.map": "/static/css/main.3f34cb1b.css.map",
+    "main.ac01a7cf.js.map": "/static/js/main.ac01a7cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.52556a32.css",
-    "static/js/main.7e75bf15.js"
+    "static/css/main.3f34cb1b.css",
+    "static/js/main.ac01a7cf.js"
   ]
 }
