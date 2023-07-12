@@ -227,11 +227,11 @@
           .card_1__img {
             right: 0;
             top: unset;
-            margin-right: 0;
-            margin-top: -2rem;
+            margin-right: 1.5rem;
+            margin-top: -3.5rem;
 
             img {
-              max-width: 60px;
+              @include width-height($maxHeight: 90px, $minHeight: 90px, $maxWidth: 90px, $minWidth: 90px)
             }
           }
         }
