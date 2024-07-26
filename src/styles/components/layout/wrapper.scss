@@ -1,0 +1,264 @@
+@import "../../imports";
+
+.wrapper.background {
+  @include flex($direction: column);
+  @include width-height($width: 100%, $height: 100%, $maxHeight: min-content);
+  justify-content: center;
+  position: fixed;
+  background-color: #010b12;
+
+  > .wrapper[id] {
+    position: relative;
+    z-index: 10;
+  }
+
+  // trees background
+  .trees {
+    @include width-height($width: 100%, $height: 100%);
+    @include transition($time-in: 1.2s, $time-out: 1.2s);
+    @include transform(translateY(0%));
+    position: fixed;
+    background-image: url("../../../assets/treeline.svg");
+    background-size: cover;
+    z-index: 0;
+  }
+
+  // about page
+  .about_container {
+    @include flex(row);
+    margin: 2rem 10%;
+    column-gap: 2rem;
+  }
+
+  // contact page
+  .contact_container {
+    @include flex(row);
+    margin: 5rem 10%;
+    width: 60%;
+    column-gap: 4rem;
+    min-height: 40rem;
+
+    form {
+      @include flex(column);
+      border-radius: 4px;
+      background-color: rgba(72, 72, 72, 0.4);
+      padding: 35px 35px 30px 35px;
+      width: 80%;
+
+      input,
+      textarea {
+        @include font($color: $offBlack, $size: 13px, $weight: 500);
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .submit_button {
+        @include flex($direction: row);
+        @include border-outline(
+          $noOutline: true,
+          $borderStyle: solid,
+          $borderWidth: 1px,
+          $borderColor: $moonSilver,
+          $borderRadius: 4px
+        );
+        @include transition($time-in: 250ms, $time-out: 250ms);
+        @include transform(scale(100%));
+        background-color: transparent;
+        align-items: baseline;
+        max-width: min-content;
+        cursor: pointer;
+        margin-top: 1rem;
+
+        * {
+          cursor: pointer;
+        }
+
+        > input {
+          @include border-outline($noOutline: true, $noBorder: true);
+          @include font(
+            $color: $moonSilver,
+            $size: 18px,
+            $weight: 300,
+            $decoration: none
+          );
+          background-color: transparent;
+          margin: 0;
+        }
+
+        > i {
+          @include font(
+            $color: $moonSilver,
+            $size: 16px,
+            $weight: 700,
+            $decoration: none
+          );
+          padding-right: 15px;
+        }
+
+        &:hover {
+          background-color: $moonSilver;
+          @include transform(scale(105%), $important: true);
+
+          input,
+          i {
+            color: $nightBlue;
+          }
+        }
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      span {
+        @include font($tracking: 0.8px, $size: 12px, $weight: 500);
+        margin-top: -0.5rem;
+        margin-bottom: 0.75rem;
+
+        &.message-chars-left {
+          color: $moonSilver;
+        }
+      }
+    }
+
+    > div:nth-child(2) {
+      @include flex(column);
+      min-width: 350px;
+      align-self: center;
+      margin-top: 5.5rem;
+
+      .buttons {
+        row-gap: 1rem;
+      }
+    }
+  }
+
+  // work page
+  #work {
+    overflow-y: scroll;
+    @include scrollbars(0.5em, slategray);
+
+    .work_container {
+      @include flex(row);
+      margin: 1.5rem 0 -5.5rem 1rem;
+      padding-bottom: 5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 4rem;
+
+      .cards_work_1,
+      .cards_work_2 {
+        @include flex(column);
+        width: 40%;
+        justify-content: flex-end;
+        align-items: baseline;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    ~ .trees {
+      @include transform(translateY(100%));
+    }
+
+    ~ .campfire_container .campfire {
+      @include transform(translateY(1000px));
+    }
+
+    ~ .moon {
+      @include transform(translateY(-0%));
+    }
+  }
+
+  // moon
+  .moon {
+    @include width-height(300px, 300px);
+    @include transition($time-in: 1.2s, $time-out: 1.2s);
+    @include transform(translateY(-100%));
+    background-image: url("../../../assets/moon-full.svg");
+    background-repeat: no-repeat;
+    position: fixed;
+    top: -125px;
+    right: -75px;
+    z-index: -1;
+    filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.7));
+  }
+}
+
+@include for-size(tablet-landscape-up) {
+  .wrapper.background #work .work_container {
+    margin: 1.5rem 0 -5.5rem 9rem;
+  }
+}
+
+@include for-size(phone-only) {
+  .wrapper.background {
+    > .wrapper[id] {
+      overflow-y: scroll;
+    }
+
+    > #main {
+      margin-top: -6rem;
+    }
+
+    #about {
+      margin-top: 2rem;
+    }
+
+    .about_container {
+      flex-wrap: wrap;
+      row-gap: 1rem;
+    }
+
+    #work .work_container {
+      margin: unset;
+      flex-direction: column;
+
+      .cards_work_2 {
+        margin-top: unset;
+        margin-right: unset;
+      }
+
+      .cards_work_1,
+      .cards_work_2 {
+        width: 90%;
+
+        .card {
+          max-width: 250px;
+          background-color: #010b12;
+          backdrop-filter: unset !important;
+
+          &:hover {
+            transform: unset !important;
+            -webkit-backdrop-filter: unset !important;
+            backdrop-filter: unset !important;
+          }
+
+          .card_1__img {
+            right: 0;
+            top: unset;
+            margin-right: 1.5rem;
+            margin-top: -3.5rem;
+
+            img {
+              @include width-height(
+                $maxHeight: 90px,
+                $minHeight: 90px,
+                $maxWidth: 90px,
+                $minWidth: 90px
+              );
+            }
+          }
+        }
+      }
+    }
+
+    #contact .contact_container {
+      flex-wrap: wrap;
+
+      > div:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+}

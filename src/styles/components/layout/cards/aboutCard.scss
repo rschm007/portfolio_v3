@@ -1,0 +1,128 @@
+@import "../../../imports";
+
+.about_card {
+  @include flex(column);
+  @include width-height(155px, 90px);
+  @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+  @include transition($time-in: 250ms, $time-out: 250ms);
+  @include transform(scale(100%));
+  padding: 2rem 0rem;
+  border: 6px solid $maroon;
+  border-radius: 10px;
+  background-color: $peru;
+  overflow: hidden;
+
+  .about_card__icon {
+    @include flex(column);
+    height: 100%;
+    max-height: 95px;
+    align-self: center;
+    align-items: center;
+
+    i {
+      font-size: 58px;
+      color: $maroonDark;
+
+      &.fa-file-code {
+        font-size: 55px;
+      }
+    }
+
+    h3 {
+      @include font(
+        $color: $maroonDark,
+        $align: center,
+        $weight: 600,
+        $transform: uppercase
+      );
+    }
+  }
+
+  .about_card__container {
+    display: none;
+    padding: 0 1.75rem;
+  }
+
+  .about_card__content {
+    ul {
+      @include flex(column);
+      justify-content: center;
+      padding: 0;
+      margin: 1rem;
+
+      li {
+        margin: 3px 0;
+
+        &::marker {
+          color: $maroonDark;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    @include transform(scale(105%), $important: true);
+  }
+
+  &.open {
+    justify-content: flex-start;
+
+    &.code {
+      height: 255px;
+    }
+
+    &.tech {
+      height: 285px;
+    }
+
+    &.programs {
+      height: 275px;
+    }
+
+    &.fun {
+      height: 255px;
+    }
+
+    .about_card__container {
+      display: flex;
+      padding: 0.75rem 0.75rem 0.75rem 1.75rem;
+    }
+  }
+}
+
+@include for-size(phone-only) {
+  #about {
+    overflow: scroll;
+
+    .about_card {
+      @include width-height($width: 10rem, $height: 6.5rem);
+      padding: 1rem 0.5rem;
+      flex-direction: row;
+      min-width: min-content;
+      height: unset;
+      min-height: min-content;
+
+      &:hover {
+        transform: unset !important;
+      }
+
+      .about_card__icon {
+        margin: auto;
+        max-height: 75px;
+
+        h3 {
+          margin: 0.5rem;
+        }
+
+        i {
+          font-size: 40px;
+        }
+      }
+
+      .about_card__container {
+        display: flex;
+        padding-right: 0;
+      }
+    }
+  }
+}
