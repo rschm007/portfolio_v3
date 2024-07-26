@@ -1,0 +1,98 @@
+@import "../../../imports";
+
+.card {
+  @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+  @include transition($time-in: 0.1s, $time-out: 0.2s);
+  @include transform(scale(100%));
+  height: min-content;
+  width: 375px;
+  backdrop-filter: blur(3px) brightness(130%);
+  padding: 2rem 1.75rem;
+  margin: 1rem;
+  border-radius: 10px;
+
+  .card_1__img {
+    position: absolute;
+    right: -2rem;
+    top: -0.75rem;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .logo_bg {
+    @include width-height(
+      $width: 130px,
+      $maxWidth: 130px,
+      $minWidth: 130px,
+      $height: 130px,
+      $maxHeight: 130px,
+      $minHeight: 130px
+    );
+    min-height: 100px;
+    border-radius: 100%;
+    background: white;
+  }
+
+  h3 {
+    @include font($size: 30px, $color: $moonSilver, $weight: 800, $align: left);
+    width: 95%;
+    filter: brightness(105%);
+    margin: 0;
+    margin-top: 15%;
+  }
+
+  p {
+    @include font(
+      $size: 16px,
+      $color: $moonSilver,
+      $weight: 400,
+      $align: left,
+      $leading: 24px
+    );
+    width: 95%;
+    z-index: 50;
+  }
+
+  h3::selection,
+  p::selection,
+  a::selection {
+    background: $moonSilver;
+    color: $offBlack;
+  }
+
+  .card_buttons {
+    margin-left: -1rem;
+
+    a:first-child {
+      i.fas.fa-external-link-alt {
+        @include font($size: 21px);
+      }
+    }
+  }
+
+  &:hover {
+    @include transform(scale(102%), $important: true);
+    backdrop-filter: blur(3px) brightness(150%);
+  }
+}
+
+@include for-size(tablet-landscape-up) {
+  .card .card_1__img {
+    @include width-height(
+      $width: 130px,
+      $maxWidth: 130px,
+      $minWidth: 130px,
+      $height: 130px,
+      $maxHeight: 130px,
+      $minHeight: 130px
+    );
+  }
+}
+
+@include for-size(phone-only) {
+  .card h3 {
+    width: 80%;
+  }
+}

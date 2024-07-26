@@ -1,0 +1,55 @@
+@import "../../../imports";
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(2px);
+  }
+}
+
+// n is number of stars required
+@function multiple-box-shadow($n) {
+  $xValue: 1500;
+  $yValue: 1000;
+
+  $value: "#{random($xValue)}px #{random($yValue)}px #FFF";
+
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random($xValue)}px #{random($yValue)}px #FFF";
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.stars_container {
+  position: fixed;
+  top: 0;
+
+  .stars {
+    @include width-height(1px, 1px);
+    position: absolute;
+    top: 0;
+    background: transparent;
+    box-shadow: $shadows-small;
+    animation: animStar 50s linear infinite;
+
+    &:after {
+      @include width-height(1px, 1px);
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 2000px;
+      background: transparent;
+      box-shadow: $shadows-small;
+    }
+  }
+
+  @include for-size(desktop-up) {
+    @include transform(scale(1.3));
+  }
+}

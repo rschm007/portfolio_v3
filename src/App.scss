@@ -1,16 +1,23 @@
 @import "./styles/imports";
-@import "./styles/components/wrapper.scss";
-@import "./styles/components/header.scss";
-@import "./styles/components/subtitle.scss";
-@import "./styles/components/linkButton.scss";
-@import "./styles/components/downloadButton.scss";
-@import "./styles/components/navigation.scss";
 
-@import "./styles/components/Cards/aboutCard.scss";
-@import "./styles/components/Cards/contentcard.scss";
+// animations
+@import "./styles/components/animations/nightmode/campfire.scss";
+@import "./styles/components/animations/nightmode/stars.scss";
 
-@import "./styles/components/animations/campfire.scss";
-@import "./styles/components/animations/stars.scss";
+// interactive components
+@import "./styles/components/interactive/buttons/linkButton.scss";
+@import "./styles/components/interactive/buttons/downloadButton.scss";
+
+// layout components
+@import "./styles/components/layout/header.scss";
+@import "./styles/components/layout/navigation.scss";
+@import "./styles/components/layout/wrapper.scss";
+@import "./styles/components/layout/cards/aboutCard.scss";
+@import "./styles/components/layout/cards/contentcard.scss";
+
+// typography components
+@import "./styles/components/typography/subtitle.scss";
+
 
 // globals
 body {
