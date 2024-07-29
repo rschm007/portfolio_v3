@@ -54,7 +54,7 @@ export const Contact = () => {
 				<Header
 					tag="h1"
 					content="Contact"
-					className="header_contact__hero"
+					className="header_hero contact"
 				>
 					<Subtitle
 						tag="p"

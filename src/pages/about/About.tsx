@@ -7,7 +7,7 @@ export const About = () => {
 
 	return (
 		<Wrapper id="about">
-			<Header tag="h1" content="About" className="header_about__hero">
+			<Header tag="h1" content="About" className="header_hero about">
 				<Subtitle
 					tag="p"
 					content="My name is Robert Schmahl. I'm a full stack engineer based in Orange County, CA."

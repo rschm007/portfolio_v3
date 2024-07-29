@@ -16,7 +16,7 @@ import SoundandStageLogo from "../../assets/soundandstage.png";
 export const Work = () => {
 	return (
 		<Wrapper id="work">
-			<Header tag="h1" content="Work" className="header_work__hero">
+			<Header tag="h1" content="Work" className="header_hero work">
 				<Subtitle
 					tag="p"
 					content="Some samples of my projects."
@@ -43,7 +43,8 @@ export const Work = () => {
 						img={true}
 						imgSrc={TecLogo}
 						imgAlt="The Event Community Logo"
-						imgClass="project_logo logo_bg">
+						imgClass="project_logo logo_bg"
+					>
 						<div className="flex_row card_buttons">
 							<LinkButton
 								relativeLink={false}
@@ -61,7 +62,8 @@ export const Work = () => {
 						img={true}
 						imgSrc={JemLDLogo}
 						imgAlt="JemLD logo"
-						imgClass="project_logo logo_bg">
+						imgClass="project_logo logo_bg"
+					>
 						<div className="flex_row card_buttons">
 							<LinkButton
 								relativeLink={false}
@@ -86,7 +88,8 @@ export const Work = () => {
 						img={true}
 						imgSrc={SoundandStageLogo}
 						imgAlt="SoundandStage"
-						imgClass="project_logo logo_bg">
+						imgClass="project_logo logo_bg"
+					>
 						<div className="flex_row card_buttons">
 							<LinkButton
 								relativeLink={false}
@@ -111,7 +114,8 @@ export const Work = () => {
 						img={true}
 						imgSrc={CashCommandsImg}
 						imgAlt="Southwest Dog Training Logo"
-						imgClass="project_logo">
+						imgClass="project_logo"
+					>
 						<div className="flex_row card_buttons">
 							<LinkButton
 								relativeLink={false}
@@ -138,7 +142,8 @@ export const Work = () => {
 						img={true}
 						imgSrc={ForbesAndersenImg}
 						imgAlt="Forbes Andersen Logo"
-						imgClass="project_logo">
+						imgClass="project_logo"
+					>
 						<div className="flex_row card_buttons">
 							<LinkButton
 								relativeLink={false}
@@ -156,7 +161,8 @@ export const Work = () => {
 						img={true}
 						imgSrc={ExpressImg}
 						imgAlt="Express Information Systems Logo"
-						imgClass="project_logo">
+						imgClass="project_logo"
+					>
 						<div className="flex_row card_buttons">
 							<LinkButton
 								relativeLink={false}

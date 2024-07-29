@@ -1,77 +1,41 @@
 @import "../../imports";
 
-.header {
-  &_main {
-    &__hero {
-      @include font($color: $fireBright, $weight: 800, $align: left);
-      width: calc(100vw - 60%);
-      margin-left: 10%;
+header.header_hero {
+  width: calc(100vw - 60%);
+  margin-left: 10%;
 
-      h1 {
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-        margin-bottom: 0;
-        line-height: 64px;
+  h1 {
+    @include font($size: 75px, $color: $fireBright, $weight: 800, $align: left);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    line-height: 64px;
+  }
+
+  .buttons {
+    margin-left: -0.5rem;
+
+    > .link_button {
+      &:first-child a:before {
+        width: 91px;
       }
 
-      .buttons {
-        margin-left: -0.5rem;
-
-        > .link_button {
-          &:first-child a:before {
-            width: 91px;
-          }
-
-          &:not(:first-child) {
-            padding-left: 1rem;
-          }
-        }
+      &:not(:first-child) {
+        padding-left: 1rem;
       }
     }
   }
 
-  &_about {
-    &__hero {
-      @include font($color: $fireBright, $weight: 800, $align: left);
-      width: calc(100vw - 60%);
-      margin-left: 10%;
+  &.work {
+    margin-top: 8rem;
+    margin-bottom: 1rem;
 
-      h1 {
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-        margin-bottom: 0;
-        line-height: 64px;
-      }
-    }
-  }
+    h1 {
+    @include font($color: $moonSilver);
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
 
-  &_contact {
-    &__hero {
-      @include font($color: $fireBright, $weight: 800, $align: left);
-      width: calc(100vw - 60%);
-
-      h1 {
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-        margin-bottom: 0;
-        line-height: 64px;
-      }
-    }
-  }
-
-  &_work {
-    &__hero {
-      @include font($color: $moonSilver, $weight: 800, $align: left);
-      margin-bottom: 1rem;
-      margin-left: 10%;
-
-      h1 {
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
-        font-size: 100px;
-        margin-bottom: 0;
-        line-height: 82px;
-
-        &::selection {
-          background: $moonSilver;
-          color: $offBlack;
-        }
+      &::selection {
+        background: $moonSilver;
+        color: $offBlack;
       }
     }
   }
@@ -82,10 +46,7 @@
     top: 10rem;
   }
 
-  .header_main__hero,
-  .header_about__hero,
-  .header_contact__hero,
-  .header_work__hero {
+  &[class*="__hero"] {
     width: 80%;
   }
 
