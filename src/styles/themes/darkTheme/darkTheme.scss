@@ -1,0 +1,15 @@
+@import "../../imports";
+@import "./pageTransitions.scss";
+
+.background.dark {
+    background-color: #010b12;
+
+    h1 {
+        @include font($color: $fireBright);
+
+        &::selection {
+            background: $fireBright;
+            color: $offBlack;
+        }
+    }
+}

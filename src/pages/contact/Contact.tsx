@@ -8,6 +8,7 @@ import {
 	Subtitle,
 	LinkButton,
 	DownloadButton,
+	MainContentWrapper,
 } from "components";
 
 // using react-hook-form https://react-hook-form.com
@@ -48,122 +49,115 @@ export const Contact = () => {
 	const resumeDownloadLink =
 		"https://docs.google.com/document/d/e/2PACX-1vRFi-hE3U9E35kUpok8BNZIwZk9tzoJex8G1mYLrUxaebxURJjnANfeWmi3zm8pug/pub";
 
+	const formSubtitleText = formSubmitted
+		? "Thanks, talk to you soon!"
+		: "Let's get in touch.";
+
 	return (
-		<Wrapper id="contact">
-			<Wrapper className="contact_container">
-				<Header
-					tag="h1"
-					content="Contact"
-					className="header_hero contact"
-				>
-					<Subtitle
-						tag="p"
-						content={
-							formSubmitted
-								? "Thanks, talk to you soon!"
-								: "Let's get in touch."
-						}
-						className="contact"
+		<MainContentWrapper className="flex_row">
+			<Header tag="h1" content="Contact" className="header_hero contact">
+				<Subtitle
+					tag="p"
+					content={formSubtitleText}
+					className="contact"
+				/>
+
+				<>
+					{!formSubmitted && (
+						<form
+							className="flex_col"
+							id="contact_form"
+							onSubmit={handleSubmit(onSubmit)}
+							ref={form}
+						>
+							<input
+								type="text"
+								placeholder="Name"
+								{...register("name", {
+									required: true,
+									maxLength: 30,
+								})}
+							/>
+							{errors.name && <span>This field is required</span>}
+
+							<input
+								type="email"
+								placeholder="Email"
+								{...register("email", {
+									required: true,
+									pattern:
+										/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+								})}
+							/>
+							{errors.email && (
+								<span>This field is required</span>
+							)}
+
+							<textarea
+								placeholder="Message"
+								maxLength={1500}
+								{...register("message", {
+									required: true,
+									maxLength: 1500,
+								})}
+							/>
+							{errors.message && (
+								<span>This field is required</span>
+							)}
+
+							<span className="message-chars-left">
+								{messageCharactersLeft}
+							</span>
+
+							<button className="submit_button">
+								<input type="submit" value="Send" />
+								<i className="fa-solid fa-envelope" />
+							</button>
+						</form>
+					)}
+				</>
+			</Header>
+
+			<motion.div
+				initial={{ opacity: 0, y: -50 }}
+				animate={{ opacity: 1, y: 0 }}
+				exit={{ opacity: 0, y: -50 }}
+			>
+				{" "}
+				<Subtitle
+					tag="p"
+					content="Find me online."
+					className="contact_subtitle__links"
+				/>
+				<Wrapper className="flex_column buttons">
+					<LinkButton
+						relativeLink={false}
+						href="https://github.com/rschm007"
+						iconClassName="fab fa-github"
+						content="Github"
+						className="github"
 					/>
-
-					<>
-						{!formSubmitted && (
-							<form
-								id="contact_form"
-								onSubmit={handleSubmit(onSubmit)}
-								ref={form}
-							>
-								<input
-									type="text"
-									placeholder="Name"
-									{...register("name", {
-										required: true,
-										maxLength: 30,
-									})}
-								/>
-								{errors.name && (
-									<span>This field is required</span>
-								)}
-
-								<input
-									type="email"
-									placeholder="Email"
-									{...register("email", {
-										required: true,
-										pattern:
-											/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-									})}
-								/>
-								{errors.email && (
-									<span>This field is required</span>
-								)}
-
-								<textarea
-									placeholder="Message"
-									maxLength={1500}
-									{...register("message", {
-										required: true,
-										maxLength: 1500,
-									})}
-								/>
-								{errors.message && (
-									<span>This field is required</span>
-								)}
-
-								<span className="message-chars-left">
-									{messageCharactersLeft}
-								</span>
-
-								<button className="submit_button">
-									<input type="submit" value="Send" />
-									<i className="fa-solid fa-envelope" />
-								</button>
-							</form>
-						)}
-					</>
-				</Header>
-
-				<motion.div
-					initial={{ opacity: 0, y: -50 }}
-					animate={{ opacity: 1, y: 0 }}
-					exit={{ opacity: 0, y: -50 }}
-				>
-					{" "}
-					<Subtitle
-						tag="p"
-						content="Find me online."
-						className="contact_subtitle__links"
+					<LinkButton
+						relativeLink={false}
+						href="https://www.linkedin.com/in/robert-schmahl/"
+						iconClassName="fab fa-linkedin-in"
+						content="LinkedIn"
 					/>
-					<Wrapper className="flex_column buttons">
-						<LinkButton
-							relativeLink={false}
-							href="https://github.com/rschm007"
-							iconClassName="fab fa-github"
-							content="Github"
-							className="github"
-						/>
-						<LinkButton
-							relativeLink={false}
-							href="https://www.linkedin.com/in/robert-schmahl/"
-							iconClassName="fab fa-linkedin-in"
-							content="LinkedIn"
-						/>
-					</Wrapper>
-					<Subtitle
-						tag="p"
-						content="Check out my resume."
-						className="contact_subtitle__links"
+				</Wrapper>
+				<Subtitle
+					tag="p"
+					content="Check out my resume."
+					className="contact_subtitle__links"
+				/>
+				<Wrapper className="flex_column buttons">
+					<DownloadButton
+						href={resumeDownloadLink}
+						iconClassName="fa-solid fa-file-arrow-down"
+						content="Download"
+						className="download"
 					/>
-					<Wrapper className="flex_column buttons">
-						<DownloadButton
-							href={resumeDownloadLink}
-							iconClassName="fa-solid fa-file-arrow-down"
-							content="Download"
-							className="download"
-						/>
-					</Wrapper>
-				</motion.div>
-			</Wrapper>
-		</Wrapper>
+				</Wrapper>
+			</motion.div>
+		</MainContentWrapper>
 	);
 };

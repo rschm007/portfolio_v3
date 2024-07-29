@@ -1,0 +1,55 @@
+.background.dark {
+    // moon
+    .moon {
+        @include width-height(300px, 300px);
+        @include transition($time-in: 1.2s, $time-out: 1.2s);
+        @include transform(translateY(-100%));
+        background-image: url("../../../assets/moon-full.svg");
+        background-repeat: no-repeat;
+        position: fixed;
+        top: -125px;
+        right: -75px;
+        z-index: -1;
+        filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.7));
+    }
+
+    // trees background
+    .trees {
+        @include width-height($width: 100%, $height: 100%);
+        @include transition($time-in: 1.2s, $time-out: 1.2s);
+        @include transform(translateY(0%));
+        position: fixed;
+        background-image: url("../../../assets/treeline.svg");
+        background-size: cover;
+        z-index: 0;
+    }
+
+    // page move in-out
+    &#work {
+        .trees {
+            @include transform(translateY(100%));
+        }
+
+        .campfire_container .campfire {
+            @include transform(translateY(1000px));
+        }
+
+        .moon {
+            @include transform(translateY(-0%));
+        }
+    }
+
+    &:not(#work) {
+        .trees {
+            @include transform(translateY(0%));
+        }
+
+        .campfire_container .campfire {
+            @include transform(translateY(0px));
+        }
+
+        .moon {
+            @include transform(translateY(-100%));
+        }
+    }
+}

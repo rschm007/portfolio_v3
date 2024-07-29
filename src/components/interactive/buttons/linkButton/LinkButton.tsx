@@ -23,7 +23,7 @@ export const LinkButton = ({
 	relativeLink = true,
 }: LinkButtonProps) => {
 	const commonProps = {
-		className: `link_button ${className}`,
+		className: `link_button flex_row ${className}`,
 		initial: { opacity: initialOpacity, y: initialY },
 		animate: { opacity: animateOpacity, y: animateY },
 		exit: { opacity: exitOpacity, y: exitY },
@@ -43,7 +43,12 @@ export const LinkButton = ({
 				<>
 					{iconClassName && <i className={iconClassName} />}
 
-					<a href={href} target="_blank" rel="noopener noreferrer">
+					<a
+						href={href}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex_row"
+					>
 						{content}
 					</a>
 				</>

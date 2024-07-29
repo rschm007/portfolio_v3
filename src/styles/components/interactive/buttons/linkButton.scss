@@ -1,12 +1,10 @@
 @import "../../../imports";
 
 .link_button {
-  @include flex($direction: row);
   @include border-outline($noBorder: true, $noOutline: true);
   background-color: transparent;
 
   a {
-    @include flex($direction: row);
     @include font(
       $color: $moonSilver,
       $size: 18px,

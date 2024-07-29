@@ -2,4 +2,8 @@
   &_row {
     @include flex(row);
   }
+
+  &_col {
+    @include flex(column);
+  }
 }

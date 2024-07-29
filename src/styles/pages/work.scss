@@ -1,0 +1,77 @@
+@import "../imports";
+
+.background#work main.content {
+    margin: 1.5rem 0 -5.5rem 1rem;
+    padding-bottom: 5rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    header.header_hero.work {
+        margin-top: 6rem;
+        margin-bottom: 1rem;
+
+        h1 {
+            @include font($color: $moonSilver);
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+
+            &::selection {
+                background: $moonSilver;
+                color: $offBlack;
+            }
+        }
+    }
+
+    > .wrapper.container .cards_work {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: baseline;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+@include for-size(tablet-landscape-up) {
+    .background#work main.content {
+        margin: 1.5rem 0 -5.5rem 9rem;
+    }
+}
+
+@include for-size(phone-only) {
+    .background#work .main {
+        margin: unset;
+        flex-direction: column;
+
+        .cards_work_2 {
+            margin-top: unset;
+            margin-right: unset;
+        }
+
+        .cards_work_1,
+        .cards_work_2 {
+            width: 90%;
+
+            .card {
+                max-width: 250px;
+                background-color: #010b12;
+                backdrop-filter: unset !important;
+
+                &:hover {
+                    transform: unset !important;
+                    -webkit-backdrop-filter: unset !important;
+                    backdrop-filter: unset !important;
+                }
+
+                .card_1__img {
+                    right: 0;
+                    top: unset;
+                    margin-right: 1.5rem;
+                    margin-top: -3.5rem;
+
+                    img {
+                        @include width-height($maxHeight: 90px, $minHeight: 90px, $maxWidth: 90px, $minWidth: 90px);
+                    }
+                }
+            }
+        }
+    }
+}

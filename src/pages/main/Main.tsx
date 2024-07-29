@@ -1,9 +1,15 @@
-import { Wrapper, Header, Subtitle, LinkButton } from "components";
+import {
+	Wrapper,
+	Header,
+	Subtitle,
+	LinkButton,
+	MainContentWrapper,
+} from "components";
 import React from "react";
 
 export const Main = () => {
 	return (
-		<Wrapper id="main">
+		<MainContentWrapper>
 			<Header
 				tag="h1"
 				content="Hi! I'm Robert."
@@ -30,6 +36,6 @@ export const Main = () => {
 					/>
 				</Wrapper>
 			</Header>
-		</Wrapper>
+		</MainContentWrapper>
 	);
 };
