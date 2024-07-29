@@ -4,12 +4,7 @@
   @include flex($direction: row);
   @include border-outline($noBorder: true, $noOutline: true);
   background-color: transparent;
-  @include font(
-    $color: $moonSilver,
-    $size: 18px,
-    $weight: 300,
-    $decoration: none
-  );
+  @include font($color: $moonSilver, $size: 18px, $weight: 300, $decoration: none);
   align-items: baseline;
   cursor: pointer;
 
@@ -57,12 +52,7 @@
     align-items: center;
 
     a {
-      @include font(
-        $size: 16px,
-        $color: $moonSilver,
-        $weight: 400,
-        $align: left
-      );
+      @include font($size: 16px, $color: $moonSilver, $weight: 400, $align: left);
     }
   }
 }

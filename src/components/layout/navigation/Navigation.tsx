@@ -1,4 +1,4 @@
-import { LinkButton, Wrapper } from "components";
+import { LinkButton, ThemeSwitch, Wrapper } from "components";
 import React, { useState } from "react";
 
 export const Navigation = () => {
@@ -41,6 +41,8 @@ export const Navigation = () => {
 						href="/contact"
 						content="contact"
 					/>
+
+					<ThemeSwitch />
 				</div>
 			</Wrapper>
 		</nav>
