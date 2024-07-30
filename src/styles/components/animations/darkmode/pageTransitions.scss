@@ -1,0 +1,34 @@
+.background.dark {
+    // page move in-out
+    &#work {
+        .trees {
+            @include transform(translateY(100%));
+        }
+
+        .campfire_container .campfire {
+            @include transform(translateY(1000px));
+        }
+
+        .moon {
+            @include transform(translateY(-0%));
+        }
+
+        .foreground, .midground {
+            @include transform(translateY(300%));
+        }
+    }
+
+    &:not(#work) {
+        .trees {
+            @include transform(translateY(0%));
+        }
+
+        .campfire_container .campfire {
+            @include transform(translateY(0px));
+        }
+
+        .moon {
+            @include transform(translateY(-100%));
+        }
+    }
+}

@@ -4,33 +4,15 @@
   &.main,
   &.about,
   &.contact {
-    @include font($size: 18px, $color: $peru, $weight: 100);
-    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-
-    p::selection {
-      background: $peru;
-      color: $offBlack;
-    }
+    @include font($size: 18px, $weight: 100);
   }
   &.work {
-    @include font($size: 18px, $color: $moonSilver, $weight: 100);
-    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+    @include font($size: 18px, $weight: 100);
     margin-left: 1rem;
-
-    p::selection {
-      background: $moonSilver;
-      color: $offBlack;
-    }
   }
 
   &.contact_subtitle__links {
-    @include font($size: 18px, $color: $peru, $weight: 100);
-    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-
-    p::selection {
-      background: $peru;
-      color: $offBlack;
-    }
+    @include font($size: 18px, $weight: 100);
 
     &:nth-child(3) {
       margin-top: 1rem;

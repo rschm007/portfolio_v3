@@ -1,15 +1,100 @@
-@import "../../imports";
-@import "./pageTransitions.scss";
+@import "../../mixins";
 
+// color pallete
+$peru: #da9e6e;
+$maroon: #7c1414;
+$maroonDark: #520e0e;
+$moonSilver: #bdd6be;
+$lightGreen: #aee298;
+$dimGray: #678060;
+$darkSlateGray: #354d2b;
+$darkOliveGreen: #595440;
+$darkCyan: #081f26;
+$nightBlue: #031e25;
+
+// fire colors
+$fireBright: #ff7800;
+$fireMedium: #f36200;
+$fireDark: #d63603;
+$fireShadow: #d43322;
+$fireEmber: #ef5a00;
+$log: linear-gradient(#e66465, $darkOliveGreen);
+
+// backgrounds
 .background.dark {
     background-color: #010b12;
 
+    .midground svg path {
+        fill: $darkCyan;
+    }
+
+    .foreground svg path {
+        fill: $nightBlue;
+    }
+
+    // element colors
     h1 {
         @include font($color: $fireBright);
 
         &::selection {
             background: $fireBright;
             color: $offBlack;
+        }
+    }
+
+    .subtitle {
+        p {
+            @include font($color: $peru);
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+
+            &::selection {
+                background: $peru;
+                color: $offBlack;
+            }
+        }
+
+        &.work p {
+            @include font($color: $moonSilver);
+
+            &::selection {
+                background: $moonSilver;
+                color: $offBlack;
+            }
+        }
+
+        &.contact_subtitle__links {
+            @include font($color: $peru);
+
+            p::selection {
+                background: $peru;
+                color: $offBlack;
+            }
+        }
+    }
+
+    // buttons
+    .button {
+        @include font($color: $moonSilver);
+
+        a {
+            @include font($color: $moonSilver);
+
+            &::selection {
+                background: $moonSilver;
+                color: $offBlack;
+            }
+
+            &:before {
+                background-color: $peru;
+            }
+        }
+
+        i {
+            @include font($color: $moonSilver);
+        }
+
+        &.card_button a {
+            @include font($color: $moonSilver);
         }
     }
 }

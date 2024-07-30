@@ -6,9 +6,9 @@ import {
 	Wrapper,
 	Header,
 	Subtitle,
-	LinkButton,
 	DownloadButton,
 	MainContentWrapper,
+	SocialButtons,
 } from "components";
 
 // using react-hook-form https://react-hook-form.com
@@ -129,27 +129,13 @@ export const Contact = () => {
 					content="Find me online."
 					className="contact_subtitle__links"
 				/>
-				<Wrapper className="flex_column buttons">
-					<LinkButton
-						relativeLink={false}
-						href="https://github.com/rschm007"
-						iconClassName="fab fa-github"
-						content="Github"
-						className="github"
-					/>
-					<LinkButton
-						relativeLink={false}
-						href="https://www.linkedin.com/in/robert-schmahl/"
-						iconClassName="fab fa-linkedin-in"
-						content="LinkedIn"
-					/>
-				</Wrapper>
+				<SocialButtons />
 				<Subtitle
 					tag="p"
 					content="Check out my resume."
 					className="contact_subtitle__links"
 				/>
-				<Wrapper className="flex_column buttons">
+				<Wrapper className="flex_col buttons">
 					<DownloadButton
 						href={resumeDownloadLink}
 						iconClassName="fa-solid fa-file-arrow-down"

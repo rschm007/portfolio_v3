@@ -22,7 +22,7 @@ export const DownloadButton = ({
 
 	return (
 		<motion.button
-			className={`download_button ${className}`}
+			className={`button download ${className}`}
 			id={id}
 			initial={{ opacity: initialOpacity, y: initialY }}
 			animate={{ opacity: animateOpacity, y: animateY }}

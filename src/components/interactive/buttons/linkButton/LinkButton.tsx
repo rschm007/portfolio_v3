@@ -23,7 +23,7 @@ export const LinkButton = ({
 	relativeLink = true,
 }: LinkButtonProps) => {
 	const commonProps = {
-		className: `link_button flex_row ${className}`,
+		className: `button link flex_row ${className}`,
 		initial: { opacity: initialOpacity, y: initialY },
 		animate: { opacity: animateOpacity, y: animateY },
 		exit: { opacity: exitOpacity, y: exitY },

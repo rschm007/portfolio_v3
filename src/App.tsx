@@ -2,7 +2,7 @@ import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { Navigation, NightMode, PageWrapper, Stars } from "./components";
+import { Navigation, PageWrapper, Scene } from "./components";
 import { About, Contact, Main, Work } from "./pages";
 import { useTheme } from "hooks";
 
@@ -13,8 +13,6 @@ const App = () => {
 	return (
 		<AnimatePresence>
 			<PageWrapper className={`background flex_col ${theme}`}>
-				<Stars />
-
 				<Navigation />
 
 				<Routes>
@@ -25,7 +23,7 @@ const App = () => {
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
 
-				<NightMode />
+				<Scene />
 			</PageWrapper>
 		</AnimatePresence>
 	);

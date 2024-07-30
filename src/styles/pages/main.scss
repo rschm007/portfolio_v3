@@ -1,9 +1,15 @@
 @import "../imports";
 
-.background#home main.content {
-    margin: 2rem 10%;
-    column-gap: 2rem;
-    z-index: 50;
+.background#home, .background[id] {
+    main.content {
+        margin: 2rem 10%;
+        column-gap: 2rem;
+        z-index: 50;
+
+        header.header_hero {
+            margin-left: 10%;
+        }
+    }
 }
 
 @include for-size(phone-only) {

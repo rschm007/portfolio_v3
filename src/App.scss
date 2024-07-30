@@ -3,6 +3,9 @@
 // animations
 @import "./styles/components/animations/darkmode/campfire.scss";
 @import "./styles/components/animations/darkmode/stars.scss";
+@import "./styles/components/animations/darkmode/pageTransitions.scss";
+
+@import "./styles/components/scene/scene.scss";
 
 // pages
 @import "./styles/pages/about.scss";
@@ -10,7 +13,8 @@
 @import "./styles/pages/main.scss";
 @import "./styles/pages/work.scss";
 
-// interactive components
+// buttons
+@import "./styles/components/interactive/buttons/button.scss";
 @import "./styles/components/interactive/buttons/linkButton.scss";
 @import "./styles/components/interactive/buttons/downloadButton.scss";
 @import "./styles/components/interactive/switches/themeSwitch.scss";
@@ -24,9 +28,6 @@
 
 // typography components
 @import "./styles/components/typography/subtitle.scss";
-
-// themes
-@import "./styles/themes/darkTheme/darkTheme.scss";
 
 // globals
 body {
