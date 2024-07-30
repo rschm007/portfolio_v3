@@ -1,12 +1,10 @@
 @import "../../../imports";
 
 .card {
-  @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
   @include transition($time-in: 0.1s, $time-out: 0.2s);
   @include transform(scale(100%));
   height: min-content;
   width: 375px;
-  backdrop-filter: blur(3px) brightness(130%);
   padding: 2rem 1.75rem;
   margin: 1rem;
   border-radius: 10px;
@@ -36,24 +34,16 @@
   }
 
   h3 {
-    @include font($size: 30px, $color: $moonSilver, $weight: 800, $align: left);
+    @include font($size: 30px, $weight: 800, $align: left);
     width: 95%;
-    filter: brightness(105%);
     margin: 0;
     margin-top: 15%;
   }
 
   p {
-    @include font($size: 16px, $color: $moonSilver, $weight: 400, $align: left, $leading: 24px);
+    @include font($size: 16px, $weight: 400, $align: left, $leading: 24px);
     width: 95%;
     z-index: 50;
-  }
-
-  h3::selection,
-  p::selection,
-  a::selection {
-    background: $moonSilver;
-    color: $offBlack;
   }
 
   .card_buttons {
@@ -68,7 +58,6 @@
 
   &:hover {
     @include transform(scale(102%), $important: true);
-    backdrop-filter: blur(3px) brightness(150%);
   }
 }
 

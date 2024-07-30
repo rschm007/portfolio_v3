@@ -1,5 +1,11 @@
 @import "../../../imports";
 
-.button.download a::before {
-  width: 112px;
+.button.download {
+  &::before {
+    width: 0;
+  }
+
+  &:hover::before {
+    width: 112px;
+  }
 }

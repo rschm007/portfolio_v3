@@ -3,13 +3,11 @@
 .about_card {
   @include flex(column);
   @include width-height(155px, 90px);
-  @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
   @include transition($time-in: 250ms, $time-out: 250ms);
   @include transform(scale(100%));
   padding: 2rem 0rem;
-  border: 6px solid $maroon;
+  border: 6px solid;
   border-radius: 10px;
-  background-color: $peru;
   overflow: hidden;
 
   .about_card__icon {
@@ -21,7 +19,6 @@
 
     i {
       font-size: 58px;
-      color: $maroonDark;
 
       &.fa-file-code {
         font-size: 55px;
@@ -29,12 +26,7 @@
     }
 
     h3 {
-      @include font(
-        $color: $maroonDark,
-        $align: center,
-        $weight: 600,
-        $transform: uppercase
-      );
+      @include font($align: center, $weight: 600, $transform: uppercase);
     }
   }
 
@@ -52,10 +44,6 @@
 
       li {
         margin: 3px 0;
-
-        &::marker {
-          color: $maroonDark;
-        }
       }
     }
   }

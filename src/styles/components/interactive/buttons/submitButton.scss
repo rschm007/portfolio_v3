@@ -1,0 +1,39 @@
+@import "../../../imports";
+
+.submit_button {
+    @include flex($direction: row);
+    @include border-outline(
+        $noOutline: true,
+        $borderStyle: solid,
+        $borderWidth: 1px,
+        $borderRadius: 4px
+    );
+    @include transition($time-in: 250ms, $time-out: 250ms);
+    @include transform(scale(100%));
+    background-color: transparent;
+    align-items: baseline;
+    max-width: min-content;
+    cursor: pointer;
+    margin-top: 1rem;
+
+    * {
+        cursor: pointer;
+    }
+
+    input {
+        @include border-outline($noOutline: true, $noBorder: true);
+        @include font($size: 18px, $weight: 300, $decoration: none);
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+        margin: 0;
+    }
+
+    > i {
+        @include font($size: 16px, $weight: 700, $decoration: none);
+        padding-right: 15px;
+    }
+
+    &:hover {
+        @include transform(scale(105%), $important: true);
+    }
+}

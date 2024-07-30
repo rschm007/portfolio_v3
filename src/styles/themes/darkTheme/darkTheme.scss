@@ -72,9 +72,24 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
         }
     }
 
+    // nav menu
+    nav .navigation .nav_menu {
+        @include box-shadow(0px, 0px, 16px, rgba(0, 0, 0, 0.6));
+        backdrop-filter: blur(25px);
+    }
+
+    // headers
+    header.header_hero h1 {
+        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
     // buttons
     .button {
         @include font($color: $moonSilver);
+
+        &:before {
+            background-color: $peru;
+        }
 
         a {
             @include font($color: $moonSilver);
@@ -82,10 +97,6 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
             &::selection {
                 background: $moonSilver;
                 color: $offBlack;
-            }
-
-            &:before {
-                background-color: $peru;
             }
         }
 
@@ -95,6 +106,87 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
 
         &.card_button a {
             @include font($color: $moonSilver);
+        }
+    }
+
+    .submit_button {
+        border-color: $moonSilver;
+
+        input,
+        > i {
+            @include font($color: $moonSilver);
+        }
+
+        &:hover {
+            background-color: $moonSilver;
+
+            input,
+            i {
+                color: $nightBlue !important;
+            }
+        }
+    }
+
+    // cards
+    .about_card {
+        @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+        border-color: $maroon;
+        background-color: $peru;
+
+        .about_card__icon {
+            i,
+            h3 {
+                color: $maroonDark;
+            }
+        }
+
+        .about_card__content ul li::marker {
+            color: $maroonDark;
+        }
+    }
+
+    .card {
+        @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+        backdrop-filter: blur(3px) brightness(130%);
+
+        h3 {
+            @include font($color: $moonSilver);
+            filter: brightness(105%);
+        }
+
+        p {
+            @include font($color: $moonSilver);
+        }
+
+        h3::selection,
+        p::selection,
+        a::selection {
+            background: $moonSilver;
+            color: $offBlack;
+        }
+
+        &:hover {
+            backdrop-filter: blur(3px) brightness(150%);
+        }
+    }
+
+    // page specific styles
+    &#work main.content header.header_hero.work h1 {
+        @include font($color: $moonSilver);
+        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+
+        &::selection {
+            background: $moonSilver;
+            color: $offBlack;
+        }
+    }
+
+    &#contact main.content form {
+        background-color: rgba(72, 72, 72, 0.4);
+
+        input:not([type="submit"]),
+        textarea {
+            @include font($color: $offBlack);
         }
     }
 }

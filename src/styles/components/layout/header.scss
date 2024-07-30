@@ -7,7 +7,6 @@ header.header_hero {
 
   h1 {
     @include font($weight: 800, $align: left);
-    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
     line-height: 64px;
   }

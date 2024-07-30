@@ -8,6 +8,7 @@ export const LinkedInButton = () => {
 			href="https://www.linkedin.com/in/robert-schmahl/"
 			iconClassName="fab fa-linkedin-in"
 			content="LinkedIn"
+			className="linkedin"
 		/>
 	);
 };

@@ -9,6 +9,7 @@ import {
 	DownloadButton,
 	MainContentWrapper,
 	SocialButtons,
+	SubmitButton,
 } from "components";
 
 // using react-hook-form https://react-hook-form.com
@@ -109,10 +110,7 @@ export const Contact = () => {
 								{messageCharactersLeft}
 							</span>
 
-							<button className="submit_button">
-								<input type="submit" value="Send" />
-								<i className="fa-solid fa-envelope" />
-							</button>
+							<SubmitButton />
 						</form>
 					)}
 				</>

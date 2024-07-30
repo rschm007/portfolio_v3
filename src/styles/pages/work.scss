@@ -9,16 +9,6 @@
     header.header_hero.work {
         margin-top: 6rem;
         margin-bottom: 1rem;
-
-        h1 {
-            @include font($color: $moonSilver);
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
-
-            &::selection {
-                background: $moonSilver;
-                color: $offBlack;
-            }
-        }
     }
 
     > .wrapper.container .cards_work {

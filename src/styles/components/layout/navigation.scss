@@ -95,13 +95,11 @@ nav {
 
     .nav_menu {
       @include transition($for: opacity, $time-in: 0.2s, $time-out: 0.2s);
-      @include box-shadow(0px, 0px, 16px, rgba(0, 0, 0, 0.6));
       width: 250px;
       position: absolute;
       left: 4rem;
       padding: 0.25rem 0;
       opacity: 0;
-      backdrop-filter: blur(25px);
       align-items: center;
 
       .link_button {
@@ -113,28 +111,11 @@ nav {
     &.open .nav_menu {
       opacity: 1;
 
-      .link_button {
-        a {
-          &:before {
-            margin-top: 1.4rem;
-            margin-left: 0;
-          }
-        }
-
-        &:first-child a:before {
-          width: 48px;
-        }
-
-        &:nth-child(2) a:before {
-          width: 47px;
-        }
-
-        &:nth-child(3) a:before {
-          width: 40px;
-        }
-
-        &:nth-child(4) a:before {
-          width: 60px;
+      .button.link {
+        &:before {
+          width: 0;
+          margin-top: 1.4rem;
+          margin-left: 0;
         }
 
         i {
@@ -144,13 +125,13 @@ nav {
         &:hover {
           &:nth-child(1)::before,
           &:nth-child(2)::before {
-            @include width-height($width: 60px, $height: 2px);
+            @include width-height($width: 48px, $height: 2px);
           }
           &:nth-child(3)::before {
-            @include width-height($width: 50px, $height: 2px);
+            @include width-height($width: 45px, $height: 2px);
           }
           &:nth-child(4)::before {
-            @include width-height($width: 75px, $height: 2px);
+            @include width-height($width: 60px, $height: 2px);
           }
         }
       }
