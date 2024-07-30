@@ -8,8 +8,6 @@ nav {
   z-index: 50;
 
   .navigation {
-    @include flex($direction: row);
-
     .nav_button {
       @include width-height($width: 3rem, $height: 3.5rem);
       @include transform(rotate(0deg));
@@ -96,7 +94,6 @@ nav {
     }
 
     .nav_menu {
-      @include flex($direction: row);
       @include transition($for: opacity, $time-in: 0.2s, $time-out: 0.2s);
       @include box-shadow(0px, 0px, 16px, rgba(0, 0, 0, 0.6));
       width: 250px;
@@ -105,6 +102,7 @@ nav {
       padding: 0.25rem 0;
       opacity: 0;
       backdrop-filter: blur(25px);
+      align-items: center;
 
       .link_button {
         max-width: 60px;

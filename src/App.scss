@@ -1,12 +1,19 @@
 @import "./styles/imports";
 
 // animations
-@import "./styles/components/animations/nightmode/campfire.scss";
-@import "./styles/components/animations/nightmode/stars.scss";
+@import "./styles/components/animations/darkmode/campfire.scss";
+@import "./styles/components/animations/darkmode/stars.scss";
+
+// pages
+@import "./styles/pages/about.scss";
+@import "./styles/pages/contact.scss";
+@import "./styles/pages/main.scss";
+@import "./styles/pages/work.scss";
 
 // interactive components
 @import "./styles/components/interactive/buttons/linkButton.scss";
 @import "./styles/components/interactive/buttons/downloadButton.scss";
+@import "./styles/components/interactive/switches/themeSwitch.scss";
 
 // layout components
 @import "./styles/components/layout/header.scss";
@@ -18,6 +25,8 @@
 // typography components
 @import "./styles/components/typography/subtitle.scss";
 
+// themes
+@import "./styles/themes/darkTheme/darkTheme.scss";
 
 // globals
 body {
@@ -26,10 +35,6 @@ body {
 
 h1 {
   @include font($size: 75px);
-  &::selection {
-    background: $fireBright;
-    color: $offBlack;
-  }
 }
 
 h2 {
@@ -55,12 +60,9 @@ textarea {
   @include font($family: $body);
 }
 
-.flex_row {
-  @include flex(row);
-}
-
-.flex_column {
-  @include flex(column);
+.scroll {
+  overflow-y: scroll;
+  @include scrollbars(0.5em, slategray);
 }
 
 @include for-size(phone-only) {

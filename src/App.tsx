@@ -2,13 +2,17 @@ import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { Navigation, NightMode, Stars, Wrapper } from "./components";
+import { Navigation, NightMode, PageWrapper, Stars } from "./components";
 import { About, Contact, Main, Work } from "./pages";
+import { useTheme } from "hooks";
 
 const App = () => {
+	const { darkMode } = useTheme();
+	const theme = darkMode ? "dark" : "light";
+
 	return (
 		<AnimatePresence>
-			<Wrapper className="background">
+			<PageWrapper className={`background flex_col ${theme}`}>
 				<Stars />
 
 				<Navigation />
@@ -22,7 +26,7 @@ const App = () => {
 				</Routes>
 
 				<NightMode />
-			</Wrapper>
+			</PageWrapper>
 		</AnimatePresence>
 	);
 };

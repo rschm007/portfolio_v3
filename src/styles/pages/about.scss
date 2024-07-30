@@ -1,0 +1,17 @@
+@import "../imports";
+
+.background#about main.content {
+    margin: 2rem 10%;
+    column-gap: 2rem;
+    z-index: 50;
+}
+
+@include for-size(phone-only) {
+    .background#about {
+        margin-top: 2rem;
+
+        main.content header.header_hero {
+            top: 10rem;
+        }
+    }
+}

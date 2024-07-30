@@ -1,13 +1,17 @@
 import React from "react";
 // import { aboutConfig } from "./config";
-import { Wrapper, Header, Subtitle } from "components";
+import { Wrapper, Header, Subtitle, MainContentWrapper } from "components";
 
 export const About = () => {
 	// const { code, tech, programs, fun } = aboutConfig;
 
 	return (
-		<Wrapper id="about">
-			<Header tag="h1" content="About" className="header_about__hero">
+		<MainContentWrapper>
+			<Header
+				tag="h1"
+				content="About"
+				className="header_hero about flex_col"
+			>
 				<Subtitle
 					tag="p"
 					content="My name is Robert Schmahl. I'm a full stack engineer based in Orange County, CA."
@@ -25,7 +29,7 @@ export const About = () => {
 				/>
 			</Header>
 
-			{/* <Wrapper class="about_container">
+			{/* <Wrapper class="container" id="about">
         <AboutCard class="code" icon="fa-solid fa-laptop-code" header="Code">
           <List list={code} />
         </AboutCard>
@@ -46,6 +50,6 @@ export const About = () => {
           <List list={fun} />
         </AboutCard>
       </Wrapper> */}
-		</Wrapper>
+		</MainContentWrapper>
 	);
 };

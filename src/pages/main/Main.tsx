@@ -1,13 +1,23 @@
-import { Wrapper, Header, Subtitle, LinkButton } from "components";
+import {
+	Wrapper,
+	Header,
+	Subtitle,
+	LinkButton,
+	MainContentWrapper,
+} from "components";
 import React from "react";
 
 export const Main = () => {
 	return (
-		<Wrapper id="main">
-			<Header tag="h1" content="Hi! I'm Robert." className="header_main__hero">
+		<MainContentWrapper>
+			<Header
+				tag="h1"
+				content="Hi! I'm Robert."
+				className="header_hero main"
+			>
 				<Subtitle
 					tag="p"
-					content="I'm a Software Engineer from California."
+					content="I'm a web developer from California."
 					className="about"
 				/>
 
@@ -26,6 +36,6 @@ export const Main = () => {
 					/>
 				</Wrapper>
 			</Header>
-		</Wrapper>
+		</MainContentWrapper>
 	);
 };
