@@ -1,10 +1,18 @@
 @import "./styles/imports";
 
-// animations
+// theming
+@import "./styles/themes/darkTheme/darkTheme.scss";
+@import "./styles/themes/lightTheme/lightTheme.scss";
+
+
+// animations - dark mode
 @import "./styles/components/animations/darkmode/campfire.scss";
 @import "./styles/components/animations/darkmode/stars.scss";
 @import "./styles/components/animations/darkmode/pageTransitions.scss";
+// animations - light mode
+@import "./styles/components/animations/lightmode/clouds.scss";
 
+// scene
 @import "./styles/components/scene/scene.scss";
 
 // pages
@@ -33,6 +41,10 @@
 // globals
 body {
   overflow: auto;
+}
+
+main.content {
+  z-index: 50;
 }
 
 h1 {

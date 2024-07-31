@@ -78,20 +78,30 @@
   $noBorder: false,
   $noOutline: false
 ) {
-  border-width: $borderWidth;
-  border-style: $borderStyle;
-  border-color: $borderColor;
-  border-radius: $borderRadius;
-
   @if $noBorder {
     border: none;
   } @else if $noOutline {
     outline: none;
   } @else {
-    @error "border-outline";
+    @if $borderWidth != null {
+      border-width: $borderWidth;
+    }
+    @if $borderStyle != null {
+      border-style: $borderStyle;
+    }
+    @if $borderColor != null {
+      border-color: $borderColor;
+    }
+    @if $borderRadius != null {
+      border-radius: $borderRadius;
+    }
+
+    // Handle the case where no specific border or outline setting is defined
+    @if $borderWidth == null and $borderStyle == null and $borderColor == null and $borderRadius == null {
+      @error "At least one border property or a no-border/no-outline flag must be specified in border-outline mixin.";
+    }
   }
 }
-
 // transforms, translates, etc
 @mixin transition(
   $for: all,

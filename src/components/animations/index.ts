@@ -1,1 +1,2 @@
-export * from "./nightmode";
+export * from "./darkmode";
+export * from "./lightmode";

@@ -1,1 +1,202 @@
-@import "../imports";
+@import "../../imports";
+@import "../../mixins";
+
+// color pallete
+$cloudySkyOne: #d5ddff;
+$cloudySkyTwo: #8099ff;
+$cloudSkyThree: #5577ff;
+$cloudySkyFour: #2b55ff;
+$cloudySkyFive: #0033ff;
+$blueOne: #e8f1ff;
+$blueTwo: #d1e3ff;
+$blueThree: #b9d5ff;
+$blueFour: #a2c7ff;
+$blueFive: #8bb9ff;
+$forestGreen: #284d2a;
+
+$brown: #6e4732;
+$darkBrown: #3b2518;
+
+$peru: #da9e6e;
+$maroon: #7c1414;
+$maroonDark: #520e0e;
+$moonSilver: #bdd6be;
+$lightGreen: #aee298;
+$dimGray: #678060;
+$darkSlateGray: #354d2b;
+$darkOliveGreen: #595440;
+$darkCyan: #081f26;
+$nightBlue: #031e25;
+
+// fire colors
+$fireBright: #ff7800;
+$fireMedium: #f36200;
+$fireDark: #d63603;
+$fireShadow: #d43322;
+$fireEmber: #ef5a00;
+$log: linear-gradient(#e66465, $darkOliveGreen);
+
+// backgrounds
+.background.light {
+    background-image: linear-gradient($blueThree, $blueOne);
+
+    .trees {
+        filter: hue-rotate(110deg) brightness(110%);
+    }
+
+    .midground svg path {
+        fill: $brown;
+    }
+
+    .foreground svg path {
+        fill: $darkBrown;
+    }
+
+    // element colors
+    h1 {
+        @include font($color: $blueOne);
+
+        &::selection {
+            background: $nightBlue;
+            color: $blueOne;
+        }
+    }
+
+    .subtitle {
+        p {
+            @include font($color: $offBlack);
+
+            &::selection {
+                background: $nightBlue;
+                color: $blueOne;
+            }
+        }
+    }
+
+    // nav menu
+    nav .navigation {
+        .nav_button span {
+            background-color: $nightBlue;
+        }
+
+        .nav_menu {
+            backdrop-filter: blur(25px);
+
+            button.nav_link a {
+                @include font($color: $nightBlue);
+            }
+        }
+    }
+
+    // headers
+    header.header_hero h1 {
+        @include font($color: $offBlack);
+    }
+
+    // buttons
+    .button {
+        @include font($color: $offBlack);
+
+        &:before {
+            background-color: $nightBlue;
+        }
+
+        a {
+            @include font($color: $offBlack);
+
+            &::selection {
+                background: $moonSilver;
+                color: $offBlack;
+            }
+        }
+
+        i {
+            @include font($color: $offBlack);
+        }
+
+        &.card_button a {
+            @include font($color: $offBlack);
+        }
+    }
+
+    .submit_button {
+        @include border-outline($borderColor: $offBlack);
+
+        input,
+        > i {
+            @include font($color: $offBlack);
+        }
+
+        &:hover {
+            background-color: $offBlack;
+
+            input,
+            i {
+                color: $blueOne !important;
+            }
+        }
+    }
+
+    .darkmode_switch_container#light {
+        // background-color: $cloudySkyFour;
+        @include border-outline($borderStyle: solid, $borderWidth: 1px, $borderColor: $nightBlue);
+
+        .wrapper img[class*="icon"] {
+            &.light {
+                &.sun_icon {
+                    filter: brightness(10%);
+                }
+
+                &.moon_icon {
+                    filter: invert(60%);
+                }
+            }
+        }
+    }
+
+    // cards
+    .about_card {
+        border-color: $maroon;
+        background-color: $peru;
+
+        .about_card__icon {
+            i,
+            h3 {
+                color: $maroonDark;
+            }
+        }
+
+        .about_card__content ul li::marker {
+            color: $maroonDark;
+        }
+    }
+
+    .card {
+        backdrop-filter: blur(3px) brightness(130%);
+
+        h3,
+        p {
+            @include font($color: $offBlack);
+        }
+
+        h3::selection,
+        p::selection,
+        a::selection {
+            background: $nightBlue;
+            color: $blueOne;
+        }
+
+        &:hover {
+            backdrop-filter: blur(3px) brightness(150%);
+        }
+    }
+
+    &#contact main.content form {
+        backdrop-filter: blur(3px) brightness(130%);
+
+        input:not([type="submit"]),
+        textarea {
+            @include font($color: $offBlack);
+        }
+    }
+}

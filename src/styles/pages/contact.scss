@@ -28,10 +28,6 @@
             @include font($tracking: 0.8px, $size: 12px, $weight: 500);
             margin-top: -0.5rem;
             margin-bottom: 0.75rem;
-
-            &.message-chars-left {
-                color: $moonSilver;
-            }
         }
     }
 

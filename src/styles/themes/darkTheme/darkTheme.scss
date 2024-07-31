@@ -25,11 +25,13 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
     background-color: #010b12;
 
     .midground svg path {
+        transform: scaleY(1) scaleX(1);
         fill: $darkCyan;
     }
 
     .foreground svg path {
-        fill: $nightBlue;
+        transform: scaleY(1) scaleX(1);
+        fill: #122631;
     }
 
     // element colors
@@ -73,9 +75,15 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
     }
 
     // nav menu
-    nav .navigation .nav_menu {
-        @include box-shadow(0px, 0px, 16px, rgba(0, 0, 0, 0.6));
-        backdrop-filter: blur(25px);
+    nav .navigation {
+        .nav_button span {
+            background-color: $peru;
+        }
+
+        .nav_menu {
+            @include box-shadow(0px, 0px, 16px, rgba(0, 0, 0, 0.6));
+            backdrop-filter: blur(25px);
+        }
     }
 
     // headers
@@ -110,7 +118,7 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
     }
 
     .submit_button {
-        border-color: $moonSilver;
+        @include border-outline($borderColor: $moonSilver);
 
         input,
         > i {
@@ -123,6 +131,22 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
             input,
             i {
                 color: $nightBlue !important;
+            }
+        }
+    }
+
+    .darkmode_switch_container#dark {
+        background-color: #434a4c;
+
+        .wrapper img[class*="icon"] {
+            &.dark {
+                &.sun_icon {
+                    filter: invert(40%);
+                }
+
+                &.moon_icon {
+                    filter: invert(80%);
+                }
             }
         }
     }
@@ -187,6 +211,10 @@ $log: linear-gradient(#e66465, $darkOliveGreen);
         input:not([type="submit"]),
         textarea {
             @include font($color: $offBlack);
+        }
+
+        .message-chars-left {
+            color: $moonSilver;
         }
     }
 }

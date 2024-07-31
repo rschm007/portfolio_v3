@@ -1,0 +1,15 @@
+@import "../../../imports";
+
+.background.light {
+    .clouds_container {
+        @include width-height($width: 100%, $height: 100%);
+        position: fixed;
+        z-index: 0;
+
+        #clouds {
+            #cloud1 {
+                transform-origin: 0px 0px;
+            }
+        }
+    }
+}

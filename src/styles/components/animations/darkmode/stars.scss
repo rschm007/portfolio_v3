@@ -11,12 +11,12 @@
 
 @keyframes animShootingStar {
   from {
-    transform: translateY(0px) translateX(0px) rotate(-45deg);
+    transform: translateY(0px) translateX(0px) rotate(-65deg);
     opacity: 1;
     height: 5px;
   }
   to {
-    transform: translateY(40vh) translateX(40vw) rotate(-45deg);
+    transform: translateY(5vh) translateX(40vw) rotate(-65deg);
     opacity: 1;
     height: 40vh;
   }
@@ -24,12 +24,12 @@
 
 @keyframes animShootingStar-2 {
   from {
-    transform: translateY(0px) translateX(0px) rotate(-45deg);
+    transform: translateY(0px) translateX(0px) rotate(-65deg);
     opacity: 1;
     height: 5px;
   }
   to {
-    transform: translateY(20vh) translateX(20vw) rotate(-45deg);
+    transform: translateY(5vh) translateX(30vw) rotate(-65deg);
     opacity: 1;
     height: 40vh;
   }
@@ -54,14 +54,13 @@ $shadows-big: multiple-box-shadow(100);
 
 .background:not(#work) {
   .shooting-star {
+    @include width-height($width: 1px, $height: 50px);
     z-index: 2;
-    width: 1px;
-    height: 50px;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     position: absolute;
     top: 0;
-    left: 20vw;
+    left: 10vw;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
     animation: animShootingStar 3s linear infinite;
     -webkit-transition: all 2000ms linear;
@@ -70,8 +69,7 @@ $shadows-big: multiple-box-shadow(100);
 
   .shooting-star-2 {
     z-index: 2;
-    width: 1px;
-    height: 50px;
+    @include width-height($width: 1px, $height: 50px);
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     position: absolute;

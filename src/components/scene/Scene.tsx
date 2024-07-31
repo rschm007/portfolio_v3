@@ -1,4 +1,4 @@
-import { Campfire, Stars } from "components";
+import { Campfire, Clouds, Stars } from "components";
 import { useTheme } from "hooks";
 import React from "react";
 
@@ -12,6 +12,12 @@ export const Scene = () => {
 					<Stars />
 
 					<div className="moon" />
+				</>
+			)}
+
+			{!darkMode && (
+				<>
+					<Clouds />
 				</>
 			)}
 

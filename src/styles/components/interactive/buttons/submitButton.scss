@@ -2,12 +2,7 @@
 
 .submit_button {
     @include flex($direction: row);
-    @include border-outline(
-        $noOutline: true,
-        $borderStyle: solid,
-        $borderWidth: 1px,
-        $borderRadius: 4px
-    );
+    @include border-outline( $borderWidth: 1px, $borderStyle: solid, $borderRadius: 200px);
     @include transition($time-in: 250ms, $time-out: 250ms);
     @include transform(scale(100%));
     background-color: transparent;
