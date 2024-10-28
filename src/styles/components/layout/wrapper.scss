@@ -200,7 +200,7 @@
     }
 
     > #main {
-      margin-top: -6rem;
+      margin-top: 5rem;
     }
 
     #about {
@@ -257,6 +257,8 @@
 
     #contact .contact_container {
       flex-wrap: wrap;
+      width: 100%;
+      margin-top: 30%;
 
       > div:nth-child(2) {
         margin-top: 0;

@@ -9,7 +9,8 @@ export const Navigation = () => {
 			<Wrapper className={`navigation ${open ? "open" : "closed"}`}>
 				<div
 					className={`nav_button ${open ? "open" : "closed"}`}
-					onClick={() => setOpen(!open)}>
+					onClick={() => setOpen(!open)}
+				>
 					<span />
 					<span />
 					<span />
@@ -18,10 +19,26 @@ export const Navigation = () => {
 					<span />
 				</div>
 				<div className="nav_menu">
-					<LinkButton className="nav_link" href="/home" content="home" />
-					<LinkButton className="nav_link" href="/about" content="about" />
-					<LinkButton className="nav_link" href="/work" content="work" />
-					<LinkButton className="nav_link" href="/contact" content="contact" />
+					<LinkButton
+						className="nav_link"
+						href="/home"
+						content="home"
+					/>
+					<LinkButton
+						className="nav_link"
+						href="/about"
+						content="about"
+					/>
+					<LinkButton
+						className="nav_link"
+						href="/work"
+						content="work"
+					/>
+					<LinkButton
+						className="nav_link"
+						href="/contact"
+						content="contact"
+					/>
 				</div>
 			</Wrapper>
 		</nav>
