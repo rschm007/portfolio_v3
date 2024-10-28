@@ -237,10 +237,7 @@
           }
 
           .card_1__img {
-            right: 0;
-            top: unset;
-            margin-right: 1.5rem;
-            margin-top: -3.5rem;
+            display: none;
 
             img {
               @include width-height(
