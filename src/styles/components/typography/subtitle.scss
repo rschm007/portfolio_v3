@@ -2,6 +2,18 @@
 @use "../../variables";
 
 .subtitle {
+  a {
+    @include mixins.transition($time-in: 0.2s);
+    color: variables.$fireBright;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+
+    &:hover {
+      @include mixins.hoverBrighten();
+    }
+  }
+
   &.main,
   &.about,
   &.contact {

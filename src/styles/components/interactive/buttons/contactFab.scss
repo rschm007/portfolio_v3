@@ -1,0 +1,47 @@
+@use "../../../mixins";
+@use "../../../variables";
+
+.contact_fab {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 40;
+
+  a {
+    @include mixins.flex($direction: row);
+    @include mixins.font(
+      $color: variables.$nightBlue,
+      $size: 16px,
+      $weight: 600,
+      $decoration: none
+    );
+    @include mixins.box-shadow(0px, 6px, 20px, rgba(0, 0, 0, 0.45));
+    @include mixins.transition($time-in: 0.2s);
+    align-items: center;
+    column-gap: 0.6rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    background-color: variables.$fireBright;
+
+    i {
+      font-size: 16px;
+    }
+
+    &:hover {
+      @include mixins.transform(scale(1.05));
+      filter: drop-shadow(0 0 14px rgba(255, 153, 51, 0.55));
+    }
+  }
+}
+
+@include mixins.for-size(phone-only) {
+  .contact_fab {
+    right: 1rem;
+    bottom: 1rem;
+
+    a {
+      padding: 0.75rem 1.1rem;
+      font-size: 15px;
+    }
+  }
+}

@@ -33,10 +33,12 @@
         @include mixins.transition;
         @include mixins.transform(scale(1.2));
       }
+    }
 
-      .btn_label::after {
-        opacity: 1;
-      }
+    // reveal the underline on hover AND on the active route (NavLink adds .active)
+    &:hover .btn_label::after,
+    &.active .btn_label::after {
+      opacity: 1;
     }
   }
 

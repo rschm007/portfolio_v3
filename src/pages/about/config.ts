@@ -3,9 +3,10 @@ export const aboutConfig = {
 		"React",
 		"Next.js",
 		"TypeScript",
-		"styled-components",
 		"Three.js",
 		"Storybook",
+		"SCSS / SASS",
+		"Tailwind CSS",
 	],
 	ai: [
 		"LLM APIs",
@@ -15,5 +16,5 @@ export const aboutConfig = {
 		"Snowflake",
 	],
 	backend: ["Python", "REST APIs", "AWS", "CI/CD", "Datadog", "Testing"],
-	tools: ["Figma", "Adobe Creative Suite", "Git", "Postman", "VS Code"],
+	tools: ["Figma", "Adobe CS", "Git", "Postman", "VS Code"],
 };

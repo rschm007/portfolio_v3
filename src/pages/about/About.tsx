@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { aboutConfig } from "./config";
 import {
 	Wrapper,
@@ -5,7 +6,6 @@ import {
 	Subtitle,
 	AboutCard,
 	List,
-	LinkButton,
 	PageMeta,
 } from "components";
 
@@ -16,11 +16,16 @@ export const About = () => {
 		<Wrapper id="about">
 			<PageMeta title="About" />
 			<Header tag="h1" content="About" className="header_about__hero">
-				<Subtitle
-					tag="p"
-					content="I'm Robert Schmahl, a Senior Full-Stack & Applied AI Engineer based in Irvine, CA. At Seek, I build AI-powered data experiences — turning LLM capabilities into intuitive, production-grade user workflows."
-					className="about"
-				/>
+				<Subtitle tag="p" className="about">
+					{"I'm Robert Schmahl, a Senior Full-Stack & Applied AI Engineer based in sunny California. At "}
+					<a
+						href="https://www.seekinsights.com/"
+						target="_blank"
+						rel="noopener noreferrer">
+						Seek Insights
+					</a>
+					{", I build AI-powered data experiences — turning LLM capabilities into intuitive, production-grade user workflows."}
+				</Subtitle>
 				<Subtitle
 					tag="p"
 					content="I work across the stack in React, TypeScript, and Python — designing backend services and APIs that integrate AI models, and shipping the interfaces on top, with the testing, CI/CD, and observability to keep it reliable at scale. Put simply: I turn “it worked in dev” into production systems."
@@ -71,17 +76,11 @@ export const About = () => {
 					content="Open to freelance"
 					className="services_heading"
 				/>
-				<Subtitle
-					tag="p"
-					content="Alongside my full-time work, I take select freelance projects through Robert Schmahl Design — React & Next.js apps, full-stack MVPs, and AI-powered features. Have something in mind?"
-					className="services_text"
-				/>
-				<LinkButton
-					href="/contact"
-					iconClassName="fa-solid fa-paper-plane"
-					content="Let's talk"
-					className="services"
-				/>
+				<Subtitle tag="p" className="services_text">
+					{"Alongside my full-time work, I take select freelance projects through Robert Schmahl Design. Check out my "}
+					<Link to="/work">Work page</Link>
+					{" for more details on what I've built. Have something in mind?"}
+				</Subtitle>
 			</Wrapper>
 		</Wrapper>
 	);

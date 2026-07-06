@@ -19,11 +19,7 @@ export const Navigation = () => {
 					<span />
 				</div>
 				<div className="nav_menu">
-					<LinkButton
-						className="nav_link"
-						href="/home"
-						content="home"
-					/>
+					<LinkButton className="nav_link" href="/" content="home" />
 					<LinkButton
 						className="nav_link"
 						href="/about"

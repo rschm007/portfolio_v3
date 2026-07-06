@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ButtonProps } from "@types";
 
@@ -31,11 +31,11 @@ export const LinkButton = ({
 	return (
 		<motion.button id={id} {...commonProps}>
 			{relativeLink && (
-				<Link to={href}>
+				<NavLink to={href} end={href === "/"}>
 					{iconClassName && <i className={iconClassName} />}
 
 					<span className="btn_label">{content}</span>
-				</Link>
+				</NavLink>
 			)}
 
 			{!relativeLink && (
