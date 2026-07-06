@@ -8,6 +8,7 @@ import {
 	Subtitle,
 	LinkButton,
 	DownloadButton,
+	PageMeta,
 } from "components";
 
 // using react-hook-form https://react-hook-form.com
@@ -15,6 +16,7 @@ import {
 
 export const Contact = () => {
 	const [formSubmitted, setFormSubmitted] = useState(false);
+	const [submitError, setSubmitError] = useState(false);
 	const form = useRef(null);
 
 	const {
@@ -27,20 +29,16 @@ export const Contact = () => {
 	const serviceId = "service_099ykyu";
 	const publicKey = "PM7WpMK3j-g1tPpJt";
 
-	const onSubmit: SubmitHandler<FieldValues> = (data) =>
-		sendForm(serviceId, "template_qxzz12l", form.current ?? "", {
+	const onSubmit: SubmitHandler<FieldValues> = () => {
+		setSubmitError(false);
+
+		return sendForm(serviceId, "template_qxzz12l", form.current ?? "", {
 			publicKey: publicKey,
 		}).then(
-			(res) => {
-				console.log("SUCCESS!", res.status, res.text);
-				console.log(data);
-
-				setFormSubmitted(true);
-			},
-			(err) => {
-				console.log("ERROR", err);
-			},
+			() => setFormSubmitted(true),
+			() => setSubmitError(true),
 		);
+	};
 
 	const message = watch("message") || "";
 	const messageCharactersLeft = 1500 - message.length;
@@ -50,6 +48,7 @@ export const Contact = () => {
 
 	return (
 		<Wrapper id="contact">
+			<PageMeta title="Contact" />
 			<Wrapper className="contact_container">
 				<Header
 					tag="h1"
@@ -61,7 +60,9 @@ export const Contact = () => {
 						content={
 							formSubmitted
 								? "Thanks, talk to you soon!"
-								: "Let's get in touch."
+								: submitError
+									? "Something went wrong — please try again."
+									: "Let's get in touch."
 						}
 						className="contact"
 					/>

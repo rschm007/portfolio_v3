@@ -4,6 +4,7 @@ import {
 	Subtitle,
 	ContentCard,
 	LinkButton,
+	PageMeta,
 } from "../../components";
 import CashCommandsImg from "../../assets/cashcommands.jpg";
 import ForbesAndersenImg from "../../assets/forbesandersen.png";
@@ -15,6 +16,7 @@ import SoundandStageLogo from "../../assets/soundandstage.png";
 export const Work = () => {
 	return (
 		<Wrapper id="work">
+			<PageMeta title="Work" />
 			<Header tag="h1" content="Work" className="header_work__hero">
 				<Subtitle
 					tag="p"
@@ -25,17 +27,6 @@ export const Work = () => {
 
 			<Wrapper className="work_container">
 				<Wrapper className="cards_work_1">
-					{/* <ContentCard
-                        header="Babelbox"
-                        description="Play a game of Liar Liar live with your friends. Built in React."
-                        img={true} imgSrc={BavelImg} imgAlt="Bavel Logo" imgClass="project_logo"
-                    >
-                        <div className="flex_row card_buttons">
-                            <LinkButton relativeLink={false} href="https://github.com/https-github-com-steversonTong/BabelBox" icon="fab fa-github" content="Github" class="card_button github" />
-                            <LinkButton relativeLink={false} href="https://babelbox-react.herokuapp.com/" icon="fas fa-external-link-alt" content="Deployed app" class="card_button app" />
-                        </div>
-                    </ContentCard> */}
-
 					<ContentCard
 						header="The Event Community"
 						description="Find event vendors and venues, leave reviews, and book services. Built in Remix."

@@ -1,8 +1,9 @@
-import { Wrapper, Header, Subtitle, LinkButton } from "components";
+import { Wrapper, Header, Subtitle, LinkButton, PageMeta } from "components";
 
 export const Main = () => {
 	return (
 		<Wrapper id="main">
+			<PageMeta />
 			<Header tag="h1" content="Hi! I'm Robert." className="header_main__hero">
 				<Subtitle
 					tag="p"

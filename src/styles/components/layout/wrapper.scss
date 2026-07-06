@@ -29,6 +29,11 @@
   // about page
   .about_container {
     @include mixins.flex(row);
+    align-items: flex-start;
+    // Reserve the tallest expanded-card height (Tech ≈ 379px) so hovering a
+    // card doesn't change the container height — otherwise the whole block
+    // re-centers and the heading + sibling cards jump on hover.
+    min-height: 24rem;
     margin: 2rem 10%;
     column-gap: 2rem;
   }
@@ -211,6 +216,8 @@
     .about_container {
       flex-wrap: wrap;
       row-gap: 1rem;
+      // cards are always expanded on mobile (no hover), so no reserve needed
+      min-height: unset;
     }
 
     #work .work_container {
