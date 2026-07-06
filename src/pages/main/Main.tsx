@@ -7,7 +7,7 @@ export const Main = () => {
 			<Header tag="h1" content="Hi! I'm Robert." className="header_main__hero">
 				<Subtitle
 					tag="p"
-					content="I'm a Software Engineer from California."
+					content="Senior Full-Stack & Applied AI Engineer. Building warm, human-centered systems in a cold, automated world."
 					className="about"
 				/>
 
