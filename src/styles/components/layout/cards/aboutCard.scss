@@ -1,19 +1,20 @@
-@import "../../../imports";
+@use "../../../mixins";
+@use "../../../variables";
 
 .about_card {
-  @include flex(column);
-  @include width-height(155px, 90px);
-  @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
-  @include transition($time-in: 250ms, $time-out: 250ms);
-  @include transform(scale(100%));
+  @include mixins.flex(column);
+  @include mixins.width-height(155px, 90px);
+  @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+  @include mixins.transition($time-in: 250ms, $time-out: 250ms);
+  @include mixins.transform(scale(100%));
   padding: 2rem 0rem;
-  border: 6px solid $maroon;
+  border: 6px solid variables.$maroon;
   border-radius: 10px;
-  background-color: $peru;
+  background-color: variables.$peru;
   overflow: hidden;
 
   .about_card__icon {
-    @include flex(column);
+    @include mixins.flex(column);
     height: 100%;
     max-height: 95px;
     align-self: center;
@@ -21,7 +22,7 @@
 
     i {
       font-size: 58px;
-      color: $maroonDark;
+      color: variables.$maroonDark;
 
       &.fa-file-code {
         font-size: 55px;
@@ -29,8 +30,8 @@
     }
 
     h3 {
-      @include font(
-        $color: $maroonDark,
+      @include mixins.font(
+        $color: variables.$maroonDark,
         $align: center,
         $weight: 600,
         $transform: uppercase
@@ -45,7 +46,7 @@
 
   .about_card__content {
     ul {
-      @include flex(column);
+      @include mixins.flex(column);
       justify-content: center;
       padding: 0;
       margin: 1rem;
@@ -54,14 +55,14 @@
         margin: 3px 0;
 
         &::marker {
-          color: $maroonDark;
+          color: variables.$maroonDark;
         }
       }
     }
   }
 
   &:hover {
-    @include transform(scale(105%), $important: true);
+    @include mixins.transform(scale(105%), $important: true);
   }
 
   &.open {
@@ -90,12 +91,12 @@
   }
 }
 
-@include for-size(phone-only) {
+@include mixins.for-size(phone-only) {
   #about {
     overflow: scroll;
 
     .about_card {
-      @include width-height($width: 10rem, $height: 6.5rem);
+      @include mixins.width-height($width: 10rem, $height: 6.5rem);
       padding: 1rem 0.5rem;
       flex-direction: row;
       min-width: min-content;

@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 /**
  * @description default props for components. Extend this to add your own props
  * @param className string

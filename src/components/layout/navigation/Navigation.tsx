@@ -1,5 +1,5 @@
 import { LinkButton, Wrapper } from "components";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Navigation = () => {
 	const [open, setOpen] = useState(true);

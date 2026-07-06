@@ -1,4 +1,5 @@
-@import "../../../imports";
+@use "../../../mixins";
+@use "../../../variables";
 
 @mixin fireGlow() {
   box-shadow:
@@ -80,10 +81,10 @@
 @keyframes glow {
   0%,
   100% {
-    background-color: $fireEmber;
+    background-color: variables.$fireEmber;
   }
   50% {
-    background-color: $fireBright;
+    background-color: variables.$fireBright;
   }
 }
 
@@ -103,11 +104,11 @@
   bottom: 45%;
 
   .campfire {
-    @include transition($time-in: 1.2s, $time-out: 1.2s);
-    @include transform(translateY(0%));
+    @include mixins.transition($time-in: 1.2s, $time-out: 1.2s);
+    @include mixins.transform(translateY(0%));
 
     .smoke {
-      @include width-height(630px, 400px);
+      @include mixins.width-height(630px, 400px);
       transform: skewX(5deg) scale(0.9);
       position: absolute;
       bottom: 30%;
@@ -130,7 +131,7 @@
       mask-position: center bottom;
 
       svg {
-        @include width-height(600px, 400px);
+        @include mixins.width-height(600px, 400px);
         position: absolute;
         top: 0;
 
@@ -178,7 +179,7 @@
     }
 
     .fire {
-      @include width-height($width: 140px, $height: 140px);
+      @include mixins.width-height($width: 140px, $height: 140px);
       position: absolute;
       top: 58%;
       right: 288px;
@@ -195,21 +196,21 @@
       .main .main_fire,
       .right,
       .left {
-        @include width-height($width: 115%, $height: 115%);
+        @include mixins.width-height($width: 115%, $height: 115%);
       }
 
       .right .main_fire,
       .left .main_fire {
-        @include width-height($width: 100%, $height: 100%);
+        @include mixins.width-height($width: 100%, $height: 100%);
         top: 20%;
       }
 
       .main_fire,
       .particle_fire {
-        @include mask-image(
+        @include mixins.mask-image(
           -webkit-gradient(linear, left top, left bottom, from(rgb(255, 120, 0)), to(rgba(212, 51, 34, 0.6)))
         );
-        @include filter(drop-shadow(0 0 10px $fireShadow));
+        @include mixins.filter(drop-shadow(0 0 10px variables.$fireShadow));
       }
 
       .main {
@@ -220,18 +221,18 @@
         .main_fire {
           background-image: radial-gradient(
             farthest-corner at 10px 0,
-            $fireShadow 0%,
-            $fireEmber 95%
+            variables.$fireShadow 0%,
+            variables.$fireEmber 95%
           );
           transform: scaleX(0.8) rotate(45deg);
           border-radius: 0 40% 60% 40%;
         }
 
         .particle_fire {
-          @include width-height($width: 10px, $height: 10px);
+          @include mixins.width-height($width: 10px, $height: 10px);
           top: 60%;
           left: 45%;
-          background-color: $fireEmber;
+          background-color: variables.$fireEmber;
           border-radius: 50%;
           animation: particleUp 2s ease-out 0;
           animation-iteration-count: infinite;
@@ -246,16 +247,16 @@
 
         .main_fire {
           right: -45%;
-          background-color: $fireEmber;
+          background-color: variables.$fireEmber;
           transform: scaleX(0.7) rotate(45deg);
           border-radius: 0 40% 60% 40%;
         }
 
         .particle_fire {
-          @include width-height($width: 15px, $height: 15px);
+          @include mixins.width-height($width: 15px, $height: 15px);
           top: 45%;
           left: 50%;
-          background-color: $fireEmber;
+          background-color: variables.$fireEmber;
           transform: scaleX(0.8) rotate(45deg);
           border-radius: 50%;
           animation: particleUp 2s ease-out 0;
@@ -271,16 +272,16 @@
 
         .main_fire {
           left: -30%;
-          background-color: $fireEmber;
+          background-color: variables.$fireEmber;
           transform: scaleX(0.7) rotate(45deg);
           border-radius: 0 40% 60% 40%;
         }
 
         .particle_fire {
-          @include width-height($width: 10%, $height: 10%);
+          @include mixins.width-height($width: 10%, $height: 10%);
           top: 10%;
           left: 20%;
-          background-color: $fireEmber;
+          background-color: variables.$fireEmber;
           border-radius: 50%;
           animation: particleUp 3s infinite ease-out 0;
           animation-iteration-count: infinite;
@@ -289,10 +290,10 @@
       }
 
       .bottom .main_fire {
-        @include width-height($width: 75%, $height: 75%);
+        @include mixins.width-height($width: 75%, $height: 75%);
         top: 30%;
         left: 20%;
-        background-color: $fireBright;
+        background-color: variables.$fireBright;
         transform: scaleX(0.8) rotate(45deg);
         border-radius: 0 40% 100% 40%;
         filter: blur(10px);
@@ -300,7 +301,7 @@
       }
 
       .glow {
-        @include width-height($width: 30%, $height: 0%);
+        @include mixins.width-height($width: 30%, $height: 0%);
         @include fireGlow();
         margin-left: 50%;
         margin-top: 50%;
@@ -314,15 +315,15 @@
 
     .logs {
       position: absolute;
-      @include transform(scale(1.5));
+      @include mixins.transform(scale(1.5));
       top: 91%;
       right: 585px;
       z-index: 2;
       margin-top: 14rem;
 
       .log {
-        @include width-height($width: 21px, $height: 120px);
-        background: $log;
+        @include mixins.width-height($width: 21px, $height: 120px);
+        background: variables.$log;
         position: absolute;
         bottom: 0;
         border-radius: 10px;
@@ -330,7 +331,7 @@
         box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 
         &:after {
-          @include width-height($width: 100%, $height: 20px);
+          @include mixins.width-height($width: 100%, $height: 20px);
           content: "";
           display: block;
           background: #ff915b;
@@ -385,8 +386,8 @@
         top: 180px;
         background-image: radial-gradient(
           circle at bottom right,
-          $rockLight,
-          $rockDark
+          variables.$rockLight,
+          variables.$rockDark
         );
         border-radius: 95px 95px 0 0;
       }
@@ -394,7 +395,7 @@
       .rock_big {
         &_5,
         &_4 {
-          @include box-shadow(
+          @include mixins.box-shadow(
             $top: 20px,
             $left: -30px,
             $blur: 26px,
@@ -403,7 +404,7 @@
         }
         &_1,
         &_2 {
-          @include box-shadow(
+          @include mixins.box-shadow(
             $top: -20px,
             $left: -30px,
             $blur: 26px,
@@ -411,14 +412,14 @@
           );
         }
         &_3 {
-          @include box-shadow($left: -20px, $blur: 26px, $inset: true);
+          @include mixins.box-shadow($left: -20px, $blur: 26px, $inset: true);
         }
         &_1:before,
         &_2:before,
         &_3:before,
         &_4:before,
         &_5:before {
-          @include box-shadow($blur: 30px, $color: #000);
+          @include mixins.box-shadow($blur: 30px, $color: #000);
           content: "";
           position: absolute;
           background-color: #000;
@@ -429,61 +430,61 @@
           animation-fill-mode: both;
         }
         &_1:before {
-          @include width-height($width: 76px, $height: 18px);
-          @include transform(skewX(70deg));
+          @include mixins.width-height($width: 76px, $height: 18px);
+          @include mixins.transform(skewX(70deg));
           margin-top: 56px;
           left: 42px;
         }
         &_2:before {
-          @include width-height($width: 74px, $height: 18px);
-          @include transform(skewX(60deg));
+          @include mixins.width-height($width: 74px, $height: 18px);
+          @include mixins.transform(skewX(60deg));
           margin-top: 45px;
           left: 21px;
         }
         &_3:before {
-          @include width-height($width: 74px, $height: 18px);
+          @include mixins.width-height($width: 74px, $height: 18px);
           margin-top: 58px;
           left: 12px;
         }
         &_4:before {
-          @include width-height($width: 75px, $height: 18px);
-          @include transform(skewX(-35deg));
+          @include mixins.width-height($width: 75px, $height: 18px);
+          @include mixins.transform(skewX(-35deg));
           margin-top: 47px;
           left: -9px;
         }
         &_5:before {
-          @include width-height($width: 95px, $height: 18px);
-          @include transform(skewX(-65deg));
+          @include mixins.width-height($width: 95px, $height: 18px);
+          @include mixins.transform(skewX(-65deg));
           margin-top: 54px;
           left: -19px;
         }
         &_1,
         &_1_glow {
-          @include width-height($width: 95px, $height: 56px);
+          @include mixins.width-height($width: 95px, $height: 56px);
           top: 180px;
           right: -140px;
         }
         &_2,
         &_2_glow {
-          @include width-height($width: 80px, $height: 45px);
+          @include mixins.width-height($width: 80px, $height: 45px);
           top: 190px;
           right: -65px;
         }
         &_3,
         &_3_glow {
-          @include width-height($width: 85px, $height: 58px);
+          @include mixins.width-height($width: 85px, $height: 58px);
           top: 176px;
           right: 10px;
         }
         &_4,
         &_4_glow {
-          @include width-height($width: 70px, $height: 48px);
+          @include mixins.width-height($width: 70px, $height: 48px);
           top: 185px;
           right: 80px;
         }
         &_5,
         &_5_glow {
-          @include width-height($width: 90px, $height: 54px);
+          @include mixins.width-height($width: 90px, $height: 54px);
           top: 179px;
           right: 145px;
         }
@@ -491,27 +492,27 @@
     }
 
     .ground {
-      @include width-height(100%, 15%);
+      @include mixins.width-height(100%, 15%);
       position: absolute;
       z-index: 1;
       bottom: 20%;
     }
 
-    @include for-size(desktop-up) {
-      @include transform(scale(1.1));
+    @include mixins.for-size(desktop-up) {
+      @include mixins.transform(scale(1.1));
       right: -4rem;
     }
   }
 }
 
-@include for-size(tablet-portrait-up) {
+@include mixins.for-size(tablet-portrait-up) {
   .campfire_container {
     bottom: 25%;
     right: -6rem;
   }
 }
 
-@include for-size(phone-only) {
+@include mixins.for-size(phone-only) {
   .campfire_container {
     transform: scale(0.6);
     bottom: 12rem;
@@ -542,12 +543,12 @@
   }
 
   #about ~ .campfire_container .campfire {
-    @include transition($time-in: 0.3s, $time-out: 0.3s);
+    @include mixins.transition($time-in: 0.3s, $time-out: 0.3s);
     transform: scale(0.8) translateX(500px);
   }
 
   #contact ~ .campfire_container .campfire {
-    @include transition($time-in: 0.8 s, $time-out: 0.8 s);
+    @include mixins.transition($time-in: 0.8 s, $time-out: 0.8 s);
     transform: scale(0.8) translateX(500px);
   }
 }

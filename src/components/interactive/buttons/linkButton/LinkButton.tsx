@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import React from "react";
 import { ButtonProps } from "@types";
 
 export interface LinkButtonProps extends ButtonProps {

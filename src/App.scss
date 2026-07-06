@@ -1,22 +1,24 @@
-@import "./styles/imports";
+@use "styles/imports";
 
 // animations
-@import "./styles/components/animations/nightmode/campfire.scss";
-@import "./styles/components/animations/nightmode/stars.scss";
+@use "styles/components/animations/nightmode/campfire.scss";
+@use "styles/components/animations/nightmode/stars.scss";
 
 // interactive components
-@import "./styles/components/interactive/buttons/linkButton.scss";
-@import "./styles/components/interactive/buttons/downloadButton.scss";
+@use "styles/components/interactive/buttons/linkButton.scss";
+@use "styles/components/interactive/buttons/downloadButton.scss";
 
 // layout components
-@import "./styles/components/layout/header.scss";
-@import "./styles/components/layout/navigation.scss";
-@import "./styles/components/layout/wrapper.scss";
-@import "./styles/components/layout/cards/aboutCard.scss";
-@import "./styles/components/layout/cards/contentcard.scss";
+@use "styles/components/layout/header.scss";
+@use "styles/components/layout/navigation.scss";
+@use "styles/components/layout/wrapper.scss";
+@use "styles/components/layout/cards/aboutCard.scss";
+@use "styles/components/layout/cards/contentcard.scss";
 
 // typography components
-@import "./styles/components/typography/subtitle.scss";
+@use "styles/components/typography/subtitle.scss";
+@use "styles/mixins";
+@use "styles/variables";
 
 
 // globals
@@ -25,22 +27,22 @@ body {
 }
 
 h1 {
-  @include font($size: 75px);
+  @include mixins.font($size: 75px);
   &::selection {
-    background: $fireBright;
-    color: $offBlack;
+    background: variables.$fireBright;
+    color: variables.$offBlack;
   }
 }
 
 h2 {
-  @include font($size: 60px);
+  @include mixins.font($size: 60px);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  @include font($tracking: 0.8px, $family: $heading);
+  @include mixins.font($tracking: 0.8px, $family: variables.$heading);
 }
 
 h5,
@@ -52,19 +54,19 @@ span,
 input,
 input::placeholder,
 textarea {
-  @include font($family: $body);
+  @include mixins.font($family: variables.$body);
 }
 
 .flex_row {
-  @include flex(row);
+  @include mixins.flex(row);
 }
 
 .flex_column {
-  @include flex(column);
+  @include mixins.flex(column);
 }
 
-@include for-size(phone-only) {
+@include mixins.for-size(phone-only) {
   h1 {
-    @include font($size: 55px);
+    @include mixins.font($size: 55px);
   }
 }

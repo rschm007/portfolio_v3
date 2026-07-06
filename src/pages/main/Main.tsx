@@ -1,5 +1,4 @@
 import { Wrapper, Header, Subtitle, LinkButton } from "components";
-import React from "react";
 
 export const Main = () => {
 	return (

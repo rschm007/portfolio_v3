@@ -1,7 +1,6 @@
 import { CardProps } from "@types";
 import { Wrapper } from "components";
 import { motion } from "framer-motion";
-import React from "react";
 
 export interface ContentCardProps extends CardProps {
 	img?: boolean;

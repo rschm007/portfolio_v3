@@ -1,6 +1,11 @@
+@use "sass:color";
+
 // important helper function
 @function if-important($important) {
-  @return #{if($important, "!important", "")};
+  @if $important {
+    @return #{"!important"};
+  }
+  @return #{""};
 }
 
 // fonts
@@ -153,7 +158,7 @@
 @mixin scrollbars(
   $size,
   $foreground-color,
-  $background-color: mix($foreground-color, white, 50%)
+  $background-color: color.mix($foreground-color, white, 50%)
 ) {
   // For Google Chrome
   &::-webkit-scrollbar {

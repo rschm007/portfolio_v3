@@ -1,9 +1,10 @@
-@import "../../../imports";
+@use "../../../mixins";
+@use "../../../variables";
 
 .card {
-  @include box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
-  @include transition($time-in: 0.1s, $time-out: 0.2s);
-  @include transform(scale(100%));
+  @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+  @include mixins.transition($time-in: 0.1s, $time-out: 0.2s);
+  @include mixins.transform(scale(100%));
   height: min-content;
   width: 375px;
   backdrop-filter: blur(3px) brightness(130%);
@@ -22,7 +23,7 @@
   }
 
   .logo_bg {
-    @include width-height(
+    @include mixins.width-height(
       $width: 130px,
       $maxWidth: 130px,
       $minWidth: 130px,
@@ -36,7 +37,7 @@
   }
 
   h3 {
-    @include font($size: 30px, $color: $moonSilver, $weight: 800, $align: left);
+    @include mixins.font($size: 30px, $color: variables.$moonSilver, $weight: 800, $align: left);
     width: 95%;
     filter: brightness(105%);
     margin: 0;
@@ -44,9 +45,9 @@
   }
 
   p {
-    @include font(
+    @include mixins.font(
       $size: 16px,
-      $color: $moonSilver,
+      $color: variables.$moonSilver,
       $weight: 400,
       $align: left,
       $leading: 24px
@@ -58,8 +59,8 @@
   h3::selection,
   p::selection,
   a::selection {
-    background: $moonSilver;
-    color: $offBlack;
+    background: variables.$moonSilver;
+    color: variables.$offBlack;
   }
 
   .card_buttons {
@@ -67,20 +68,20 @@
 
     a:first-child {
       i.fas.fa-external-link-alt {
-        @include font($size: 21px);
+        @include mixins.font($size: 21px);
       }
     }
   }
 
   &:hover {
-    @include transform(scale(102%), $important: true);
+    @include mixins.transform(scale(102%), $important: true);
     backdrop-filter: blur(3px) brightness(150%);
   }
 }
 
-@include for-size(tablet-landscape-up) {
+@include mixins.for-size(tablet-landscape-up) {
   .card .card_1__img {
-    @include width-height(
+    @include mixins.width-height(
       $width: 130px,
       $maxWidth: 130px,
       $minWidth: 130px,
@@ -91,7 +92,7 @@
   }
 }
 
-@include for-size(phone-only) {
+@include mixins.for-size(phone-only) {
   .card h3 {
     width: 80%;
   }

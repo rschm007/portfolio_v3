@@ -1,4 +1,3 @@
-import React from "react";
 import { Campfire } from "./campfire";
 
 export const NightMode = () => {

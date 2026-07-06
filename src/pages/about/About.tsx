@@ -1,4 +1,3 @@
-import React from "react";
 // import { aboutConfig } from "./config";
 import { Wrapper, Header, Subtitle } from "components";
 

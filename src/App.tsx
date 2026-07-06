@@ -1,7 +1,6 @@
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import React from "react";
 import { Navigation, NightMode, Stars, Wrapper } from "./components";
 import { About, Contact, Main, Work } from "./pages";
 

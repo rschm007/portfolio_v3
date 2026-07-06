@@ -1,35 +1,36 @@
-@import "../../imports";
+@use "../../mixins";
+@use "../../variables";
 
 .subtitle {
   &.main,
   &.about,
   &.contact {
-    @include font($size: 18px, $color: $peru, $weight: 100);
+    @include mixins.font($size: 18px, $color: variables.$peru, $weight: 100);
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 
     p::selection {
-      background: $peru;
-      color: $offBlack;
+      background: variables.$peru;
+      color: variables.$offBlack;
     }
   }
   &.work {
-    @include font($size: 18px, $color: $moonSilver, $weight: 100);
+    @include mixins.font($size: 18px, $color: variables.$moonSilver, $weight: 100);
     text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
     margin-left: 1rem;
 
     p::selection {
-      background: $moonSilver;
-      color: $offBlack;
+      background: variables.$moonSilver;
+      color: variables.$offBlack;
     }
   }
 
   &.contact_subtitle__links {
-    @include font($size: 18px, $color: $peru, $weight: 100);
+    @include mixins.font($size: 18px, $color: variables.$peru, $weight: 100);
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 
     p::selection {
-      background: $peru;
-      color: $offBlack;
+      background: variables.$peru;
+      color: variables.$offBlack;
     }
 
     &:nth-child(3) {

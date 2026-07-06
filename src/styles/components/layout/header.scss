@@ -1,9 +1,10 @@
-@import "../../imports";
+@use "../../mixins";
+@use "../../variables";
 
 .header {
   &_main {
     &__hero {
-      @include font($color: $fireBright, $weight: 800, $align: left);
+      @include mixins.font($color: variables.$fireBright, $weight: 800, $align: left);
       width: calc(100vw - 60%);
       margin-left: 10%;
 
@@ -31,7 +32,7 @@
 
   &_about {
     &__hero {
-      @include font($color: $fireBright, $weight: 800, $align: left);
+      @include mixins.font($color: variables.$fireBright, $weight: 800, $align: left);
       width: calc(100vw - 60%);
       margin-left: 10%;
 
@@ -45,7 +46,7 @@
 
   &_contact {
     &__hero {
-      @include font($color: $fireBright, $weight: 800, $align: left);
+      @include mixins.font($color: variables.$fireBright, $weight: 800, $align: left);
       width: calc(100vw - 60%);
 
       h1 {
@@ -59,7 +60,7 @@
 
   &_work {
     &__hero {
-      @include font($color: $moonSilver, $weight: 800, $align: left);
+      @include mixins.font($color: variables.$moonSilver, $weight: 800, $align: left);
       margin-bottom: 1rem;
       margin-left: 10%;
 
@@ -70,15 +71,15 @@
         line-height: 82px;
 
         &::selection {
-          background: $moonSilver;
-          color: $offBlack;
+          background: variables.$moonSilver;
+          color: variables.$offBlack;
         }
       }
     }
   }
 }
 
-@include for-size(phone-only) {
+@include mixins.for-size(phone-only) {
   .header_about__hero {
     top: 10rem;
   }

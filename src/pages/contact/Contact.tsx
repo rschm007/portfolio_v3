@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { sendForm } from "@emailjs/browser";
 import {
 	Wrapper,

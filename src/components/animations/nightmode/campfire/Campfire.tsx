@@ -1,5 +1,4 @@
 import { Wrapper } from "components";
-import React from "react";
 
 export const Campfire = () => {
 	return (
