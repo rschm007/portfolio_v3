@@ -27,15 +27,44 @@
   }
 
   // about page
+  #about {
+    // content (intro + cards + services callout) exceeds one screen, so scroll
+    overflow-y: scroll;
+    @include mixins.scrollbars(0.5em, slategray);
+    padding-bottom: 4rem;
+  }
+
   .about_container {
     @include mixins.flex(row);
     align-items: flex-start;
-    // Reserve the tallest expanded-card height (Tech ≈ 379px) so hovering a
-    // card doesn't change the container height — otherwise the whole block
-    // re-centers and the heading + sibling cards jump on hover.
-    min-height: 24rem;
     margin: 2rem 10%;
     column-gap: 2rem;
+  }
+
+  .services_callout {
+    @include mixins.flex(column);
+    align-items: flex-start;
+    margin: 1rem 10% 0;
+    max-width: 40rem;
+    row-gap: 0.5rem;
+
+    .services_heading h2 {
+      @include mixins.font(
+        $size: 2rem,
+        $color: variables.$fireBright,
+        $weight: 700
+      );
+    }
+
+    .services_text {
+      @include mixins.font(
+        $size: 18px,
+        $color: variables.$peru,
+        $weight: 100
+      );
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.5rem;
+    }
   }
 
   // contact page

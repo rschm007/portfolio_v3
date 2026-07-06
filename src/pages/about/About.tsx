@@ -5,11 +5,12 @@ import {
 	Subtitle,
 	AboutCard,
 	List,
+	LinkButton,
 	PageMeta,
 } from "components";
 
 export const About = () => {
-	const { code, tech, programs, fun } = aboutConfig;
+	const { frontend, ai, backend, tools } = aboutConfig;
 
 	return (
 		<Wrapper id="about">
@@ -17,46 +18,70 @@ export const About = () => {
 			<Header tag="h1" content="About" className="header_about__hero">
 				<Subtitle
 					tag="p"
-					content="My name is Robert Schmahl. I'm a full stack engineer based in Orange County, CA."
+					content="I'm Robert Schmahl, a Senior Full-Stack & Applied AI Engineer based in Irvine, CA. At Seek, I build AI-powered data experiences — turning LLM capabilities into intuitive, production-grade user workflows."
 					className="about"
 				/>
 				<Subtitle
 					tag="p"
-					content="I build cool apps however I can, whenever I can, like SPA React applications, Shopify ecommerce sites, artist portfolios, and Wordpress multi-page sites."
+					content="I work across the stack in React, TypeScript, and Python — designing backend services and APIs that integrate AI models, and shipping the interfaces on top, with the testing, CI/CD, and observability to keep it reliable at scale. Put simply: I turn “it worked in dev” into production systems."
 					className="about"
 				/>
 				<Subtitle
 					tag="p"
-					content="I like dogs, good food, and campfires."
+					content="My path here wasn't typical — graphic design and communications first, then code — which shows up as strong design instincts and a real eye for UX."
+					className="about"
+				/>
+				<Subtitle
+					tag="p"
+					content="Off the clock: dogs, good food, and campfires."
 					className="about"
 				/>
 			</Header>
 
 			<Wrapper className="about_container">
 				<AboutCard
-					className="code"
-					icon="fa-solid fa-laptop-code"
-					header="Code">
-					<List list={code} />
+					className="frontend"
+					icon="fa-solid fa-code"
+					header="Frontend">
+					<List list={frontend} />
 				</AboutCard>
 
-				<AboutCard className="tech" icon="fas fa-tools" header="Tech">
-					<List list={tech} />
-				</AboutCard>
-
-				<AboutCard
-					className="programs"
-					icon="fa-solid fa-file-code"
-					header="Programs">
-					<List list={programs} />
+				<AboutCard className="ai" icon="fa-solid fa-robot" header="AI & Data">
+					<List list={ai} />
 				</AboutCard>
 
 				<AboutCard
-					className="fun"
-					icon="fa-solid fa-face-smile"
-					header="Fun">
-					<List list={fun} />
+					className="backend"
+					icon="fa-solid fa-server"
+					header="Backend">
+					<List list={backend} />
 				</AboutCard>
+
+				<AboutCard
+					className="tools"
+					icon="fa-solid fa-pen-ruler"
+					header="Design">
+					<List list={tools} />
+				</AboutCard>
+			</Wrapper>
+
+			<Wrapper className="services_callout">
+				<Subtitle
+					tag="h2"
+					content="Open to freelance"
+					className="services_heading"
+				/>
+				<Subtitle
+					tag="p"
+					content="Alongside my full-time work, I take select freelance projects through Robert Schmahl Design — React & Next.js apps, full-stack MVPs, and AI-powered features. Have something in mind?"
+					className="services_text"
+				/>
+				<LinkButton
+					href="/contact"
+					iconClassName="fa-solid fa-paper-plane"
+					content="Let's talk"
+					className="services"
+				/>
 			</Wrapper>
 		</Wrapper>
 	);

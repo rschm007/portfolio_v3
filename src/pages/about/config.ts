@@ -1,21 +1,19 @@
 export const aboutConfig = {
-	code: ["HTML", "CSS/SCSS", "TS/JS", "PHP", "C#"],
-	tech: [
-		"Next.js",
-		"Remix",
+	frontend: [
 		"React",
-		"TailwindCSS",
-		"Shopify",
-		"Firebase",
-		"MySQL",
+		"Next.js",
+		"TypeScript",
+		"styled-components",
+		"Three.js",
+		"Storybook",
 	],
-	programs: ["Figma", "Adobe Creative Suite", "VSCode", "Postman", "Git"],
-	fun: [
-		"Hiking",
-		"Kayaking",
-		"Woodworking",
-		"Aquascaping",
-		"Art & design",
-		"Powerlifting",
+	ai: [
+		"LLM APIs",
+		"Multi-agent pipelines",
+		"RAG / Text2SQL",
+		"Langfuse",
+		"Snowflake",
 	],
+	backend: ["Python", "REST APIs", "AWS", "CI/CD", "Datadog", "Testing"],
+	tools: ["Figma", "Adobe Creative Suite", "Git", "Postman", "VS Code"],
 };

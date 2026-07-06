@@ -23,10 +23,6 @@
     i {
       font-size: 58px;
       color: variables.$maroonDark;
-
-      &.fa-file-code {
-        font-size: 55px;
-      }
     }
 
     h3 {
@@ -67,22 +63,8 @@
 
   &.open {
     justify-content: flex-start;
-
-    &.code {
-      height: 255px;
-    }
-
-    &.tech {
-      height: 285px;
-    }
-
-    &.programs {
-      height: 275px;
-    }
-
-    &.fun {
-      height: 255px;
-    }
+    // single height that fits the tallest list (6 items); no per-card magic numbers
+    height: 22rem;
 
     .about_card__container {
       display: flex;
