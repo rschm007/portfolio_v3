@@ -30,7 +30,7 @@ export const DownloadButton = ({
 		>
 			{iconClassName && <i className={iconClassName} />}
 
-			{content}
+			<span className="btn_label">{content}</span>
 
 			{children}
 		</motion.button>

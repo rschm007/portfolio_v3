@@ -112,6 +112,27 @@
   transition-delay: $delay;
 }
 
+// Animated hover underline that always matches the width of the text it wraps.
+// Apply to an element that tightly wraps only the label text; reveal it by
+// setting `opacity: 1` on the `::after` from the interactive ancestor's :hover.
+@mixin text-underline($color, $offset: 0.6rem, $thickness: 2px) {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    @include transition($time-in: 0.25s);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: $offset;
+    width: 100%;
+    height: $thickness;
+    background-color: $color;
+    opacity: 0;
+  }
+}
+
 @mixin transform($property, $important: false) {
   -webkit-transform: ($property) if-important($important);
   -ms-transform: ($property) if-important($important);

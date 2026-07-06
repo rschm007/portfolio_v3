@@ -34,7 +34,7 @@ export const LinkButton = ({
 				<Link to={href}>
 					{iconClassName && <i className={iconClassName} />}
 
-					{content}
+					<span className="btn_label">{content}</span>
 				</Link>
 			)}
 
@@ -43,7 +43,7 @@ export const LinkButton = ({
 					{iconClassName && <i className={iconClassName} />}
 
 					<a href={href} target="_blank" rel="noopener noreferrer">
-						{content}
+						<span className="btn_label">{content}</span>
 					</a>
 				</>
 			)}

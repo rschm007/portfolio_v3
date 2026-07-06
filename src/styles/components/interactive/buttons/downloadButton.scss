@@ -14,15 +14,9 @@
   align-items: baseline;
   cursor: pointer;
 
-  &:before {
-    @include mixins.width-height($width: 115px, $height: 2px);
-    @include mixins.transition($time-in: 0.25s);
-    position: absolute;
-    opacity: 0;
-    margin-top: 2rem;
-    margin-left: 5px;
-    content: "";
-    background-color: variables.$peru;
+  // Hover underline tracks the label width automatically (see text-underline mixin).
+  .btn_label {
+    @include mixins.text-underline(variables.$peru);
   }
 
   &:hover {
@@ -33,18 +27,9 @@
       @include mixins.transform(scale(1.2));
     }
 
-    &:before {
-      @include mixins.transition;
+    .btn_label::after {
       opacity: 1;
     }
-  }
-
-  &.download a::before {
-    width: 112px;
-  }
-
-  &.github a::before {
-    width: 90px;
   }
 
   i {
@@ -52,18 +37,5 @@
     @include mixins.transition;
     @include mixins.transform(scale(1));
     padding: 0 0.5rem;
-  }
-
-  &.card_button {
-    align-items: center;
-
-    a {
-      @include mixins.font(
-        $size: 16px,
-        $color: variables.$moonSilver,
-        $weight: 400,
-        $align: left
-      );
-    }
   }
 }
