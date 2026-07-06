@@ -2,53 +2,78 @@
 @use "../../../variables";
 
 .about_card {
-  @include mixins.flex(column);
-  @include mixins.width-height(155px, 90px);
-  @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+  @include mixins.width-height($width: 11rem, $height: 14rem);
   @include mixins.transition($time-in: 250ms, $time-out: 250ms);
-  @include mixins.transform(scale(100%));
-  padding: 2rem 0rem;
-  border: 6px solid variables.$maroon;
-  border-radius: 10px;
-  background-color: variables.$peru;
-  overflow: hidden;
+  perspective: 1000px;
+  background-color: transparent;
 
-  .about_card__icon {
-    @include mixins.flex(column);
+  .about_card__inner {
+    position: relative;
+    width: 100%;
     height: 100%;
-    max-height: 95px;
-    align-self: center;
-    align-items: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
 
+  // the flip
+  &:hover .about_card__inner {
+    transform: rotateY(180deg);
+  }
+
+  // warm firelight glow while flipping
+  &:hover {
+    filter: drop-shadow(0 0 14px rgba(255, 153, 51, 0.45));
+  }
+
+  .about_card__face {
+    @include mixins.flex(column);
+    @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    padding: 1.5rem 1rem;
+    border: 6px solid variables.$maroon;
+    border-radius: 10px;
+    background-color: variables.$peru;
+  }
+
+  .about_card__front {
     i {
       font-size: 58px;
       color: variables.$maroonDark;
     }
 
-    h3 {
+    .icon_title {
       @include mixins.font(
         $color: variables.$maroonDark,
         $align: center,
         $weight: 600,
         $transform: uppercase
       );
+      margin-top: 0.75rem;
     }
   }
 
-  .about_card__container {
-    display: none;
-    padding: 0 1.75rem;
-  }
+  .about_card__back {
+    transform: rotateY(180deg);
 
-  .about_card__content {
     ul {
       @include mixins.flex(column);
       justify-content: center;
       padding: 0;
-      margin: 1rem;
+      margin: 0;
+      list-style-position: inside;
 
       li {
-        margin: 3px 0;
+        @include mixins.font(
+          $color: variables.$maroonDark,
+          $size: 15px,
+          $weight: 500
+        );
+        margin: 4px 0;
 
         &::marker {
           color: variables.$maroonDark;
@@ -56,56 +81,55 @@
       }
     }
   }
-
-  &:hover {
-    @include mixins.transform(scale(105%), $important: true);
-  }
-
-  &.open {
-    justify-content: flex-start;
-    // single height that fits the tallest list (6 items); no per-card magic numbers
-    height: 22rem;
-
-    .about_card__container {
-      display: flex;
-      padding: 0.75rem 0.75rem 0.75rem 1.75rem;
-    }
-  }
 }
 
+// On touch/phone there's no hover to trigger the flip, so drop the 3D and show
+// one static card with the icon + list stacked (bg/border move to the outer card).
 @include mixins.for-size(phone-only) {
-  #about {
-    overflow: scroll;
+  #about .about_card {
+    @include mixins.width-height($width: 100%, $height: auto, $maxWidth: 20rem);
+    @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
+    perspective: none;
+    border: 6px solid variables.$maroon;
+    border-radius: 10px;
+    background-color: variables.$peru;
 
-    .about_card {
-      @include mixins.width-height($width: 10rem, $height: 6.5rem);
-      padding: 1rem 0.5rem;
+    .about_card__inner {
+      transform: none !important;
+      transform-style: flat;
+    }
+
+    &:hover {
+      filter: none;
+    }
+
+    .about_card__face {
+      @include mixins.box-shadow(0, 0, 0, transparent);
+      position: static;
+      backface-visibility: visible;
+      -webkit-backface-visibility: visible;
+      border: none;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+    }
+
+    .about_card__front {
       flex-direction: row;
-      min-width: min-content;
-      height: unset;
-      min-height: min-content;
+      justify-content: flex-start;
+      column-gap: 1rem;
 
-      &:hover {
-        transform: unset !important;
+      i {
+        font-size: 40px;
       }
 
-      .about_card__icon {
-        margin: auto;
-        max-height: 75px;
-
-        h3 {
-          margin: 0.5rem;
-        }
-
-        i {
-          font-size: 40px;
-        }
+      .icon_title {
+        margin-top: 0;
       }
+    }
 
-      .about_card__container {
-        display: flex;
-        padding-right: 0;
-      }
+    .about_card__back {
+      transform: none;
+      align-items: flex-start;
     }
   }
 }

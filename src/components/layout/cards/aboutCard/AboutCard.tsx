@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { CardProps } from "@types";
-import { Wrapper } from "components";
 
 export const AboutCard = ({
 	className = "",
@@ -17,28 +15,23 @@ export const AboutCard = ({
 	exitY = -50,
 	children,
 }: CardProps) => {
-	const [hovered, setHovered] = useState(false);
-	const toggleHover = () => setHovered(!hovered);
-
 	return (
 		<motion.article
-			className={
-				hovered ? `open about_card ${className}` : `about_card ${className}`
-			}
+			className={`about_card ${className}`}
 			id={id}
-			onMouseEnter={toggleHover}
-			onMouseLeave={toggleHover}
 			initial={{ opacity: initialOpacity, y: initialY }}
 			animate={{ opacity: animateOpacity, y: animateY }}
 			exit={{ opacity: exitOpacity, y: exitY }}
 			transition={transition}>
-			<Wrapper className="about_card__icon">
-				<i className={icon} />
-				<h3 className="icon_title">{header}</h3>
-			</Wrapper>
-			<Wrapper className="about_card__container">
-				<Wrapper className="about_card__content">{children}</Wrapper>
-			</Wrapper>
+			<div className="about_card__inner">
+				<div className="about_card__face about_card__front">
+					<i className={icon} />
+					<h3 className="icon_title">{header}</h3>
+				</div>
+				<div className="about_card__face about_card__back">
+					{children}
+				</div>
+			</div>
 		</motion.article>
 	);
 };
