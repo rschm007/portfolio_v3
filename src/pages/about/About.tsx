@@ -17,28 +17,28 @@ export const About = () => {
 			<PageMeta title="About" />
 			<Header tag="h1" content="About" className="header_about__hero">
 				<Subtitle tag="p" className="about">
-					{"I'm Robert Schmahl, a Senior Full-Stack & Applied AI Engineer based in sunny California. At "}
+					{"I'm Robert Schmahl — a Senior Full-Stack & Applied AI Engineer in sunny California, and a professional AI skeptic who (ironically) builds AI-powered systems for a living. At "}
 					<a
 						href="https://www.seekinsights.com/"
 						target="_blank"
 						rel="noopener noreferrer">
 						Seek Insights
 					</a>
-					{", I build AI-powered data experiences — turning LLM capabilities into intuitive, production-grade user workflows."}
+					{", I turn large language models into data experiences people actually trust: production-grade workflows, minus the hand-waving."}
 				</Subtitle>
 				<Subtitle
 					tag="p"
-					content="I work across the stack in React, TypeScript, and Python — designing backend services and APIs that integrate AI models, and shipping the interfaces on top, with the testing, CI/CD, and observability to keep it reliable at scale. Put simply: I turn “it worked in dev” into production systems."
+					content="I'm full-stack; React and TypeScript up top, Python and APIs underneath. I wire AI models into products that hold up in front of real users, with the testing, CI/CD, and observability that make that possible. In other words, I turn the phrase “it worked in dev” into “it works in production.”"
 					className="about"
 				/>
 				<Subtitle
 					tag="p"
-					content="My path here wasn't typical — graphic design and communications first, then code — which shows up as strong design instincts and a real eye for UX."
+					content="I took the scenic route into engineering: graphic design and communications first, code second. All those years fussing over kerning left me with an unreasonable eye for detail and a sixth sense for when a UI is quietly on fire."
 					className="about"
 				/>
 				<Subtitle
 					tag="p"
-					content="Off the clock: dogs, good food, and campfires."
+					content="Off the clock, you'll find me with my dog, hunting down good food with my wife, or in front of an actual campfire — the one kind of stack I don't have to debug."
 					className="about"
 				/>
 			</Header>
@@ -77,9 +77,13 @@ export const About = () => {
 					className="services_heading"
 				/>
 				<Subtitle tag="p" className="services_text">
-					{"Alongside my full-time work, I take select freelance projects through Robert Schmahl Design. Check out my "}
+					{"Outside the day job, I take on select freelance projects through Robert Schmahl Design — React and Next.js apps, full-stack MVPs, e-commerce, blogs, and AI features that do more than look good in a demo. "}
+				</Subtitle>
+				<Subtitle tag="p" className="services_text">
+					{"My "}
 					<Link to="/work">Work page</Link>
-					{" for more details on what I've built. Have something in mind?"}
+					{" has the receipts. Got something in mind? "}
+					<Link to="/contact">Let's talk.</Link>
 				</Subtitle>
 			</Wrapper>
 		</Wrapper>

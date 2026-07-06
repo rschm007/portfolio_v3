@@ -49,11 +49,10 @@
   }
 
   .services_callout {
-    @include mixins.flex(column);
-    align-items: flex-start;
-    margin: 0 10% 0;
+    // block flow (not flex) so paragraph margins collapse and the row spacing
+    // matches the intro block above
+    margin: 0 10%;
     max-width: 40rem;
-    row-gap: 0.5rem;
 
     .services_heading h2 {
       @include mixins.font(
@@ -72,7 +71,6 @@
         $weight: 100
       );
       text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-      margin-bottom: 0.5rem;
     }
   }
 
