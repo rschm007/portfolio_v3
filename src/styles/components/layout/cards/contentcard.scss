@@ -13,8 +13,7 @@
   padding: 1.75rem;
   border-radius: 10px;
 
-  // contained logo badge — rounded square so square logos fill it edge-to-edge
-  // while wide/wordmark logos letterbox cleanly (never cropped)
+  // contained logo badge: rounded square that the logo fills (object-fit: cover)
   .card__logo {
     @include mixins.flex(row);
     @include mixins.width-height($width: 64px, $height: 64px);

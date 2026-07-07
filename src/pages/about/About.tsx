@@ -17,7 +17,7 @@ export const About = () => {
 			<PageMeta title="About" />
 			<Header tag="h1" content="About" className="header_about__hero">
 				<Subtitle tag="p" className="about">
-					{"I'm Robert Schmahl — a Senior Full-Stack & Applied AI Engineer in sunny California, and a professional AI skeptic who (ironically) builds AI-powered systems for a living. At "}
+					{"I'm Robert Schmahl, a Senior Full-Stack & Applied AI Engineer in sunny California, and a professional AI skeptic who (ironically) builds AI-powered systems for a living. At "}
 					<a
 						href="https://www.seekinsights.com/"
 						target="_blank"
@@ -38,7 +38,7 @@ export const About = () => {
 				/>
 				<Subtitle
 					tag="p"
-					content="Off the clock, you'll find me with my dog, hunting down good food with my wife, or in front of an actual campfire — the one kind of stack I don't have to debug."
+					content="Off the clock, you'll find me with my dog, hunting down good food with my wife, or in front of an actual campfire, the one kind of stack I don't have to debug."
 					className="about"
 				/>
 			</Header>
@@ -77,7 +77,7 @@ export const About = () => {
 					className="services_heading"
 				/>
 				<Subtitle tag="p" className="services_text">
-					{"Outside the day job, I take on select freelance projects through Robert Schmahl Design — React and Next.js apps, full-stack MVPs, e-commerce, blogs, and AI features that do more than look good in a demo. "}
+					{"Outside the day job, I take on select freelance projects through Robert Schmahl Design: React and Next.js apps, full-stack MVPs, e-commerce, blogs, and AI features that do more than look good in a demo. "}
 				</Subtitle>
 				<Subtitle tag="p" className="services_text">
 					{"My "}

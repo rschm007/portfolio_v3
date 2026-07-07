@@ -14,10 +14,14 @@
     height: 100%;
   }
 
-  // main + contact keep the lower, hero-centered start
-  > #main,
-  > #contact {
+  // home keeps the lower, hero-centered start
+  > #main {
     padding-top: 15%;
+  }
+
+  // contact header aligns with about/work (just below the fixed nav)
+  > #contact {
+    padding-top: 6.5rem;
   }
 
   // trees background
@@ -84,83 +88,109 @@
 
     form {
       @include mixins.flex(column);
-      border-radius: 4px;
-      background-color: rgba(72, 72, 72, 0.4);
-      padding: 35px 35px 30px 35px;
-      width: 80%;
+      @include mixins.box-shadow(0px, 8px, 24px, rgba(0, 0, 0, 0.4));
+      box-sizing: border-box;
+      border: 1px solid rgba(189, 214, 190, 0.14);
+      border-radius: 10px;
+      background-color: rgba(1, 11, 18, 0.4);
+      backdrop-filter: blur(4px);
+      padding: 2rem;
+      width: 28rem;
+      max-width: 100%;
+
+      .field {
+        @include mixins.flex(column);
+        margin-bottom: 1.1rem;
+      }
+
+      label {
+        @include mixins.font(
+          $color: variables.$moonSilver,
+          $size: 12px,
+          $weight: 600,
+          $tracking: 0.6px,
+          $transform: uppercase
+        );
+        margin-bottom: 0.4rem;
+        opacity: 0.85;
+      }
 
       input,
       textarea {
-        @include mixins.font($color: variables.$offBlack, $size: 13px, $weight: 500);
-        margin-bottom: 0.75rem;
-        padding: 0.5rem 1rem;
+        @include mixins.font(
+          $color: variables.$moonSilver,
+          $size: 15px,
+          $weight: 400
+        );
+        @include mixins.transition($time-in: 0.2s);
+        border: 1px solid rgba(189, 214, 190, 0.22);
+        border-radius: 6px;
+        background-color: rgba(0, 0, 0, 0.28);
+        padding: 0.65rem 0.9rem;
+
+        &::placeholder {
+          color: rgba(189, 214, 190, 0.45);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: variables.$fireBright;
+          box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.18);
+        }
+      }
+
+      textarea {
+        min-height: 8rem;
+        resize: vertical;
+      }
+
+      .field_error {
+        @include mixins.font(
+          $color: variables.$fireBright,
+          $size: 12px,
+          $weight: 500
+        );
+        margin-top: 0.4rem;
+      }
+
+      .message-chars-left {
+        @include mixins.font(
+          $color: variables.$moonSilver,
+          $size: 12px,
+          $weight: 400
+        );
+        align-self: flex-end;
+        margin-top: 0.4rem;
+        opacity: 0.6;
       }
 
       .submit_button {
         @include mixins.flex($direction: row);
-        @include mixins.border-outline(
-          $noOutline: true,
-          $borderStyle: solid,
-          $borderWidth: 1px,
-          $borderColor: variables.$moonSilver,
-          $borderRadius: 4px
+        @include mixins.border-outline($noOutline: true, $noBorder: true);
+        @include mixins.font(
+          $color: variables.$nightBlue,
+          $size: 16px,
+          $weight: 600,
+          $decoration: none
         );
-        @include mixins.transition($time-in: 250ms, $time-out: 250ms);
+        @include mixins.transition($time-in: 0.2s);
         @include mixins.transform(scale(100%));
-        background-color: transparent;
-        align-items: baseline;
-        max-width: min-content;
+        align-items: center;
+        align-self: flex-start;
+        column-gap: 0.5rem;
+        margin-top: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        border-radius: 999px;
+        background-color: variables.$fireBright;
         cursor: pointer;
-        margin-top: 1rem;
 
-        * {
-          cursor: pointer;
-        }
-
-        > input {
-          @include mixins.border-outline($noOutline: true, $noBorder: true);
-          @include mixins.font(
-            $color: variables.$moonSilver,
-            $size: 18px,
-            $weight: 300,
-            $decoration: none
-          );
-          background-color: transparent;
-          margin: 0;
-        }
-
-        > i {
-          @include mixins.font(
-            $color: variables.$moonSilver,
-            $size: 16px,
-            $weight: 700,
-            $decoration: none
-          );
-          padding-right: 15px;
+        i {
+          font-size: 15px;
         }
 
         &:hover {
-          background-color: variables.$moonSilver;
-          @include mixins.transform(scale(105%), $important: true);
-
-          input,
-          i {
-            color: variables.$nightBlue;
-          }
-        }
-      }
-
-      textarea {
-        resize: none;
-      }
-
-      span {
-        @include mixins.font($tracking: 0.8px, $size: 12px, $weight: 500);
-        margin-top: -0.5rem;
-        margin-bottom: 0.75rem;
-
-        &.message-chars-left {
-          color: variables.$moonSilver;
+          @include mixins.transform(scale(1.04));
+          filter: drop-shadow(0 0 12px rgba(255, 153, 51, 0.5));
         }
       }
     }
@@ -276,7 +306,7 @@
       }
     }
 
-    // project cards — default 2-up grid
+    // project cards: default 2-up grid
     .cards_grid {
       @include mixins.flex(row);
       flex-wrap: wrap;
@@ -380,11 +410,13 @@
 
     #contact .contact_container {
       flex-wrap: wrap;
-      width: 100%;
-      margin-top: 30%;
+      // width auto + side margins so it fills the viewport without overflowing
+      // (base rule sets width 60% + margin 0 10%, which overflows on mobile)
+      width: auto;
+      margin: 20% 6% 2rem;
 
       > div:nth-child(2) {
-        margin-top: 0;
+        margin-top: 1.5rem;
       }
     }
   }

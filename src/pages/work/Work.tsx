@@ -20,7 +20,7 @@ export const Work = () => {
 			<Header tag="h1" content="Work" className="header_work__hero">
 				<Subtitle
 					tag="p"
-					content="What I've built — on the clock and after hours."
+					content="What I've built, on the clock and after hours."
 					className="work"
 				/>
 			</Header>
@@ -45,7 +45,7 @@ export const Work = () => {
 							</span>
 						</div>
 						<p className="experience_item__summary">
-							{"I build the AI-powered experiences behind Insight Cloud — Seek's decision-making platform used by teams at Gopuff, Coca-Cola, and Pepsi. Across React and Python, I ship conversational analytics agents, LLM reasoning over a Snowflake data foundation, and the app-store flows that let analysts subscribe once and ask anything."}
+							{"I build the AI-powered experiences behind Insight Cloud, Seek's decision-making platform used by teams at Gopuff, Coca-Cola, and Pepsi. Across React and Python, I ship conversational analytics agents, LLM reasoning over a Snowflake data foundation, and the app-store flows that let analysts subscribe once and ask anything."}
 						</p>
 					</article>
 
@@ -60,7 +60,7 @@ export const Work = () => {
 							</span>
 						</div>
 						<p className="experience_item__summary">
-							{"Led the migration of our internal delivery platform to Next.js and built shared tooling adopted across 5+ teams — doubling release velocity and taking automated test coverage from 0 to 86%. That work shipped features for "}
+							{"Led the migration of our internal delivery platform to Next.js and built shared tooling adopted across 5+ teams, doubling release velocity and taking automated test coverage from 0 to 86%. That work shipped features for "}
 							<a
 								href="https://www.panasonic.aero/converix"
 								target="_blank"
@@ -109,7 +109,7 @@ export const Work = () => {
 				<div className="cards_grid">
 					<ContentCard
 						header="The Event Community"
-						description="A full-stack marketplace where event planners find vendors and venues, read reviews, and book services — built end-to-end in Remix, from data model to server routes to UI."
+						description="A full-stack marketplace where event planners find vendors and venues, read reviews, and book services. Built end-to-end in Remix, from data model to server routes to UI."
 						img
 						imgSrc={TecLogo}
 						imgAlt="The Event Community logo"
@@ -127,7 +127,7 @@ export const Work = () => {
 
 					<ContentCard
 						header="JemLD"
-						description="A portfolio and inquiry site for lighting designer Jacqueline Malenke — built on Next.js with a Firebase backend so she can manage her own galleries and leads."
+						description="A portfolio and inquiry site for lighting designer Jacqueline Malenke, built on Next.js with a Firebase backend so she can manage her own galleries and leads."
 						img
 						imgSrc={JemLDLogo}
 						imgAlt="JemLD logo"
@@ -157,7 +157,7 @@ export const Work = () => {
 				<div className="cards_grid">
 					<ContentCard
 						header="SoundandStage"
-						description="A hand-built custom WordPress theme for sound designer Vincent Olivieri — structured so a non-technical client can manage every page himself."
+						description="A hand-built custom WordPress theme for sound designer Vincent Olivieri, structured so a non-technical client can manage every page himself."
 						img
 						imgSrc={SoundandStageLogo}
 						imgAlt="SoundandStage logo"
@@ -207,7 +207,7 @@ export const Work = () => {
 
 					<ContentCard
 						header="Forbes Andersen"
-						description="A polished WordPress marketing site for a financial-services firm — clean, credible, and easy for the team to keep current."
+						description="A polished WordPress marketing site for a financial-services firm: clean, credible, and easy for the team to keep current."
 						img
 						imgSrc={ForbesAndersenImg}
 						imgAlt="Forbes Andersen logo"
@@ -243,7 +243,7 @@ export const Work = () => {
 
 					<ContentCard
 						header="CMS Music Studio"
-						description="A warm, welcoming WordPress site for a private voice and piano studio serving students of all ages — built so the studio can keep lessons and details current without touching code."
+						description="A warm, welcoming WordPress site for a private voice and piano studio serving students of all ages, built so the studio can keep lessons and details current without touching code."
 						icon="fa-solid fa-music">
 						<div className="flex_row card_buttons">
 							<LinkButton

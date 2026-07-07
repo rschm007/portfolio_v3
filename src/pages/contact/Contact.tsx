@@ -61,7 +61,7 @@ export const Contact = () => {
 							formSubmitted
 								? "Thanks, talk to you soon!"
 								: submitError
-									? "Something went wrong — please try again."
+									? "Something went wrong. Please try again."
 									: "Let's get in touch."
 						}
 						className="contact"
@@ -74,50 +74,69 @@ export const Contact = () => {
 								onSubmit={handleSubmit(onSubmit)}
 								ref={form}
 							>
-								<input
-									type="text"
-									placeholder="Name"
-									{...register("name", {
-										required: true,
-										maxLength: 30,
-									})}
-								/>
-								{errors.name && (
-									<span>This field is required</span>
-								)}
+								<div className="field">
+									<label htmlFor="name">Name</label>
+									<input
+										id="name"
+										type="text"
+										placeholder="Your name"
+										{...register("name", {
+											required: true,
+											maxLength: 30,
+										})}
+									/>
+									{errors.name && (
+										<span className="field_error" role="alert">
+											Please enter your name.
+										</span>
+									)}
+								</div>
 
-								<input
-									type="email"
-									placeholder="Email"
-									{...register("email", {
-										required: true,
-										pattern:
-											/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-									})}
-								/>
-								{errors.email && (
-									<span>This field is required</span>
-								)}
+								<div className="field">
+									<label htmlFor="email">Email</label>
+									<input
+										id="email"
+										type="email"
+										placeholder="you@example.com"
+										{...register("email", {
+											required: true,
+											pattern:
+												/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+										})}
+									/>
+									{errors.email && (
+										<span className="field_error" role="alert">
+											{errors.email.type === "pattern"
+												? "Please enter a valid email."
+												: "Please enter your email."}
+										</span>
+									)}
+								</div>
 
-								<textarea
-									placeholder="Message"
-									maxLength={1500}
-									{...register("message", {
-										required: true,
-										maxLength: 1500,
-									})}
-								/>
-								{errors.message && (
-									<span>This field is required</span>
-								)}
+								<div className="field">
+									<label htmlFor="message">Message</label>
+									<textarea
+										id="message"
+										rows={6}
+										placeholder="What's on your mind?"
+										maxLength={1500}
+										{...register("message", {
+											required: true,
+											maxLength: 1500,
+										})}
+									/>
+									{errors.message && (
+										<span className="field_error" role="alert">
+											Please enter a message.
+										</span>
+									)}
+									<span className="message-chars-left">
+										{messageCharactersLeft} characters left
+									</span>
+								</div>
 
-								<span className="message-chars-left">
-									{messageCharactersLeft}
-								</span>
-
-								<button className="submit_button">
-									<input type="submit" value="Send" />
-									<i className="fa-solid fa-envelope" />
+								<button type="submit" className="submit_button">
+									Send <i className="fa-solid fa-paper-plane" />
 								</button>
 							</form>
 						)}

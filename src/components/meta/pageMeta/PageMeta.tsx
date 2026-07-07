@@ -1,5 +1,5 @@
 const SITE_NAME = "Robert Schmahl";
-const DEFAULT_TITLE = `${SITE_NAME} — Full Stack Engineer`;
+const DEFAULT_TITLE = `${SITE_NAME} · Full Stack Engineer`;
 
 export interface PageMetaProps {
 	/** Page name, e.g. "About". Omit on the home page for the default title. */
@@ -11,5 +11,5 @@ export interface PageMetaProps {
  * <head> natively, so no react-helmet dependency is needed.
  */
 export const PageMeta = ({ title }: PageMetaProps) => (
-	<title>{title ? `${title} — ${SITE_NAME}` : DEFAULT_TITLE}</title>
+	<title>{title ? `${title} · ${SITE_NAME}` : DEFAULT_TITLE}</title>
 );
