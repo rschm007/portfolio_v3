@@ -1,0 +1,116 @@
+@use "../../mixins";
+@use "../../variables";
+
+#services {
+  // header aligns with about/work (just below the fixed nav); content scrolls
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+  overflow-y: scroll;
+  @include mixins.scrollbars(0.5em, slategray);
+
+  .services_section {
+    margin: 1.5rem 10% 2.5rem;
+
+    &__title {
+      @include mixins.font(
+        $size: 26px,
+        $color: variables.$moonSilver,
+        $weight: 800,
+        $align: left
+      );
+      margin: 0 0 1.25rem;
+    }
+  }
+
+  // offering cards — 2x2 on desktop, single column on mobile
+  .services_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    max-width: 37rem;
+
+    .card {
+      width: auto;
+    }
+  }
+
+  // "how I work" steps
+  .process {
+    @include mixins.flex(column);
+    row-gap: 1.5rem;
+    max-width: 44rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &_step {
+      @include mixins.flex($direction: row);
+      align-items: flex-start;
+      column-gap: 1rem;
+
+      &__num {
+        @include mixins.flex($direction: row);
+        @include mixins.width-height($width: 2.25rem, $height: 2.25rem);
+        @include mixins.font(
+          $color: variables.$nightBlue,
+          $size: 16px,
+          $weight: 700
+        );
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 100%;
+        background-color: variables.$fireBright;
+      }
+
+      &__title {
+        @include mixins.font(
+          $size: 18px,
+          $color: variables.$fireBright,
+          $weight: 700
+        );
+        margin: 0 0 0.25rem;
+      }
+
+      &__desc {
+        @include mixins.font(
+          $size: 15px,
+          $color: variables.$moonSilver,
+          $weight: 400,
+          $leading: 22px
+        );
+        margin: 0;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  // closing call to action
+  .services_cta {
+    &__text {
+      @include mixins.font(
+        $size: 18px,
+        $color: variables.$peru,
+        $weight: 100
+      );
+      margin: 0;
+
+      a {
+        @include mixins.transition($time-in: 0.2s);
+        color: variables.$fireBright;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+
+        &:hover {
+          @include mixins.hoverBrighten();
+        }
+      }
+    }
+  }
+}
+
+@include mixins.for-size(phone-only) {
+  #services .services_section {
+    margin: 1.5rem 5% 2rem;
+  }
+}

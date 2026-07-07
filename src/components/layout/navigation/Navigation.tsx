@@ -32,6 +32,11 @@ export const Navigation = () => {
 					/>
 					<LinkButton
 						className="nav_link"
+						href="/services"
+						content="services"
+					/>
+					<LinkButton
+						className="nav_link"
 						href="/contact"
 						content="contact"
 					/>

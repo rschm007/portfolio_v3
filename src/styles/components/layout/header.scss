@@ -72,6 +72,20 @@
       }
     }
   }
+
+  &_services {
+    &__hero {
+      @include mixins.font($color: variables.$fireBright, $weight: 800, $align: left);
+      width: calc(100vw - 60%);
+      margin-left: 10%;
+
+      h1 {
+        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+        line-height: 64px;
+      }
+    }
+  }
 }
 
 @include mixins.for-size(phone-only) {
@@ -82,6 +96,7 @@
   .header_main__hero,
   .header_about__hero,
   .header_contact__hero,
+  .header_services__hero,
   .header_work__hero {
     width: 80%;
   }

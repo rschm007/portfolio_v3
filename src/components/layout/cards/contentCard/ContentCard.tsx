@@ -1,12 +1,15 @@
+import type { ReactNode } from "react";
 import { CardProps } from "@types";
 import { motion } from "framer-motion";
 
-export interface ContentCardProps extends CardProps {
+// children is optional here (cards may have buttons, a badge, or nothing)
+export interface ContentCardProps extends Omit<CardProps, "children"> {
 	img?: boolean;
 	imgSrc?: string;
 	imgAlt?: string;
 	imgClass?: string;
 	description?: string;
+	children?: ReactNode;
 }
 
 export const ContentCard = ({

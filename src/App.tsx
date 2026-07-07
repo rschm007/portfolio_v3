@@ -8,7 +8,7 @@ import {
 	Stars,
 	Wrapper,
 } from "./components";
-import { About, Contact, Main, Work } from "./pages";
+import { About, Contact, Main, Services, Work } from "./pages";
 
 const App = () => {
 	return (
@@ -23,6 +23,7 @@ const App = () => {
 					<Route path="/home" element={<Navigate to="/" replace />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/work" element={<Work />} />
+					<Route path="/services" element={<Services />} />
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
 
