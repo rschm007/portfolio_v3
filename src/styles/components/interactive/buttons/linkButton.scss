@@ -1,45 +1,44 @@
 @use "../../../mixins";
 @use "../../../variables";
 
+// .link_button IS the anchor (NavLink / <a>), not a button wrapping one.
 .link_button {
   @include mixins.flex($direction: row);
   @include mixins.border-outline($noBorder: true, $noOutline: true);
+  @include mixins.font(
+    $color: variables.$moonSilver,
+    $size: 18px,
+    $weight: 300,
+    $decoration: none
+  );
+  align-items: baseline;
   background-color: transparent;
 
-  a {
-    @include mixins.flex($direction: row);
-    @include mixins.font(
-      $color: variables.$moonSilver,
-      $size: 18px,
-      $weight: 300,
-      $decoration: none
-    );
-    align-items: baseline;
+  &::selection {
+    background: variables.$moonSilver;
+    color: variables.$offBlack;
+  }
 
-    &::selection {
-      background: variables.$moonSilver;
-      color: variables.$offBlack;
+  // Hover underline tracks the label width automatically (see text-underline mixin).
+  .btn_label {
+    @include mixins.text-underline(variables.$peru);
+  }
+
+  &:hover,
+  &:focus-visible {
+    @include mixins.hoverBrighten();
+
+    i {
+      @include mixins.transition;
+      @include mixins.transform(scale(1.2));
     }
+  }
 
-    // Hover underline tracks the label width automatically (see text-underline mixin).
-    .btn_label {
-      @include mixins.text-underline(variables.$peru);
-    }
-
-    &:hover {
-      @include mixins.hoverBrighten();
-
-      i {
-        @include mixins.transition;
-        @include mixins.transform(scale(1.2));
-      }
-    }
-
-    // reveal the underline on hover AND on the active route (NavLink adds .active)
-    &:hover .btn_label::after,
-    &.active .btn_label::after {
-      opacity: 1;
-    }
+  // reveal the underline on hover, keyboard focus, and the active route
+  &:hover .btn_label::after,
+  &:focus-visible .btn_label::after,
+  &.active .btn_label::after {
+    opacity: 1;
   }
 
   i {
@@ -51,15 +50,12 @@
 
   &.card_button {
     align-items: center;
-
-    a {
-      @include mixins.font(
-        $size: 16px,
-        $color: variables.$moonSilver,
-        $weight: 400,
-        $align: left
-      );
-    }
+    @include mixins.font(
+      $size: 16px,
+      $color: variables.$moonSilver,
+      $weight: 400,
+      $align: left
+    );
 
     i.fa-github {
       font-size: 21px;

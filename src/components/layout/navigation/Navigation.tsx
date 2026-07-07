@@ -2,7 +2,7 @@ import { LinkButton, Wrapper } from "components";
 import { useState } from "react";
 
 export const Navigation = () => {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 
 	return (
 		<nav>
