@@ -14,6 +14,28 @@ import TecLogo from "../../assets/tec_logo.svg";
 import JemLDLogo from "../../assets/JQlogo-color.jpg";
 import SoundandStageLogo from "../../assets/soundandstage.png";
 
+// Brands whose products my work (at Panasonic Avionics and Seek) reaches.
+// Logos live in /public/logos and are served from /logos/*.
+const brands: { name: string; logo?: string }[] = [
+	{ name: "Panasonic Avionics", logo: "/logos/panasonic.svg" },
+	{ name: "NIQ", logo: "/logos/niq.svg" },
+	{ name: "Fanatics", logo: "/logos/fanatics.svg" },
+	{ name: "ibotta", logo: "/logos/ibotta.svg" },
+	{ name: "gopuff", logo: "/logos/gopuff.svg" },
+	{ name: "ambee", logo: "/logos/ambee.svg" },
+	{ name: "hopper", logo: "/logos/hopper.svg" },
+	{ name: "Pepsi", logo: "/logos/pepsi.svg" },
+	{ name: "Heineken", logo: "/logos/heineken.svg" },
+	{ name: "Coca-Cola", logo: "/logos/cocacola.svg" },
+	{ name: "United Airlines", logo: "/logos/united_logo_h_w_r.png" },
+	{ name: "Air Canada", logo: "/logos/aircanada.svg" },
+	{ name: "Air India", logo: "/logos/airindia.png" },
+	{ name: "Emirates Airlines", logo: "/logos/emiratesairlines.svg" },
+	{ name: "Lufthansa", logo: "/logos/lufthansa.svg" },
+	{ name: "U.S. Air Force", logo: "/logos/usairforce.svg" },
+	{ name: "U.S. Space Force", logo: "/logos/usspaceforce.svg" },
+];
+
 export const Work = () => {
 	return (
 		<Wrapper id="work">
@@ -102,6 +124,34 @@ export const Work = () => {
 							{". Built React + Three.js CAD visualization for monitoring and optimizing prints, lifting print-success rates 27%."}
 						</p>
 					</article>
+				</div>
+			</section>
+
+			<section className="work_section">
+				<h2 className="work_section__title">Where my work reaches</h2>
+				<div className="logo_marquee">
+					<div className="logo_track">
+						{[...brands, ...brands].map((brand, i) => (
+							<div
+								className="brand"
+								key={`${brand.name}-${i}`}
+								title={brand.name}
+								aria-hidden={
+									i >= brands.length ? true : undefined
+								}>
+								{brand.logo ? (
+									<img
+										src={brand.logo}
+										alt={`${brand.name} logo`}
+									/>
+								) : (
+									<span className="brand__placeholder">
+										{brand.name}
+									</span>
+								)}
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
 

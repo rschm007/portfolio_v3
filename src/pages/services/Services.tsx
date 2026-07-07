@@ -55,6 +55,29 @@ const process = [
 	},
 ];
 
+const testimonials = [
+	{
+		quote: "He doesn't just write code that works. He builds scalable, maintainable solutions with long-term impact in mind, and consistently delivers high-quality work. Any team would be extremely fortunate to have him.",
+		author: "Claire Nguyen",
+		role: "Technical Writer, Panasonic Avionics",
+	},
+	{
+		quote: "Robert is highly motivated, inquisitive, and resourceful. He brings thoughtful analysis to every project and delivers on time, on budget, and often with multiple inventive options. Punctual, dependable, and professional.",
+		author: "Bil Schroeder",
+		role: "Director of Marketing & Communications, South Coast Repertory",
+	},
+	{
+		quote: "Robert is extremely knowledgeable as a full-stack developer and a dedicated worker. He grasps concepts quickly, always goes beyond what he learns, and works great with others. An exceptional addition to any team.",
+		author: "Steve Tong",
+		role: "Software Engineer",
+	},
+	{
+		quote: "Robert is so great to work with. He’s very professional, listens to what I ask for, gives feedback on what may or may not work, and delivers the product in a very timely manner.",
+		author: "Jacqueline Malenke",
+		role: "Award-winning Lighting Designer, JemLD"
+	}
+];
+
 export const Services = () => {
 	return (
 		<Wrapper id="services">
@@ -101,6 +124,27 @@ export const Services = () => {
 						</li>
 					))}
 				</ol>
+			</section>
+
+			<section className="services_section">
+				<h2 className="services_section__title">Kind words</h2>
+				<div className="testimonials">
+					{testimonials.map((item) => (
+						<blockquote className="testimonial" key={item.author}>
+							<i
+								className="fa-solid fa-quote-left testimonial__mark"
+								aria-hidden="true"
+							/>
+							<p className="testimonial__quote">{item.quote}</p>
+							<footer className="testimonial__author">
+								{item.author}
+								<span className="testimonial__role">
+									{item.role}
+								</span>
+							</footer>
+						</blockquote>
+					))}
+				</div>
 			</section>
 
 			<section className="services_section services_cta">

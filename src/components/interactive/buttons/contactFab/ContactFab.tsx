@@ -20,7 +20,7 @@ export const ContactFab = () => {
 					transition={{ duration: 0.25 }}>
 					<Link to="/contact" aria-label="Get in touch with Robert">
 						<i className="fa-solid fa-paper-plane" />
-						<span>Let's talk</span>
+						<span>{"Let's talk"}</span>
 					</Link>
 				</motion.div>
 			)}

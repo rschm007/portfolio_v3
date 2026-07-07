@@ -85,6 +85,61 @@
     }
   }
 
+  // testimonials — stacked in the left column so they clear the campfire
+  .testimonials {
+    @include mixins.flex($direction: column);
+    row-gap: 1.5rem;
+    max-width: 40rem;
+  }
+
+  .testimonial {
+    @include mixins.flex($direction: column);
+    @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.4));
+    margin: 0;
+    padding: 1.75rem;
+    border: 1px solid rgba(189, 214, 190, 0.12);
+    border-radius: 10px;
+    background-color: rgba(1, 11, 18, 0.5);
+    backdrop-filter: blur(3px);
+
+    &__mark {
+      @include mixins.font($color: variables.$peru, $size: 20px);
+      margin-bottom: 0.75rem;
+      opacity: 0.8;
+    }
+
+    &__quote {
+      @include mixins.font(
+        $color: variables.$moonSilver,
+        $size: 15px,
+        $weight: 300,
+        $leading: 24px
+      );
+      font-style: italic;
+      margin: 0 0 1.25rem;
+    }
+
+    &__author {
+      @include mixins.font(
+        $color: variables.$fireBright,
+        $size: 15px,
+        $weight: 600
+      );
+      margin-top: auto;
+    }
+
+    &__role {
+      @include mixins.font(
+        $color: variables.$moonSilver,
+        $size: 13px,
+        $weight: 400
+      );
+      display: block;
+      margin-top: 0.15rem;
+      opacity: 0.7;
+    }
+  }
+
   // closing call to action
   .services_cta {
     &__text {
@@ -110,7 +165,18 @@
 }
 
 @include mixins.for-size(phone-only) {
-  #services .services_section {
-    margin: 1.5rem 5% 2rem;
+  #services {
+    .services_section {
+      margin: 1.5rem 5% 2rem;
+    }
+
+    // the fixed campfire sits behind scrolling content on mobile, so make the
+    // cards opaque to keep text legible over the flame
+    .testimonial,
+    .card {
+      background-color: #0b1c26;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
   }
 }

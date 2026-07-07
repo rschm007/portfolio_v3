@@ -10,7 +10,9 @@
 
   > .wrapper[id]:not(#work) {
     position: relative;
-    z-index: 10;
+    // above the campfire (z-index 10) so content stays readable where it
+    // overlaps the flame (e.g. the logo wall / cards on mobile)
+    z-index: 20;
     height: 100%;
   }
 
@@ -227,6 +229,83 @@
         );
         margin: 0 0 1.25rem;
       }
+
+      &__lead {
+        @include mixins.font(
+          $size: 16px,
+          $color: variables.$moonSilver,
+          $weight: 400,
+          $leading: 24px
+        );
+        max-width: 46rem;
+        margin: -0.5rem 0 1.5rem;
+        opacity: 0.85;
+      }
+    }
+
+    // "where my work reaches" — auto-scrolling logo carousel
+    .logo_marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent,
+        #000 6%,
+        #000 94%,
+        transparent
+      );
+      mask-image: linear-gradient(
+        90deg,
+        transparent,
+        #000 6%,
+        #000 94%,
+        transparent
+      );
+    }
+
+    .logo_track {
+      @include mixins.flex($direction: row);
+      align-items: center;
+      width: max-content;
+      column-gap: 3.5rem;
+      animation: logo-scroll 50s linear infinite;
+
+      // let visitors stop the scroll to read a logo
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    .brand {
+      @include mixins.flex($direction: row);
+      @include mixins.width-height($width: 8rem, $height: 3rem);
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+
+      img {
+        @include mixins.transition($time-in: 0.2s);
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        // normalize mixed-format logos to a clean white mark (needs
+        // transparent source logos)
+        filter: brightness(0) invert(1);
+        opacity: 0.7;
+      }
+
+      &:hover img {
+        opacity: 1;
+      }
+
+      &__placeholder {
+        @include mixins.font(
+          $color: variables.$moonSilver,
+          $size: 13px,
+          $weight: 500,
+          $align: center
+        );
+        opacity: 0.5;
+      }
     }
 
     // experience band
@@ -419,5 +498,22 @@
         margin-top: 1.5rem;
       }
     }
+  }
+}
+
+@keyframes logo-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+// respect reduced-motion: stop the auto-scroll and let users scroll manually
+@media (prefers-reduced-motion: reduce) {
+  #work .logo_track {
+    animation: none;
+  }
+
+  #work .logo_marquee {
+    overflow-x: auto;
   }
 }

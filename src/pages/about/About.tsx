@@ -83,7 +83,7 @@ export const About = () => {
 					{"My "}
 					<Link to="/work">Work page</Link>
 					{" has the receipts. Got something in mind? "}
-					<Link to="/contact">Let's talk.</Link>
+					<Link to="/contact">{"Let's talk."}</Link>
 				</Subtitle>
 			</Wrapper>
 		</Wrapper>
