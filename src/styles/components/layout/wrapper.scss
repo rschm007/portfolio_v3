@@ -181,26 +181,127 @@
   #work {
     // nudge the header down so it clears the fixed nav (matches #about)
     padding-top: 6.5rem;
+    padding-bottom: 4rem;
     overflow-y: scroll;
     @include mixins.scrollbars(0.5em, slategray);
 
-    .work_container {
-      @include mixins.flex(row);
-      margin: 1.5rem 0 -5.5rem 1rem;
-      padding-bottom: 5rem;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: 4rem;
+    .work_section {
+      margin: 2rem 10% 2.5rem;
 
-      .cards_work_1,
-      .cards_work_2 {
-        @include mixins.flex(column);
-        width: 40%;
-        justify-content: flex-end;
-        align-items: baseline;
-        padding: 0 1rem;
-        flex-wrap: wrap;
+      &__title {
+        @include mixins.font(
+          $size: 26px,
+          $color: variables.$moonSilver,
+          $weight: 800,
+          $align: left
+        );
+        margin: 0 0 1.25rem;
       }
+    }
+
+    // experience band
+    .experience {
+      @include mixins.flex(column);
+      row-gap: 1.5rem;
+      max-width: 46rem;
+
+      &_item {
+        border-left: 3px solid variables.$peru;
+        padding-left: 1rem;
+
+        &__head {
+          @include mixins.flex(row);
+          align-items: baseline;
+          flex-wrap: wrap;
+          column-gap: 0.75rem;
+        }
+
+        &__company {
+          @include mixins.font(
+            $size: 18px,
+            $color: variables.$fireBright,
+            $weight: 700
+          );
+          @include mixins.transition($time-in: 0.2s);
+
+          // underline + hover only when the company name is actually a link
+          &:is(a) {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+
+            &:hover {
+              @include mixins.hoverBrighten();
+            }
+          }
+        }
+
+        &__role {
+          @include mixins.font(
+            $size: 16px,
+            $color: variables.$moonSilver,
+            $weight: 500
+          );
+        }
+
+        &__dates {
+          @include mixins.font(
+            $size: 14px,
+            $color: variables.$moonSilver,
+            $weight: 300
+          );
+          opacity: 0.7;
+        }
+
+        &__summary {
+          @include mixins.font(
+            $size: 15px,
+            $color: variables.$moonSilver,
+            $weight: 400,
+            $leading: 22px
+          );
+          margin: 0.4rem 0 0;
+          opacity: 0.9;
+
+          a {
+            @include mixins.transition($time-in: 0.2s);
+            color: variables.$fireBright;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+
+            &:hover {
+              @include mixins.hoverBrighten();
+            }
+          }
+        }
+      }
+    }
+
+    // project cards — default 2-up grid
+    .cards_grid {
+      @include mixins.flex(row);
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 1.5rem;
+      max-width: 46rem;
+    }
+
+    // full-viewport-width masonry sections (freelance / client sites)
+    .work_section--wide {
+      margin-right: 4%;
+    }
+
+    .work_section--wide .cards_grid {
+      display: block;
+      column-width: 17rem;
+      column-gap: 1.5rem;
+      max-width: none;
+    }
+
+    .work_section--wide .card {
+      width: auto;
+      margin: 0 0 1.5rem;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
     }
 
     ~ .trees {
@@ -231,11 +332,6 @@
   }
 }
 
-@include mixins.for-size(tablet-landscape-up) {
-  .wrapper.background #work .work_container {
-    margin: 1.5rem 0 -5.5rem 9rem;
-  }
-}
 
 @include mixins.for-size(phone-only) {
   .wrapper.background {
@@ -258,42 +354,26 @@
       min-height: unset;
     }
 
-    #work .work_container {
-      margin: unset;
-      flex-direction: column;
-
-      .cards_work_2 {
-        margin-top: unset;
-        margin-right: unset;
+    #work {
+      .work_section {
+        margin: 1.5rem 5% 2rem;
       }
 
-      .cards_work_1,
-      .cards_work_2 {
-        width: 90%;
+      .experience,
+      .cards_grid {
+        max-width: 100%;
+      }
 
-        .card {
-          max-width: 250px;
-          background-color: #010b12;
+      .card {
+        width: 100%;
+        background-color: #010b12;
+        backdrop-filter: unset !important;
+        -webkit-backdrop-filter: unset !important;
+
+        &:hover {
+          transform: unset !important;
+          -webkit-backdrop-filter: unset !important;
           backdrop-filter: unset !important;
-
-          &:hover {
-            transform: unset !important;
-            -webkit-backdrop-filter: unset !important;
-            backdrop-filter: unset !important;
-          }
-
-          .card_1__img {
-            display: none;
-
-            img {
-              @include mixins.width-height(
-                $maxHeight: 90px,
-                $minHeight: 90px,
-                $maxWidth: 90px,
-                $minWidth: 90px
-              );
-            }
-          }
         }
       }
     }

@@ -2,58 +2,62 @@
 @use "../../../variables";
 
 .card {
+  @include mixins.flex(column);
   @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.6));
   @include mixins.transition($time-in: 0.1s, $time-out: 0.2s);
   @include mixins.transform(scale(100%));
-  height: min-content;
-  width: 375px;
+  box-sizing: border-box; // so width includes padding and 2 fit per row
+  width: 22rem;
+  max-width: 100%;
   backdrop-filter: blur(3px) brightness(130%);
-  padding: 2rem 1.75rem;
-  margin: 1rem;
+  padding: 1.75rem;
   border-radius: 10px;
 
-  .card_1__img {
-    position: absolute;
-    right: -2rem;
-    top: -0.75rem;
+  // contained logo badge — rounded square so square logos fill it edge-to-edge
+  // while wide/wordmark logos letterbox cleanly (never cropped)
+  .card__logo {
+    @include mixins.flex(row);
+    @include mixins.width-height($width: 64px, $height: 64px);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    background: white;
+    overflow: hidden;
 
     img {
-      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // icon fallback for clients without a logo
+    i {
+      font-size: 30px;
+      color: variables.$nightBlue;
     }
   }
 
-  .logo_bg {
-    @include mixins.width-height(
-      $width: 130px,
-      $maxWidth: 130px,
-      $minWidth: 130px,
-      $height: 130px,
-      $maxHeight: 130px,
-      $minHeight: 130px
-    );
-    min-height: 100px;
-    border-radius: 100%;
-    background: white;
-  }
-
   h3 {
-    @include mixins.font($size: 30px, $color: variables.$moonSilver, $weight: 800, $align: left);
-    width: 95%;
-    filter: brightness(105%);
-    margin: 0;
-    margin-top: 15%;
+    @include mixins.font(
+      $size: 24px,
+      $color: variables.$moonSilver,
+      $weight: 800,
+      $align: left
+    );
+    margin: 0 0 0.5rem;
   }
 
   p {
     @include mixins.font(
-      $size: 16px,
+      $size: 15px,
       $color: variables.$moonSilver,
       $weight: 400,
       $align: left,
-      $leading: 24px
+      $leading: 22px
     );
-    width: 95%;
-    z-index: 50;
+    margin: 0 0 1.25rem;
+    opacity: 0.92;
   }
 
   h3::selection,
@@ -64,7 +68,8 @@
   }
 
   .card_buttons {
-    margin-left: -1rem;
+    margin-top: auto; // pin buttons to the bottom so rows align
+    margin-left: -0.5rem;
 
     a:first-child {
       i.fas.fa-external-link-alt {
@@ -76,24 +81,5 @@
   &:hover {
     @include mixins.transform(scale(102%), $important: true);
     backdrop-filter: blur(3px) brightness(150%);
-  }
-}
-
-@include mixins.for-size(tablet-landscape-up) {
-  .card .card_1__img {
-    @include mixins.width-height(
-      $width: 130px,
-      $maxWidth: 130px,
-      $minWidth: 130px,
-      $height: 130px,
-      $maxHeight: 130px,
-      $minHeight: 130px
-    );
-  }
-}
-
-@include mixins.for-size(phone-only) {
-  .card h3 {
-    width: 80%;
   }
 }

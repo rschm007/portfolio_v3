@@ -1,5 +1,4 @@
 import { CardProps } from "@types";
-import { Wrapper } from "components";
 import { motion } from "framer-motion";
 
 export interface ContentCardProps extends CardProps {
@@ -13,10 +12,10 @@ export interface ContentCardProps extends CardProps {
 export const ContentCard = ({
 	className = "",
 	id,
-	img = false,
 	imgSrc = "",
 	imgAlt = "",
 	imgClass = "",
+	icon = "",
 	header = "",
 	description = "",
 	initialOpacity = 0,
@@ -34,26 +33,20 @@ export const ContentCard = ({
 			initial={{ opacity: initialOpacity, y: initialY }}
 			animate={{ opacity: animateOpacity, y: animateY }}
 			exit={{ opacity: exitOpacity, y: exitY }}>
-			{img && imgSrc && imgAlt && imgClass ? (
-				<Wrapper className="flex_row card_1__content">
-					<Wrapper className="flex_column card_1__img">
+			{(imgSrc || icon) && (
+				<div className="card__logo">
+					{imgSrc ? (
 						<img src={imgSrc} alt={imgAlt} className={imgClass} />
-					</Wrapper>
-					<Wrapper className="flex_column">
-						<h3>{header}</h3>
-						<p>{description}</p>
-
-						<>{children}</>
-					</Wrapper>
-				</Wrapper>
-			) : (
-				<Wrapper className="flex_column">
-					<h3>{header}</h3>
-					<p>{description}</p>
-
-					<>{children}</>
-				</Wrapper>
+					) : (
+						<i className={icon} aria-hidden="true" />
+					)}
+				</div>
 			)}
+
+			<h3>{header}</h3>
+			<p>{description}</p>
+
+			{children}
 		</motion.article>
 	);
 };
