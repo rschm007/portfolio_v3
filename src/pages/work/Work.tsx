@@ -6,6 +6,7 @@ import {
 	LinkButton,
 	PageMeta,
 } from "../../components";
+import OmniWorldsLogo from "../../assets/omniworlds-logo.svg";
 import CashCommandsImg from "../../assets/cashcommands.jpg";
 import ForbesAndersenImg from "../../assets/forbesandersen.png";
 import ExpressImg from "../../assets/expressinfo.png";
@@ -107,6 +108,17 @@ export const Work = () => {
 			<section className="work_section work_section--wide">
 				<h2 className="work_section__title">Freelance &amp; projects</h2>
 				<div className="cards_grid">
+					<ContentCard
+						className="featured"
+						header="OmniWorlds"
+						description="A universal tabletop RPG system and companion web app. One framework flexible enough to run any genre, from space opera to high fantasy, with character building, custom Powers, and combat in the browser."
+						img
+						imgSrc={OmniWorldsLogo}
+						imgAlt="OmniWorlds logo"
+						imgClass="project_logo">
+						<span className="coming_soon">Coming Soon!</span>
+					</ContentCard>
+
 					<ContentCard
 						header="The Event Community"
 						description="A full-stack marketplace where event planners find vendors and venues, read reviews, and book services. Built end-to-end in Remix, from data model to server routes to UI."
