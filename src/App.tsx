@@ -1,6 +1,6 @@
 import "./App.scss";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import {
 	ContactFab,
 	Navigation,
@@ -12,26 +12,34 @@ import { About, Contact, Main, Services, Work } from "./pages";
 
 const App = () => {
 	return (
-		<AnimatePresence>
-			<Wrapper className="background">
-				<Stars />
+		// reducedMotion="user" makes every framer-motion animation (route
+		// transitions, card/button entrances) honor the OS "reduce motion"
+		// setting: transform/position animations are skipped, opacity is kept.
+		<MotionConfig reducedMotion="user">
+			<AnimatePresence>
+				<Wrapper className="background">
+					<Stars />
 
-				<Navigation />
+					<Navigation />
 
-				<Routes>
-					<Route path="/" element={<Main />} />
-					<Route path="/home" element={<Navigate to="/" replace />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/work" element={<Work />} />
-					<Route path="/services" element={<Services />} />
-					<Route path="/contact" element={<Contact />} />
-				</Routes>
+					<Routes>
+						<Route path="/" element={<Main />} />
+						<Route
+							path="/home"
+							element={<Navigate to="/" replace />}
+						/>
+						<Route path="/about" element={<About />} />
+						<Route path="/work" element={<Work />} />
+						<Route path="/services" element={<Services />} />
+						<Route path="/contact" element={<Contact />} />
+					</Routes>
 
-				<NightMode />
+					<NightMode />
 
-				<ContactFab />
-			</Wrapper>
-		</AnimatePresence>
+					<ContactFab />
+				</Wrapper>
+			</AnimatePresence>
+		</MotionConfig>
 	);
 };
 

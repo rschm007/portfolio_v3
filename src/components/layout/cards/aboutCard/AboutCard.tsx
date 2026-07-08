@@ -20,6 +20,9 @@ export const AboutCard = ({
 		<motion.article
 			className={`about_card ${className}`}
 			id={id}
+			// focusable so keyboard users can flip the card to read the skill
+			// list (the flip is otherwise hover-only)
+			tabIndex={0}
 			initial={{ opacity: initialOpacity, y: initialY }}
 			animate={{ opacity: animateOpacity, y: animateY }}
 			exit={{ opacity: exitOpacity, y: exitY }}

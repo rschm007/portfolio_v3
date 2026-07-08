@@ -3,7 +3,7 @@ import { Wrapper } from "components";
 export const Campfire = () => {
 	return (
 		<Wrapper className="campfire_container">
-			<section className="campfire">
+			<section className="campfire" aria-hidden="true">
 				<div className="smoke">
 					<svg>
 						<path d="M 150 0 Q 200 100 100 250 C 0 450 120 400 50 600  " />

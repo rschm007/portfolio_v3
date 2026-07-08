@@ -19,7 +19,8 @@
     @include mixins.text-underline(variables.$peru);
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     @include mixins.hoverBrighten();
 
     svg {

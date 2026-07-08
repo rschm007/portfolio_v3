@@ -38,7 +38,7 @@ const brands: { name: string; logo?: string }[] = [
 
 export const Work = () => {
 	return (
-		<Wrapper id="work">
+		<Wrapper id="work" as="main">
 			<PageMeta title="Work" />
 			<Header tag="h1" content="Work" className="header_work__hero">
 				<Subtitle

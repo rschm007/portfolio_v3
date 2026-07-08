@@ -13,8 +13,9 @@ export const ContactFab = () => {
 	return (
 		<AnimatePresence>
 			{!onContact && (
-				<motion.div
+				<motion.aside
 					className="contact_fab"
+					aria-label="Contact shortcut"
 					initial={{ opacity: 0, y: 24 }}
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 24 }}
@@ -23,7 +24,7 @@ export const ContactFab = () => {
 						<Icon className="fa-solid fa-paper-plane" />
 						<span>{"Let's talk"}</span>
 					</Link>
-				</motion.div>
+				</motion.aside>
 			)}
 		</AnimatePresence>
 	);

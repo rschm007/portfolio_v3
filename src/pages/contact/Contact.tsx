@@ -48,7 +48,7 @@ export const Contact = () => {
 		"https://docs.google.com/document/d/e/2PACX-1vRFi-hE3U9E35kUpok8BNZIwZk9tzoJex8G1mYLrUxaebxURJjnANfeWmi3zm8pug/pub";
 
 	return (
-		<Wrapper id="contact">
+		<Wrapper id="contact" as="main">
 			<PageMeta title="Contact" />
 			<Wrapper className="contact_container">
 				<Header

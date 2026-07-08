@@ -20,14 +20,23 @@
     will-change: transform;
   }
 
-  // the flip
-  &:hover .about_card__inner {
+  // the flip — on hover and on keyboard focus (card is tabbable)
+  &:hover .about_card__inner,
+  &:focus-visible .about_card__inner {
     transform: rotateY(180deg);
   }
 
   // warm firelight glow while flipping
-  &:hover {
+  &:hover,
+  &:focus-visible {
     filter: drop-shadow(0 0 14px rgba(255, 153, 51, 0.45));
+  }
+
+  // visible focus ring for keyboard users
+  &:focus-visible {
+    outline: 3px solid variables.$fireBright;
+    outline-offset: 4px;
+    border-radius: 10px;
   }
 
   .about_card__face {

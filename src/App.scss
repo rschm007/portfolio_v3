@@ -26,6 +26,26 @@
 // globals
 body {
   overflow: auto;
+  // matches the fixed .wrapper.background layer that covers the viewport. Never
+  // visible (that layer sits on top), but it gives the page a real opaque
+  // backdrop in the DOM so contrast tooling resolves text against dark, not the
+  // default white canvas.
+  background-color: #010b12;
+}
+
+// Respect the OS "reduce motion" setting: neutralize all decorative CSS motion
+// site-wide (campfire flicker/embers/smoke, drifting stars, card flip + hover
+// transitions). Animations settle to their end state instantly instead of
+// looping; framer-motion animations are handled separately via <MotionConfig>.
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 h1 {
@@ -57,6 +77,20 @@ input,
 input::placeholder,
 textarea {
   @include mixins.font($family: variables.$body);
+}
+
+// visually hidden but available to screen readers (e.g. section headings that
+// keep the heading order valid without adding visible chrome)
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .flex_row {

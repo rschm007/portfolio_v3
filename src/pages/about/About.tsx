@@ -13,7 +13,7 @@ export const About = () => {
 	const { frontend, ai, backend, tools } = aboutConfig;
 
 	return (
-		<Wrapper id="about">
+		<Wrapper id="about" as="main">
 			<PageMeta title="About" />
 			<Header tag="h1" content="About" className="header_about__hero">
 				<Subtitle tag="p" className="about">
@@ -44,6 +44,7 @@ export const About = () => {
 			</Header>
 
 			<Wrapper className="about_container">
+				<h2 className="sr-only">Skills</h2>
 				<AboutCard
 					className="frontend"
 					icon="fa-solid fa-code"

@@ -87,7 +87,7 @@ const testimonials = [
 
 export const Services = () => {
 	return (
-		<Wrapper id="services">
+		<Wrapper id="services" as="main">
 			<PageMeta title="Services" />
 			<Header
 				tag="h1"
