@@ -30,7 +30,7 @@ const brands: { name: string; logo?: string }[] = [
 	{ name: "United Airlines", logo: "/logos/united_logo_h_w_r.png" },
 	{ name: "Air Canada", logo: "/logos/aircanada.svg" },
 	{ name: "Air India", logo: "/logos/airindia.png" },
-	{ name: "Emirates Airlines", logo: "/logos/emiratesairlines.svg" },
+	{ name: "Saudia", logo: "/logos/saudia.png" },
 	{ name: "Lufthansa", logo: "/logos/lufthansa.svg" },
 	{ name: "U.S. Air Force", logo: "/logos/usairforce.svg" },
 	{ name: "U.S. Space Force", logo: "/logos/usspaceforce.svg" },
@@ -143,6 +143,8 @@ export const Work = () => {
 									<img
 										src={brand.logo}
 										alt={`${brand.name} logo`}
+										loading="lazy"
+										decoding="async"
 									/>
 								) : (
 									<span className="brand__placeholder">

@@ -9,6 +9,7 @@ import {
 	LinkButton,
 	DownloadButton,
 	PageMeta,
+	Icon,
 } from "components";
 
 // using react-hook-form https://react-hook-form.com
@@ -136,7 +137,7 @@ export const Contact = () => {
 								</div>
 
 								<button type="submit" className="submit_button">
-									Send <i className="fa-solid fa-paper-plane" />
+									Send <Icon className="fa-solid fa-paper-plane" />
 								</button>
 							</form>
 						)}

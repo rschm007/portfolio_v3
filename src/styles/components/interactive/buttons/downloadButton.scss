@@ -22,7 +22,7 @@
   &:hover {
     @include mixins.hoverBrighten();
 
-    i {
+    svg {
       @include mixins.transition;
       @include mixins.transform(scale(1.2));
     }
@@ -32,7 +32,7 @@
     }
   }
 
-  i {
+  svg {
     @include mixins.font($color: variables.$moonSilver, $size: 24px);
     @include mixins.transition;
     @include mixins.transform(scale(1));

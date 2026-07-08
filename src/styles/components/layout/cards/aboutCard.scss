@@ -13,6 +13,11 @@
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    // keep the flip on its own GPU layer so the front face's inline <svg> icon
+    // doesn't flicker/repaint inside the backface-hidden 3D context (a known
+    // WebKit/Blink bug that surfaced when the icon font became an SVG)
+    will-change: transform;
   }
 
   // the flip
@@ -41,7 +46,11 @@
   }
 
   .about_card__front {
-    i {
+    // translateZ(0) forces a stable compositing layer for the icon, which
+    // stops the SVG from flickering while the card sits in a 3D context
+    transform: translateZ(0);
+
+    svg {
       font-size: 58px;
       color: variables.$maroonDark;
     }
@@ -118,7 +127,7 @@
       justify-content: flex-start;
       column-gap: 1rem;
 
-      i {
+      svg {
         font-size: 40px;
       }
 

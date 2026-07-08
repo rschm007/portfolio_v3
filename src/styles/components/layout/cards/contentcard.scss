@@ -30,8 +30,8 @@
       object-fit: cover;
     }
 
-    // icon fallback for clients without a logo
-    i {
+    // icon fallback for clients without a logo (Font Awesome renders an <svg>)
+    svg {
       font-size: 30px;
       color: variables.$nightBlue;
     }
@@ -71,7 +71,7 @@
     margin-left: -0.5rem;
 
     a:first-child {
-      i.fas.fa-external-link-alt {
+      svg {
         @include mixins.font($size: 21px);
       }
     }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CardProps } from "@types";
+import { Icon } from "../../../icon";
 
 export const AboutCard = ({
 	className = "",
@@ -25,7 +26,7 @@ export const AboutCard = ({
 			transition={transition}>
 			<div className="about_card__inner">
 				<div className="about_card__face about_card__front">
-					<i className={icon} />
+					<Icon className={icon} />
 					<h3 className="icon_title">{header}</h3>
 				</div>
 				<div className="about_card__face about_card__back">

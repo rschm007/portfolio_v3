@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { CardProps } from "@types";
 import { motion } from "framer-motion";
+import { Icon } from "../../../icon";
 
 // children is optional here (cards may have buttons, a badge, or nothing)
 export interface ContentCardProps extends Omit<CardProps, "children"> {
@@ -39,9 +40,15 @@ export const ContentCard = ({
 			{(imgSrc || icon) && (
 				<div className="card__logo">
 					{imgSrc ? (
-						<img src={imgSrc} alt={imgAlt} className={imgClass} />
+						<img
+							src={imgSrc}
+							alt={imgAlt}
+							className={imgClass}
+							loading="lazy"
+							decoding="async"
+						/>
 					) : (
-						<i className={icon} aria-hidden="true" />
+						<Icon className={icon} />
 					)}
 				</div>
 			)}

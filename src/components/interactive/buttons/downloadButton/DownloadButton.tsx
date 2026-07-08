@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ButtonProps } from "@types";
+import { Icon } from "../../../icon";
 
 export const DownloadButton = ({
 	className = "",
@@ -28,7 +29,7 @@ export const DownloadButton = ({
 			exit={{ opacity: exitOpacity, y: exitY }}
 			onClick={downloadFile}
 		>
-			{iconClassName && <i className={iconClassName} />}
+			{iconClassName && <Icon className={iconClassName} />}
 
 			<span className="btn_label">{content}</span>
 

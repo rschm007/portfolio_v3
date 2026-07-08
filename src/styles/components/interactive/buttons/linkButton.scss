@@ -28,7 +28,7 @@
   &:focus-visible {
     @include mixins.hoverBrighten();
 
-    i {
+    svg {
       @include mixins.transition;
       @include mixins.transform(scale(1.2));
     }
@@ -41,7 +41,7 @@
     opacity: 1;
   }
 
-  i {
+  svg {
     @include mixins.font($color: variables.$moonSilver, $size: 24px);
     @include mixins.transition;
     @include mixins.transform(scale(1));
@@ -57,10 +57,10 @@
       $align: left
     );
 
-    i.fa-github {
+    svg.fa-github {
       font-size: 21px;
     }
-    i.fa-external-link {
+    svg.fa-up-right-from-square {
       font-size: 20px;
     }
   }

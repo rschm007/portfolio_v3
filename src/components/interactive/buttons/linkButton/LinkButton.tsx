@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ButtonProps } from "@types";
+import { Icon } from "../../../icon";
 
 // framer-motion wrapper around react-router's NavLink (for the entrance animation)
 const MotionNavLink = motion.create(NavLink);
@@ -33,7 +34,7 @@ export const LinkButton = ({
 
 	const inner = (
 		<>
-			{iconClassName && <i className={iconClassName} />}
+			{iconClassName && <Icon className={iconClassName} />}
 			<span className="btn_label">{content}</span>
 			{children}
 		</>

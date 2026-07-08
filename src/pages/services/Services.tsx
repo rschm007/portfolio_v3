@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { Wrapper, Header, Subtitle, ContentCard, PageMeta } from "components";
+import {
+	Wrapper,
+	Header,
+	Subtitle,
+	ContentCard,
+	PageMeta,
+	Icon,
+} from "components";
 
 const offerings = [
 	{
@@ -131,10 +138,7 @@ export const Services = () => {
 				<div className="testimonials">
 					{testimonials.map((item) => (
 						<blockquote className="testimonial" key={item.author}>
-							<i
-								className="fa-solid fa-quote-left testimonial__mark"
-								aria-hidden="true"
-							/>
+							<Icon className="fa-solid fa-quote-left testimonial__mark" />
 							<p className="testimonial__quote">{item.quote}</p>
 							<footer className="testimonial__author">
 								{item.author}
