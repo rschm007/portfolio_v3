@@ -93,6 +93,31 @@ textarea {
   border: 0;
 }
 
+// tech-stack pills (used on Work project/client cards and experience items)
+.tech_tags {
+  @include mixins.flex(row);
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tech_tag {
+  @include mixins.font(
+    $color: variables.$moonSilver,
+    $size: 12px,
+    $weight: 500,
+    $tracking: 0.2px
+  );
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(189, 214, 190, 0.22);
+  border-radius: 999px;
+  background-color: rgba(189, 214, 190, 0.06);
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
 .flex_row {
   @include mixins.flex(row);
 }

@@ -10,6 +10,8 @@ export interface ContentCardProps extends Omit<CardProps, "children"> {
 	imgAlt?: string;
 	imgClass?: string;
 	description?: string;
+	// tech-stack labels shown as pills at the bottom of the card
+	tags?: string[];
 	children?: ReactNode;
 }
 
@@ -22,6 +24,7 @@ export const ContentCard = ({
 	icon = "",
 	header = "",
 	description = "",
+	tags,
 	initialOpacity = 0,
 	animateOpacity = 1,
 	exitOpacity = 0,
@@ -55,6 +58,16 @@ export const ContentCard = ({
 
 			<h3>{header}</h3>
 			<p>{description}</p>
+
+			{tags && tags.length > 0 && (
+				<ul className="tech_tags" aria-label="Tech stack">
+					{tags.map((tag) => (
+						<li className="tech_tag" key={tag}>
+							{tag}
+						</li>
+					))}
+				</ul>
+			)}
 
 			{children}
 		</motion.article>

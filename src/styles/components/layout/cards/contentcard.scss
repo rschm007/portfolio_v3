@@ -66,6 +66,19 @@
     color: variables.$offBlack;
   }
 
+  // tech pills sit at the bottom of the card; this pushes them (and the
+  // buttons/badge that follow) down so cards in a row stay aligned
+  .tech_tags {
+    margin-top: auto;
+  }
+
+  // when tags are present they do the pushing, so the following buttons/badge
+  // just need a small gap instead of their own auto margin
+  .tech_tags ~ .card_buttons,
+  .tech_tags ~ .coming_soon {
+    margin-top: 0.9rem;
+  }
+
   .card_buttons {
     margin-top: auto; // pin buttons to the bottom so rows align
     margin-left: -0.5rem;

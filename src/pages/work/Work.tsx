@@ -70,6 +70,13 @@ export const Work = () => {
 						<p className="experience_item__summary">
 							{"I build the AI-powered experiences behind Insight Cloud, Seek's decision-making platform used by teams at Gopuff, Coca-Cola, and Pepsi. Across React and Python, I ship conversational analytics agents, LLM reasoning over a Snowflake data foundation, and the app-store flows that let analysts subscribe once and ask anything."}
 						</p>
+						<ul className="tech_tags" aria-label="Tech stack">
+							<li className="tech_tag">React</li>
+							<li className="tech_tag">TypeScript</li>
+							<li className="tech_tag">Python</li>
+							<li className="tech_tag">LLMs</li>
+							<li className="tech_tag">Snowflake</li>
+						</ul>
 					</article>
 
 					<article className="experience_item">
@@ -99,6 +106,14 @@ export const Work = () => {
 							</a>
 							{", fleet-wide app deployment for airline IFE systems."}
 						</p>
+						<ul className="tech_tags" aria-label="Tech stack">
+							<li className="tech_tag">Next.js</li>
+							<li className="tech_tag">React</li>
+							<li className="tech_tag">TypeScript</li>
+							<li className="tech_tag">Kubernetes</li>
+							<li className="tech_tag">AWS</li>
+							<li className="tech_tag">CI/CD</li>
+						</ul>
 					</article>
 
 					<article className="experience_item">
@@ -123,6 +138,11 @@ export const Work = () => {
 							</a>
 							{". Built React + Three.js CAD visualization for monitoring and optimizing prints, lifting print-success rates 27%."}
 						</p>
+						<ul className="tech_tags" aria-label="Tech stack">
+							<li className="tech_tag">React</li>
+							<li className="tech_tag">Three.js</li>
+							<li className="tech_tag">TypeScript</li>
+						</ul>
 					</article>
 				</div>
 			</section>
@@ -164,6 +184,7 @@ export const Work = () => {
 						className="featured"
 						header="OmniWorlds"
 						description="A universal tabletop RPG system and companion web app. One framework flexible enough to run any genre, from space opera to high fantasy, with character building, custom Powers, and combat in the browser."
+						tags={["Next.js", "TypeScript", "Payload CMS", "Supabase", "Vercel"]}
 						img
 						imgSrc={OmniWorldsLogo}
 						imgAlt="OmniWorlds logo"
@@ -174,6 +195,7 @@ export const Work = () => {
 					<ContentCard
 						header="The Event Community"
 						description="A full-stack marketplace where event planners find vendors and venues, read reviews, and book services. Built end-to-end in Remix, from data model to server routes to UI."
+						tags={["Remix", "TypeScript", "Firebase"]}
 						img
 						imgSrc={TecLogo}
 						imgAlt="The Event Community logo"
@@ -192,6 +214,7 @@ export const Work = () => {
 					<ContentCard
 						header="JemLD"
 						description="A portfolio and inquiry site for lighting designer Jacqueline Malenke, built on Next.js with a Firebase backend so she can manage her own galleries and leads."
+						tags={["Next.js", "TypeScript", "Firebase", "Vercel"]}
 						img
 						imgSrc={JemLDLogo}
 						imgAlt="JemLD logo"
@@ -222,6 +245,7 @@ export const Work = () => {
 					<ContentCard
 						header="SoundandStage"
 						description="A hand-built custom WordPress theme for sound designer Vincent Olivieri, structured so a non-technical client can manage every page himself."
+						tags={["WordPress", "PHP"]}
 						img
 						imgSrc={SoundandStageLogo}
 						imgAlt="SoundandStage logo"
@@ -247,6 +271,7 @@ export const Work = () => {
 					<ContentCard
 						header="Southwest Dog Training"
 						description="A Shopify storefront and custom theme for a Canadian dog-training business selling training programs and gear online."
+						tags={["Shopify", "Liquid"]}
 						img
 						imgSrc={CashCommandsImg}
 						imgAlt="Southwest Dog Training logo"
@@ -272,6 +297,7 @@ export const Work = () => {
 					<ContentCard
 						header="Forbes Andersen"
 						description="A polished WordPress marketing site for a financial-services firm: clean, credible, and easy for the team to keep current."
+						tags={["WordPress"]}
 						img
 						imgSrc={ForbesAndersenImg}
 						imgAlt="Forbes Andersen logo"
@@ -290,6 +316,7 @@ export const Work = () => {
 					<ContentCard
 						header="Express Info Systems"
 						description="A content-driven marketing site for an IT-services company, built for easy updates by a non-technical team."
+						tags={["WordPress"]}
 						img
 						imgSrc={ExpressImg}
 						imgAlt="Express Information Systems logo"
@@ -308,6 +335,7 @@ export const Work = () => {
 					<ContentCard
 						header="CMS Music Studio"
 						description="A warm, welcoming WordPress site for a private voice and piano studio serving students of all ages, built so the studio can keep lessons and details current without touching code."
+						tags={["WordPress"]}
 						icon="fa-solid fa-music">
 						<div className="flex_row card_buttons">
 							<LinkButton
