@@ -13,6 +13,7 @@
 @use "styles/components/layout/header.scss";
 @use "styles/components/layout/navigation.scss";
 @use "styles/components/layout/wrapper.scss";
+@use "styles/components/layout/caseStudy.scss";
 @use "styles/components/layout/services.scss";
 @use "styles/components/layout/cards/aboutCard.scss";
 @use "styles/components/layout/cards/contentcard.scss";
@@ -116,6 +117,43 @@ textarea {
   background-color: rgba(189, 214, 190, 0.06);
   white-space: nowrap;
   opacity: 0.85;
+}
+
+// "Case study →" link, shared by Work cards and experience items
+// Featured, filled accent pill (matches the "Let's talk" FAB): sets it apart
+// from the ghost Visit site / GitHub buttons as the primary action.
+.case_study_link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  column-gap: 0.6rem;
+  @include mixins.font(
+    $color: variables.$fireBright,
+    $size: 15px,
+    $weight: 600,
+    $decoration: none
+  );
+  @include mixins.transition($time-in: 0.2s);
+  @include mixins.transform(scale(1));
+  padding: 8px 1rem;
+  border: 2px solid variables.$fireBright;
+  border-radius: 999px;
+  background-color: transparent;
+
+  svg {
+    font-size: 15px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    @include mixins.transform(scale(1.04));
+    filter: drop-shadow(0 0 12px rgba(255, 120, 0, 0.5));
+  }
+
+  &:focus-visible {
+    outline: 3px solid variables.$moonSilver;
+    outline-offset: 3px;
+  }
 }
 
 .flex_row {

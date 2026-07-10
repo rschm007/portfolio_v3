@@ -217,6 +217,15 @@
     overflow-y: scroll;
     @include mixins.scrollbars(0.5em, slategray);
 
+    // solid halo in the page background colour: invisible against the dark
+    // backdrop, but masks any star that would show through the gaps in/around
+    // the text (matches the case-study pages). Inherited by descendant text.
+    text-shadow:
+      0 0 5px #010b12,
+      0 0 5px #010b12,
+      0 0 5px #010b12,
+      0 0 5px #010b12;
+
     .work_section {
       margin: 2rem 10% 2.5rem;
 
@@ -385,6 +394,11 @@
 
         .tech_tags {
           margin-top: 0.85rem;
+        }
+
+        &__case_study {
+          display: inline-block;
+          margin-top: 0.75rem;
         }
       }
     }

@@ -1,0 +1,225 @@
+@use "../../mixins";
+@use "../../variables";
+
+// Case-study detail pages: a calm long-form reading layout. Mirrors #work's
+// background treatment (campfire pushed off, moon shown) so scrolling prose
+// isn't fighting the fire animation.
+#case-study {
+  padding-top: 6.5rem;
+  padding-bottom: 5rem;
+  overflow-y: scroll;
+  @include mixins.scrollbars(0.5em, slategray);
+
+  ~ .trees {
+    @include mixins.transform(translateY(100%));
+  }
+
+  ~ .campfire_container .campfire {
+    @include mixins.transform(translateY(1000px));
+  }
+
+  ~ .moon {
+    @include mixins.transform(translateY(-0%));
+  }
+
+  .case_study {
+    margin: 0 10%;
+    max-width: 46rem;
+    // solid halo in the page background colour: invisible against the dark
+    // backdrop, but masks any star that would otherwise show through the gaps
+    // in/around the text, keeping long-form copy readable. Inherited by all
+    // descendant text.
+    text-shadow:
+      0 0 5px #010b12,
+      0 0 5px #010b12,
+      0 0 5px #010b12,
+      0 0 5px #010b12;
+  }
+
+  .case_study__back {
+    @include mixins.font(
+      $color: variables.$moonSilver,
+      $size: 14px,
+      $weight: 500,
+      $decoration: none
+    );
+    @include mixins.transition($time-in: 0.2s);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+
+    &:hover {
+      @include mixins.hoverBrighten();
+      opacity: 1;
+    }
+  }
+
+  .case_study__hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .case_study__title {
+    @include mixins.font(
+      $size: 40px,
+      $color: variables.$fireBright,
+      $weight: 800,
+      $align: left
+    );
+    margin: 0 0 0.5rem;
+  }
+
+  .case_study__tagline {
+    @include mixins.font(
+      $size: 18px,
+      $color: variables.$peru,
+      $weight: 400,
+      $leading: 26px
+    );
+    margin: 0 0 1rem;
+  }
+
+  .case_study__meta {
+    @include mixins.font(
+      $size: 14px,
+      $color: variables.$moonSilver,
+      $weight: 400
+    );
+    margin: 0 0 1rem;
+    opacity: 0.7;
+  }
+
+  .case_study__hero .tech_tags {
+    margin: 0 0 1.25rem;
+  }
+
+  .case_study__links {
+    @include mixins.flex(row);
+    column-gap: 1.5rem;
+
+    a {
+      @include mixins.font(
+        $color: variables.$fireBright,
+        $size: 15px,
+        $weight: 600,
+        $decoration: none
+      );
+      @include mixins.transition($time-in: 0.2s);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+
+      &:hover {
+        @include mixins.hoverBrighten();
+      }
+    }
+  }
+
+  // key-results stat row
+  .case_study__metrics {
+    @include mixins.flex(row);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0 0 2.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(189, 214, 190, 0.14);
+    border-bottom: 1px solid rgba(189, 214, 190, 0.14);
+    list-style: none;
+
+    li {
+      @include mixins.flex(column);
+    }
+
+    .case_study__metric-value {
+      @include mixins.font(
+        $size: 26px,
+        $color: variables.$fireBright,
+        $weight: 800
+      );
+    }
+
+    .case_study__metric-label {
+      @include mixins.font(
+        $size: 13px,
+        $color: variables.$moonSilver,
+        $weight: 400
+      );
+      opacity: 0.75;
+      margin-top: 0.15rem;
+    }
+  }
+
+  .case_study__section {
+    margin-bottom: 2.25rem;
+
+    h2 {
+      @include mixins.font(
+        $size: 20px,
+        $color: variables.$moonSilver,
+        $weight: 800,
+        $align: left
+      );
+      margin: 0 0 0.75rem;
+    }
+
+    p {
+      @include mixins.font(
+        $size: 16px,
+        $color: variables.$moonSilver,
+        $weight: 400,
+        $leading: 26px
+      );
+      margin: 0;
+      opacity: 0.92;
+    }
+  }
+
+  .case_study__list {
+    @include mixins.flex(column);
+    row-gap: 0.6rem;
+    margin: 0;
+    padding-left: 1.1rem;
+
+    li {
+      @include mixins.font(
+        $size: 16px,
+        $color: variables.$moonSilver,
+        $weight: 400,
+        $leading: 24px
+      );
+      opacity: 0.92;
+    }
+  }
+
+  .case_study__decisions {
+    margin: 0;
+
+    div {
+      margin-bottom: 1.1rem;
+    }
+
+    dt {
+      @include mixins.font(
+        $size: 16px,
+        $color: variables.$fireBright,
+        $weight: 700
+      );
+      margin-bottom: 0.25rem;
+    }
+
+    dd {
+      @include mixins.font(
+        $size: 16px,
+        $color: variables.$moonSilver,
+        $weight: 400,
+        $leading: 24px
+      );
+      margin: 0;
+      opacity: 0.92;
+    }
+  }
+}
+
+@include mixins.for-size(phone-only) {
+  #case-study .case_study {
+    margin: 0 5%;
+  }
+}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
 	Wrapper,
 	Header,
@@ -5,6 +6,7 @@ import {
 	ContentCard,
 	LinkButton,
 	PageMeta,
+	Icon,
 } from "../../components";
 import OmniWorldsLogo from "../../assets/omniworlds-logo.svg";
 import CashCommandsImg from "../../assets/cashcommands.jpg";
@@ -114,6 +116,12 @@ export const Work = () => {
 							<li className="tech_tag">AWS</li>
 							<li className="tech_tag">CI/CD</li>
 						</ul>
+						<Link
+							to="/work/panasonic"
+							className="case_study_link experience_item__case_study">
+							<Icon className="fa-solid fa-book-open" />
+							<span className="btn_label">Case study</span>
+						</Link>
 					</article>
 
 					<article className="experience_item">
@@ -143,6 +151,12 @@ export const Work = () => {
 							<li className="tech_tag">Three.js</li>
 							<li className="tech_tag">TypeScript</li>
 						</ul>
+						<Link
+							to="/work/essentium"
+							className="case_study_link experience_item__case_study">
+							<Icon className="fa-solid fa-book-open" />
+							<span className="btn_label">Case study</span>
+						</Link>
 					</article>
 				</div>
 			</section>
@@ -196,6 +210,7 @@ export const Work = () => {
 						header="The Event Community"
 						description="A full-stack marketplace where event planners find vendors and venues, read reviews, and book services. Built end-to-end in Remix, from data model to server routes to UI."
 						tags={["Remix", "TypeScript", "Firebase"]}
+						caseStudyPath="/work/the-event-community"
 						img
 						imgSrc={TecLogo}
 						imgAlt="The Event Community logo"
@@ -215,6 +230,7 @@ export const Work = () => {
 						header="JemLD"
 						description="A portfolio and inquiry site for lighting designer Jacqueline Malenke, built on Next.js with a Firebase backend so she can manage her own galleries and leads."
 						tags={["Next.js", "TypeScript", "Firebase", "Vercel"]}
+						caseStudyPath="/work/jemld"
 						img
 						imgSrc={JemLDLogo}
 						imgAlt="JemLD logo"

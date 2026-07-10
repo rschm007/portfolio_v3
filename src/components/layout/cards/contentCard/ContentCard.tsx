@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { CardProps } from "@types";
 import { motion } from "framer-motion";
 import { Icon } from "../../../icon";
@@ -12,6 +13,8 @@ export interface ContentCardProps extends Omit<CardProps, "children"> {
 	description?: string;
 	// tech-stack labels shown as pills at the bottom of the card
 	tags?: string[];
+	// internal route to a case-study page; renders a "Case study →" link
+	caseStudyPath?: string;
 	children?: ReactNode;
 }
 
@@ -25,6 +28,7 @@ export const ContentCard = ({
 	header = "",
 	description = "",
 	tags,
+	caseStudyPath,
 	initialOpacity = 0,
 	animateOpacity = 1,
 	exitOpacity = 0,
@@ -67,6 +71,15 @@ export const ContentCard = ({
 						</li>
 					))}
 				</ul>
+			)}
+
+			{caseStudyPath && (
+				<Link
+					to={caseStudyPath}
+					className="case_study_link card_case_study">
+					<Icon className="fa-solid fa-book-open" />
+					<span className="btn_label">Case study</span>
+				</Link>
 			)}
 
 			{children}

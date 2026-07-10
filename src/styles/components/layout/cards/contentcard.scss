@@ -72,11 +72,18 @@
     margin-top: auto;
   }
 
-  // when tags are present they do the pushing, so the following buttons/badge
-  // just need a small gap instead of their own auto margin
+  // when tags are present they do the pushing, so the following link/buttons/
+  // badge just need a small gap instead of their own auto margin
+  .tech_tags ~ .card_case_study,
   .tech_tags ~ .card_buttons,
   .tech_tags ~ .coming_soon {
     margin-top: 0.9rem;
+  }
+
+  // breathing room between the featured case-study pill and the ghost
+  // Visit site / GitHub buttons below it
+  .card_case_study ~ .card_buttons {
+    margin-top: 1rem;
   }
 
   .card_buttons {

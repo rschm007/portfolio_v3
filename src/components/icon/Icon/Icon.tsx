@@ -14,6 +14,7 @@ import {
 	faLayerGroup,
 	faCartShopping,
 	faUpRightFromSquare,
+	faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -37,6 +38,7 @@ const ICONS: Record<string, IconDefinition> = {
 	"cart-shopping": faCartShopping,
 	// old alias fa-external-link-alt maps to the FA6 canonical icon
 	"external-link-alt": faUpRightFromSquare,
+	"book-open": faBookOpen,
 	github: faGithub,
 	"linkedin-in": faLinkedinIn,
 };

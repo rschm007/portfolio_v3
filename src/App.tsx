@@ -8,7 +8,7 @@ import {
 	Stars,
 	Wrapper,
 } from "./components";
-import { About, Contact, Main, Services, Work } from "./pages";
+import { About, CaseStudy, Contact, Main, Services, Work } from "./pages";
 
 const App = () => {
 	return (
@@ -30,6 +30,10 @@ const App = () => {
 						/>
 						<Route path="/about" element={<About />} />
 						<Route path="/work" element={<Work />} />
+					<Route
+						path="/work/:slug"
+						element={<CaseStudy />}
+					/>
 						<Route path="/services" element={<Services />} />
 						<Route path="/contact" element={<Contact />} />
 					</Routes>
