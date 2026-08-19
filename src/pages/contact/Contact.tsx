@@ -45,7 +45,7 @@ export const Contact = () => {
 	const messageCharactersLeft = 1500 - message.length;
 
 	const resumeDownloadLink =
-		"https://docs.google.com/document/d/e/2PACX-1vRFi-hE3U9E35kUpok8BNZIwZk9tzoJex8G1mYLrUxaebxURJjnANfeWmi3zm8pug/pub";
+		"https://docs.google.com/document/d/e/2PACX-1vTyx_AL5n0m27P0y9RDxYyoxqf5Y-alUmb9JS3_r2_2ofV7TprVN_8TXdaWUZiNqw/pub";
 
 	return (
 		<Wrapper id="contact" as="main">
