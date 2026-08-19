@@ -78,7 +78,7 @@ export const ContentCard = ({
 					to={caseStudyPath}
 					className="case_study_link card_case_study">
 					<Icon className="fa-solid fa-book-open" />
-					<span className="btn_label">Case study</span>
+					<span className="btn_label">Case Study</span>
 				</Link>
 			)}
 

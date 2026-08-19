@@ -14,16 +14,26 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    // keep the flip on its own GPU layer so the front face's inline <svg> icon
-    // doesn't flicker/repaint inside the backface-hidden 3D context (a known
-    // WebKit/Blink bug that surfaced when the icon font became an SVG)
-    will-change: transform;
   }
 
   // the flip — on hover and on keyboard focus (card is tabbable)
   &:hover .about_card__inner,
   &:focus-visible .about_card__inner {
     transform: rotateY(180deg);
+    // Promote the flip subtree to its own GPU layer ONLY while it's flipping —
+    // this keeps the front face's inline <svg> icon from flickering/repainting
+    // inside the backface-hidden 3D context (a WebKit/Blink bug that surfaced
+    // when the icon font became an SVG). Kept off at rest on purpose: a
+    // PERMANENT will-change on a preserve-3d + backface-hidden subtree makes
+    // Firefox re-establish the 3D context and flash the card during Framer
+    // Motion's mount translateY animation on the ancestor .about_card.
+    will-change: transform;
+  }
+
+  // same GPU-layer stabilization for the front icon, scoped to the flip only
+  &:hover .about_card__front,
+  &:focus-visible .about_card__front {
+    transform: translateZ(0);
   }
 
   // warm firelight glow while flipping
@@ -55,10 +65,6 @@
   }
 
   .about_card__front {
-    // translateZ(0) forces a stable compositing layer for the icon, which
-    // stops the SVG from flickering while the card sits in a 3D context
-    transform: translateZ(0);
-
     svg {
       font-size: 58px;
       color: variables.$maroonDark;

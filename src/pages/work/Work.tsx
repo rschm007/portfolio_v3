@@ -15,6 +15,7 @@ import ExpressImg from "../../assets/expressinfo.png";
 import TecLogo from "../../assets/tec_logo.svg";
 import JemLDLogo from "../../assets/JQlogo-color.jpg";
 import SoundandStageLogo from "../../assets/soundandstage.png";
+import CailinOConnorImg from "../../assets/cailinoconnor.png";
 
 // Brands whose products my work (at Panasonic Avionics and Seek) reaches.
 // Logos live in /public/logos and are served from /logos/*.
@@ -256,8 +257,27 @@ export const Work = () => {
 			</section>
 
 			<section className="work_section work_section--wide">
-				<h2 className="work_section__title">Client sites</h2>
+				<h2 className="work_section__title">Client Sites</h2>
 				<div className="cards_grid">
+					<ContentCard
+						header="Cailin O'Connor"
+						description="Full redesign of an academic website for a UCI philosophy professor. Included visual refresh, filterable research page with dropdown abstracts, consolidated books section, homepage hero layout, mobile responsiveness, and broken image/link fixes."
+						tags={["WordPress", "CSS", "UX Design", "Client Work"]}
+						img
+						imgSrc={CailinOConnorImg}
+						imgAlt="Cailin O'Connor site logo"
+						imgClass="project_logo">
+						<div className="flex_row card_buttons">
+							<LinkButton
+								relativeLink={false}
+								href="https://cailinoconnor.com"
+								iconClassName="fas fa-external-link-alt"
+								content="Visit site"
+								className="card_button site"
+							/>
+						</div>
+					</ContentCard>
+
 					<ContentCard
 						header="SoundandStage"
 						description="A hand-built custom WordPress theme for sound designer Vincent Olivieri, structured so a non-technical client can manage every page himself."
