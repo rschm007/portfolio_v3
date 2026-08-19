@@ -64,6 +64,11 @@ const process = [
 
 const testimonials = [
 	{
+		quote: "I was so happy with the site Robert designed.  He was easy to work with, professional, and fast.  The final product is exactly what I was hoping for.",
+		author: "Cailin O'Connor",
+		role: "Professor, UC Irvine",
+	},
+	{
 		quote: "He doesn't just write code that works. He builds scalable, maintainable solutions with long-term impact in mind, and consistently delivers high-quality work. Any team would be extremely fortunate to have him.",
 		author: "Claire Nguyen",
 		role: "Technical Writer, Panasonic Avionics",
