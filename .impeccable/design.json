@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-09T00:00:00Z",
+  "title": "Design System: Robert Schmahl — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ember-bright": {
+        "role": "primary",
+        "displayName": "Ember Bright",
+        "canonical": "#ff7800",
+        "tonalRamp": ["#3a1900", "#5c2800", "#8a3d00", "#c15600", "#ff7800", "#ff9a3d", "#ffbf85", "#ffe3c7"]
+      },
+      "warm-peru": {
+        "role": "secondary",
+        "displayName": "Warm Peru",
+        "canonical": "#da9e6e",
+        "tonalRamp": ["#2e1f11", "#4d3420", "#754d2f", "#a26f45", "#da9e6e", "#e3b58c", "#edcdad", "#f6e6d3"]
+      },
+      "campfire-maroon": {
+        "role": "tertiary",
+        "displayName": "Campfire Maroon",
+        "canonical": "#7c1414",
+        "tonalRamp": ["#180404", "#2c0808", "#520e0e", "#7c1414", "#a51e1e", "#c94a4a", "#dd8181", "#f0bebe"]
+      },
+      "moonlit-sage": {
+        "role": "neutral",
+        "displayName": "Moonlit Sage",
+        "canonical": "#bdd6be",
+        "tonalRamp": ["#15201a", "#243728", "#3d5b3f", "#658a63", "#93b590", "#bdd6be", "#d7e7d6", "#eef5ee"]
+      },
+      "forest-night": {
+        "role": "neutral",
+        "displayName": "Forest Night",
+        "canonical": "#010b12",
+        "tonalRamp": ["#000203", "#010b12", "#031824", "#0b2635", "#173a4c", "#2c5468", "#4d7488", "#7fa2b2"]
+      },
+      "ember-lit-charcoal": {
+        "role": "neutral",
+        "displayName": "Ember-lit Charcoal",
+        "canonical": "#0b1c26",
+        "tonalRamp": ["#04090c", "#0b1c26", "#122a38", "#1c3d4e", "#2c5568", "#437284", "#6293a5", "#8ebac9"]
+      },
+      "soot-black": {
+        "role": "neutral",
+        "displayName": "Soot Black",
+        "canonical": "#181a18",
+        "tonalRamp": ["#000000", "#0a0b0a", "#181a18", "#2c2e2c", "#464846", "#666866", "#8c8e8c", "#bbbdbb"]
+      },
+      "deep-night-blue": {
+        "role": "neutral",
+        "displayName": "Deep Night Blue",
+        "canonical": "#031e25",
+        "tonalRamp": ["#000304", "#031e25", "#08333d", "#0f4c58", "#1b6a78", "#2e8c9a", "#4fb1bd", "#87d4dc"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 on Main/About/Contact/Services (Ember Bright) and Work (Moonlit Sage)." },
+      "headline": { "displayName": "Headline", "purpose": "Global h2 default." },
+      "title": { "displayName": "Title", "purpose": "Card titles and section titles (.card h3, .work_section__title, case-study h2)." },
+      "body": { "displayName": "Body", "purpose": "Card copy, case-study prose, experience summaries. Declared font-family (UniversLT57CondensedRegular) is not shipped; see DESIGN.md Do's and Don'ts — renders as generic sans-serif fallback." },
+      "label": { "displayName": "Label", "purpose": "Form field labels (uppercase), tech-stack chips, metric labels." }
+    },
+    "shadows": [
+      { "name": "panel-ambient", "value": "0px 8px 16px rgba(0,0,0,0.6)", "purpose": "Default resting shadow for cards, about-cards, testimonials, nav menu, contact form." },
+      { "name": "featured-glow", "value": "0px 8px 16px rgba(0,0,0,0.6), 0 0 22px rgba(255,153,51,0.15)", "purpose": "Added ring on the one flagship project card." },
+      { "name": "firelight-hover-glow", "value": "drop-shadow(0 0 14px rgba(255,153,51,0.5))", "purpose": "Hover/focus glow on primary pills and the About flip-card." }
+    ],
+    "motion": [
+      { "name": "transition-standard", "value": "all 250ms ease-in-out", "purpose": "Default transition timing from the `transition` mixin, used across hover/focus states." },
+      { "name": "campfire-loop", "value": "keyframes: scaleUpDown/scaleHeight/shake/particleUp/glow/dash", "purpose": "Looping decorative animation for the fixed campfire; neutralized site-wide under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "phone-only", "value": "max-width: 599px" },
+      { "name": "tablet-portrait-up", "value": "600px–1100px" },
+      { "name": "tablet-landscape-up", "value": "min-width: 900px" },
+      { "name": "desktop-up", "value": "min-width: 1200px" },
+      { "name": "big-desktop-up", "value": "min-width: 1800px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (FAB / Submit)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled pill CTA; used as the fixed 'Let's talk' contact FAB and the contact form submit button.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Let's talk</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; column-gap: 0.6rem; padding: 0.85rem 1.4rem; border-radius: 999px; background-color: #ff7800; color: #031e25; font-size: 16px; font-weight: 600; text-decoration: none; box-shadow: 0px 6px 20px rgba(0,0,0,0.45); transition: transform 0.2s ease-in-out; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { transform: scale(1.05); filter: drop-shadow(0 0 14px rgba(255,153,51,0.55)); } .ds-btn-primary:focus-visible { outline: 3px solid #bdd6be; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Link Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Text-only nav/link button with a hover underline sized to the label width plus an icon scale-up.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\"><span class=\"ds-btn-ghost__label\">About</span></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: baseline; background: transparent; border: none; color: #bdd6be; font-size: 18px; font-weight: 300; text-decoration: none; } .ds-btn-ghost__label { position: relative; display: inline-block; } .ds-btn-ghost__label::after { content: ''; position: absolute; left: 0; top: 100%; margin-top: 0.6rem; width: 100%; height: 2px; background-color: #da9e6e; opacity: 0; transition: opacity 0.25s ease-in-out; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { filter: brightness(125%); } .ds-btn-ghost:hover .ds-btn-ghost__label::after, .ds-btn-ghost:focus-visible .ds-btn-ghost__label::after { opacity: 1; }"
+    },
+    {
+      "name": "Outline Accent Link (Case Study)",
+      "kind": "button",
+      "refersTo": "button-outline-accent",
+      "description": "2px Ember Bright outline pill used for the 'Case study →' link on Work cards and experience items.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Case study →</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; column-gap: 0.6rem; padding: 8px 1rem; border: 2px solid #ff7800; border-radius: 999px; background: transparent; color: #ff7800; font-size: 15px; font-weight: 600; text-decoration: none; transition: transform 0.2s ease-in-out; } .ds-btn-outline:hover, .ds-btn-outline:focus-visible { transform: scale(1.04); filter: drop-shadow(0 0 12px rgba(255,120,0,0.5)); } .ds-btn-outline:focus-visible { outline: 3px solid #bdd6be; outline-offset: 3px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Frosted-glass content card (project/client card) with a logo badge, title, copy, tech tags.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card__logo\">JD</div><h3 class=\"ds-card__title\">Project Name</h3><p class=\"ds-card__body\">One-line description of the project and what was built.</p><ul class=\"ds-card__tags\"><li class=\"ds-tag\">React</li><li class=\"ds-tag\">TypeScript</li></ul></div>",
+      "css": ".ds-card { box-sizing: border-box; width: 22rem; max-width: 100%; padding: 1.75rem; border-radius: 10px; backdrop-filter: blur(3px) brightness(130%); box-shadow: 0px 8px 16px rgba(0,0,0,0.6); transition: transform 0.1s ease-in-out; } .ds-card:hover { transform: scale(1.02); backdrop-filter: blur(3px) brightness(150%); } .ds-card__logo { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; margin-bottom: 1rem; border-radius: 14px; background: #fff; color: #031e25; font-weight: 700; } .ds-card__title { margin: 0 0 0.5rem; color: #bdd6be; font-size: 24px; font-weight: 800; } .ds-card__body { margin: 0 0 1.25rem; color: #bdd6be; font-size: 15px; line-height: 22px; opacity: 0.92; } .ds-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0; } .ds-tag { padding: 0.2rem 0.6rem; border: 1px solid rgba(189,214,190,0.22); border-radius: 999px; background-color: rgba(189,214,190,0.06); color: #bdd6be; font-size: 12px; font-weight: 500; opacity: 0.85; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact-form field: translucent dark fill, hairline sage border, Ember Bright focus ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Name</label><input class=\"ds-input\" id=\"ds-name\" placeholder=\"Your name\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; margin-bottom: 1.1rem; } .ds-label { margin-bottom: 0.4rem; color: #bdd6be; font-size: 12px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; opacity: 0.85; } .ds-input { padding: 0.65rem 0.9rem; border: 1px solid rgba(189,214,190,0.22); border-radius: 6px; background-color: rgba(0,0,0,0.28); color: #bdd6be; font-size: 15px; transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; } .ds-input::placeholder { color: rgba(189,214,190,0.45); } .ds-input:focus { outline: none; border-color: #ff7800; box-shadow: 0 0 0 3px rgba(255,153,51,0.18); }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Fixed top-left glass pill menu (desktop); collapses to a hamburger + solid flyout on phone-only.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__link ds-nav__link--active\" href=\"#\">Home</a><a class=\"ds-nav__link\" href=\"#\">About</a><a class=\"ds-nav__link\" href=\"#\">Work</a></nav>",
+      "css": ".ds-nav { display: flex; column-gap: 0.85rem; padding: 0.35rem 0.85rem; backdrop-filter: blur(25px); box-shadow: 0px 0px 16px rgba(0,0,0,0.6); border-radius: 999px; } .ds-nav__link { color: #bdd6be; font-size: 18px; font-weight: 300; text-decoration: none; padding: 0.4rem 0.6rem; } .ds-nav__link--active, .ds-nav__link:hover, .ds-nav__link:focus-visible { filter: brightness(125%); text-decoration: underline; text-underline-offset: 0.6rem; text-decoration-color: #da9e6e; }"
+    },
+    {
+      "name": "Tech Tag Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Static tech-stack pill used on Work cards and experience items.",
+      "html": "<span class=\"ds-chip\">TypeScript</span>",
+      "css": ".ds-chip { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid rgba(189,214,190,0.22); border-radius: 999px; background-color: rgba(189,214,190,0.06); color: #bdd6be; font-size: 12px; font-weight: 500; letter-spacing: 0.2px; white-space: nowrap; opacity: 0.85; }"
+    },
+    {
+      "name": "Night Scene (Campfire)",
+      "kind": "custom",
+      "refersTo": "signature-night-scene",
+      "description": "Signature fixed background: treeline, star field, moon, and CSS-built campfire (flame, smoke, logs, rocks). Simplified single-flame excerpt for preview purposes.",
+      "html": "<div class=\"ds-fire\"><div class=\"ds-fire__glow\"></div><div class=\"ds-fire__flame\"></div></div>",
+      "css": ".ds-fire { position: relative; width: 80px; height: 80px; } .ds-fire__flame { position: absolute; inset: 0; background-image: radial-gradient(farthest-corner at 10px 0, #d43322 0%, #ef5a00 95%); border-radius: 0 40% 60% 40%; transform: scaleX(0.8) rotate(45deg); filter: drop-shadow(0 0 10px #d43322); animation: ds-scaleUpDown 3s ease-out infinite; } .ds-fire__glow { position: absolute; inset: 0; margin: auto; width: 30%; box-shadow: 0 0 90px 50px rgba(255,208,0,0.8), 0 0 120px 70px rgba(255,136,0,0.9); opacity: 0.8; } @keyframes ds-scaleUpDown { 0%, 100% { transform: scaleY(1) scaleX(1); } 50%, 90% { transform: scaleY(1.1); } 75% { transform: scaleY(0.95); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Firelit Clearing",
+    "overview": "The site is a single, continuous night scene: a treeline silhouette, a drifting starfield, a full moon, and a hand-animated campfire fixed at the edge of the viewport. Every page is a clearing carved out of that same dark forest — content sits in frosted-glass panels that let the fire and stars show faintly through, rather than opaque cards dropped on a white canvas. This is a confirmed, deliberate brand identity (PRODUCT.md names it as incumbent design authority to preserve, not a placeholder) — it is also the site's own \"flex dev skills\" proof point for a designer-turned-engineer audience, so its craft is load-bearing.\n\nThe palette stays dark and warm: near-black night blues ground the page, a single bright ember-orange carries almost all calls to action and emphasis, and a dusty tan/sage pairing handles secondary text. Typography is a plain, confident sans (Montserrat) for anything loud — hero headlines, section titles — over a quieter body face for everything else. Depth comes from two devices working together: soft ambient drop shadows that ground panels against the scene, and warm colored glows that signal interactivity, never a color swap alone.",
+    "keyCharacteristics": [
+      "A fixed night-forest scene (trees, stars, moon, campfire) sits behind every page; content panels are frosted glass over it, not opaque cards on white.",
+      "One accent color (ember-orange) carries essentially all calls-to-action, hero emphasis, and hover state — it is rare enough elsewhere to stay legible against the dark scene.",
+      "Interactive state is communicated by a warm glow (drop-shadow in accent hues) plus a small scale lift, not by darkening/lightening a fill.",
+      "Pill shapes (999px radius) mark primary and tag-like actions; 10px rounded rectangles are the default panel/card shape."
+    ],
+    "rules": [
+      { "name": "The One Ember Rule", "body": "Ember Bright is the only saturated, high-chroma color in the system. It marks the single most important action or number on a screen (one CTA, one hero heading, one stat) — never used decoratively or repeated so often it stops reading as \"the fire.\"", "section": "colors" },
+      { "name": "The Loud/Quiet Split Rule", "body": "Montserrat is reserved for h1–h4; everything else (h5/h6, p, ul/li, span, form fields) uses the body stack. Don't introduce a third family — the split is binary on purpose.", "section": "typography" },
+      { "name": "The Glow-Not-Shadow-Darken Rule", "body": "Hover/focus feedback on this site is a warm-hued glow (drop-shadow) plus a slight scale-up, never a darker/lighter fill swap. It's the one interaction signature repeated across every clickable primitive.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Ember Bright (#ff7800) as the only saturated accent per screen — one CTA, one hero heading, one highlighted stat.",
+      "Do signal hover/focus with a warm drop-shadow glow plus a small scale transform, matching the accent hue in play (Ember or Peru).",
+      "Do build new panels as frosted glass over the night scene (backdrop-filter: blur) rather than opaque fills, and fall back to an opaque neutral (#010b12/#0b1c26) only where the fixed campfire sits directly behind scrolling content (mobile, or dense text blocks that need a legibility halo).",
+      "Do keep the pill (999px) for CTA/tag-shaped elements and 10px rounded rectangles for panels; don't mix in a third radius scale.",
+      "Do respect prefers-reduced-motion for any new decorative animation, matching the existing site-wide neutralization."
+    ],
+    "donts": [
+      "Don't introduce a second saturated accent color alongside Ember Bright — Peru and Maroon exist specifically as muted/secondary, not competing accents.",
+      "Don't signal interactive state with a fill-color swap or a darkening shadow — this system's signature is a colored glow, not a tonal shift.",
+      "Don't rely on the UniversLT57CondensedRegular body font as if it renders — it is not loaded anywhere in the build (only Montserrat is fetched from Google Fonts), so body text is actually rendering in the browser's generic sans-serif fallback today. Fix the load or set the fallback stack intentionally; don't design new copy-heavy surfaces assuming a distinct branded body face is present.",
+      "Don't add hard-edged, high-offset \"neobrutalist\" shadows — every shadow in this system is soft/ambient or a diffuse colored glow."
+    ]
+  }
+}

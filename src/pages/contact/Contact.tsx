@@ -24,7 +24,7 @@ export const Contact = () => {
 		register,
 		handleSubmit,
 		watch,
-		formState: { errors },
+		formState: { errors, isSubmitting },
 	} = useForm();
 
 	const serviceId = "service_099ykyu";
@@ -76,29 +76,47 @@ export const Contact = () => {
 								ref={form}
 							>
 								<div className="field">
-									<label htmlFor="name">Name</label>
+									<label htmlFor="name">
+										Name <span className="field_required">(required)</span>
+									</label>
 									<input
 										id="name"
 										type="text"
 										placeholder="Your name"
+										aria-required="true"
+										aria-invalid={!!errors.name}
+										aria-describedby={
+											errors.name ? "name-error" : undefined
+										}
 										{...register("name", {
 											required: true,
 											maxLength: 30,
 										})}
 									/>
 									{errors.name && (
-										<span className="field_error" role="alert">
+										<span
+											id="name-error"
+											className="field_error"
+											role="alert"
+										>
 											Please enter your name.
 										</span>
 									)}
 								</div>
 
 								<div className="field">
-									<label htmlFor="email">Email</label>
+									<label htmlFor="email">
+										Email <span className="field_required">(required)</span>
+									</label>
 									<input
 										id="email"
 										type="email"
 										placeholder="you@example.com"
+										aria-required="true"
+										aria-invalid={!!errors.email}
+										aria-describedby={
+											errors.email ? "email-error" : undefined
+										}
 										{...register("email", {
 											required: true,
 											pattern:
@@ -106,7 +124,11 @@ export const Contact = () => {
 										})}
 									/>
 									{errors.email && (
-										<span className="field_error" role="alert">
+										<span
+											id="email-error"
+											className="field_error"
+											role="alert"
+										>
 											{errors.email.type === "pattern"
 												? "Please enter a valid email."
 												: "Please enter your email."}
@@ -115,29 +137,46 @@ export const Contact = () => {
 								</div>
 
 								<div className="field">
-									<label htmlFor="message">Message</label>
+									<label htmlFor="message">
+										Message <span className="field_required">(required)</span>
+									</label>
 									<textarea
 										id="message"
 										rows={6}
 										placeholder="What's on your mind?"
 										maxLength={1500}
+										aria-required="true"
+										aria-invalid={!!errors.message}
+										aria-describedby={
+											errors.message ? "message-error" : undefined
+										}
 										{...register("message", {
 											required: true,
 											maxLength: 1500,
 										})}
 									/>
 									{errors.message && (
-										<span className="field_error" role="alert">
+										<span
+											id="message-error"
+											className="field_error"
+											role="alert"
+										>
 											Please enter a message.
 										</span>
 									)}
-									<span className="message-chars-left">
+									<span className="message-chars-left" aria-live="polite">
 										{messageCharactersLeft} characters left
 									</span>
 								</div>
 
-								<button type="submit" className="submit_button">
-									Send <Icon className="fa-solid fa-paper-plane" />
+								<button
+									type="submit"
+									className="submit_button"
+									disabled={isSubmitting}
+									aria-busy={isSubmitting}
+								>
+									{isSubmitting ? "Sending…" : "Send"}{" "}
+									<Icon className="fa-solid fa-paper-plane" />
 								</button>
 							</form>
 						)}

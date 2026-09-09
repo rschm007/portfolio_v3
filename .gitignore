@@ -31,3 +31,14 @@ pnpm-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Claude Code / Impeccable — machine-local state, not shared project config
+.claude/settings.local.json
+.claude/worktrees/
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/live/
+
+# Impeccable's compiled CLI binary — platform-specific (currently macOS arm64),
+# re-downloaded per-platform by the installer; not portable to commit
+.claude/skills/impeccable/scripts/bin/

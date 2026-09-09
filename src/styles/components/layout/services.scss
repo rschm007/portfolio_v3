@@ -174,7 +174,7 @@
     // cards opaque to keep text legible over the flame
     .testimonial,
     .card {
-      background-color: #0b1c26;
+      background-color: variables.$emberCharcoal;
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
