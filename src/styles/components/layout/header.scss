@@ -24,6 +24,28 @@
         }
       }
     }
+
+    // primary "See my work" CTA: the one actual next step off the hero, set
+    // apart from the secondary Github/LinkedIn row below it. Filled (not
+    // outline) so it carries real weight against the campfire's own glow —
+    // the ember accent on this screen belongs to an action, not just the H1.
+    // NB: sibling of &__hero above, not nested in it — the class on the link
+    // is the flat `header_main__cta`, not `header_main__hero__cta`. Compounded
+    // with .case_study_link (not just &__cta alone) so this override always
+    // beats that base rule regardless of which one the Sass module order
+    // happens to emit later in the compiled stylesheet.
+    &__cta.case_study_link {
+      margin: 1.5rem 0 2rem;
+      color: variables.$nightBlue;
+      border-color: transparent;
+      background-color: variables.$fireBright;
+
+      // clear focus ring against the bright pill (default outline is low-contrast)
+      &:focus-visible {
+        outline: 3px solid variables.$moonSilver;
+        outline-offset: 3px;
+      }
+    }
   }
 
   &_about {
@@ -90,7 +112,12 @@
 
 @include mixins.for-size(phone-only) {
   .header_about__hero {
-    top: 10rem;
+    margin-top: 10rem;
+  }
+
+  .header_work__hero h1 {
+    font-size: 55px;
+    line-height: 64px;
   }
 
   .header_main__hero,

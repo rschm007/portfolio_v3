@@ -34,20 +34,22 @@
   }
 }
 
+// animates the independent `scale` property (not `transform`) so it composites
+// on top of each rock shadow's static skewX(...) transform instead of replacing it
 @keyframes scaleHeight {
   0%,
   100% {
-    height: 20px;
+    scale: 1 1;
   }
   50%,
   90% {
-    height: 22px;
+    scale: 1 1.1;
   }
   75% {
-    height: 17px;
+    scale: 1 0.85;
   }
   80% {
-    height: 19px;
+    scale: 1 0.95;
   }
 }
 
@@ -62,8 +64,12 @@
 }
 
 @keyframes particleUp {
+  // --particle-static carries a particle's own resting transform (e.g. the
+  // `.right` particle's scaleX/rotate) since animating `transform` here would
+  // otherwise silently replace it for the whole infinite-looping animation
   0% {
     opacity: 0;
+    transform: var(--particle-static, none) translateY(0) scale(1);
   }
   20% {
     opacity: 1;
@@ -73,8 +79,8 @@
   }
   100% {
     opacity: 0;
-    top: -100%;
-    transform: scale(0.5);
+    // fixed distance approximating the old `top: -100%` move within the 140px .fire box
+    transform: var(--particle-static, none) translateY(-140px) scale(0.5);
   }
 }
 
@@ -257,7 +263,9 @@
           top: 45%;
           left: 50%;
           background-color: variables.$fireEmber;
-          transform: scaleX(0.8) rotate(45deg);
+          // consumed by particleUp's 0%/100% keyframes so the rotate/scale
+          // survives the animation instead of being silently overwritten
+          --particle-static: scaleX(0.8) rotate(45deg);
           border-radius: 50%;
           animation: particleUp 2s ease-out 0;
           animation-iteration-count: infinite;
@@ -425,6 +433,7 @@
           background-color: #000;
           opacity: 0.6;
           border-radius: 0 0 95px 95px;
+          transform-origin: bottom;
           animation: scaleHeight 3s ease-in-out;
           animation-iteration-count: infinite;
           animation-fill-mode: both;

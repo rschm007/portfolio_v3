@@ -17,10 +17,20 @@ nav {
       @include mixins.transform(rotate(0deg));
       @include mixins.transition($time-in: 0.5s);
       display: none;
+      position: relative;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      border-radius: 10px;
 
       &:hover span {
         @include mixins.hoverBrighten();
+      }
+
+      &:focus-visible {
+        outline: 2px solid variables.$fireBright;
+        outline-offset: 3px;
       }
 
       span {
@@ -117,7 +127,7 @@ nav {
   nav .navigation {
     .nav_button {
       display: block;
-      background-color: #010b12;
+      background-color: variables.$forestNight;
       border-radius: 10px;
       transform: translateY(-12px);
 
@@ -126,9 +136,6 @@ nav {
           &:nth-child(1),
           &:nth-child(2) {
             top: 18px !important;
-          }
-          &:nth-child(5) {
-            top: 38px !important;
           }
           &:nth-child(5),
           &:nth-child(6) {
@@ -139,6 +146,10 @@ nav {
         ~ .nav_menu {
           left: 3.5rem;
           opacity: 1;
+          // visibility flips to visible immediately (see the transition below)
+          // so the links become focusable/clickable as soon as the menu opens
+          visibility: visible;
+          pointer-events: auto;
         }
       }
     }
@@ -151,8 +162,23 @@ nav {
       row-gap: 0.4rem;
       padding: 0.75rem 1rem;
       opacity: 0;
+      // closed by default: hidden from screen readers, unfocusable, and
+      // un-clickable so its links don't sit in the tab order (or intercept
+      // clicks) over whatever page content the closed flyout overlaps.
+      // Toggled with no transition (like pointer-events below) so opening
+      // focuses the first link the instant React sets .open — a delayed
+      // visibility flip leaves the link still hidden when that focus() runs.
+      visibility: hidden;
+      pointer-events: none;
+      @include mixins.transition($for: opacity, $time-in: 0.2s, $time-out: 0.2s);
       backdrop-filter: unset;
-      background-color: #010b12;
+      background-color: variables.$forestNight;
+
+      // widen the tap area of each stacked link to a full 44px touch target
+      .nav_link {
+        width: 100%;
+        padding: 0.75rem 0;
+      }
     }
   }
 }

@@ -31,7 +31,7 @@ body {
   // visible (that layer sits on top), but it gives the page a real opaque
   // backdrop in the DOM so contrast tooling resolves text against dark, not the
   // default white canvas.
-  background-color: #010b12;
+  background-color: variables.$forestNight;
 }
 
 // Respect the OS "reduce motion" setting: neutralize all decorative CSS motion

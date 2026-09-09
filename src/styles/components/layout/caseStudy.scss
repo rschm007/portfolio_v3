@@ -30,10 +30,10 @@
     // in/around the text, keeping long-form copy readable. Inherited by all
     // descendant text.
     text-shadow:
-      0 0 5px #010b12,
-      0 0 5px #010b12,
-      0 0 5px #010b12,
-      0 0 5px #010b12;
+      0 0 5px variables.$forestNight,
+      0 0 5px variables.$forestNight,
+      0 0 5px variables.$forestNight,
+      0 0 5px variables.$forestNight;
   }
 
   .case_study__back {
