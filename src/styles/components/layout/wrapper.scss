@@ -3,7 +3,14 @@
 
 .wrapper.background {
   @include mixins.flex($direction: column);
-  @include mixins.width-height($width: 100%, $height: 100%, $maxHeight: min-content);
+  // No max-height cap: this is the fixed, full-viewport night scene every
+  // page sits inside. A leftover `max-height: min-content` here let the
+  // browser's min-content sizing for this nested flex/text layout override
+  // the intended 100% viewport height -- WebKit computes that considerably
+  // smaller than Chromium does for this markup, so the whole app rendered
+  // shrunk into a small centered box on iOS, with blank margins above/below
+  // and real content squeezed/clipped into the undersized area.
+  @include mixins.width-height($width: 100%, $height: 100%);
   justify-content: center;
   position: fixed;
   background-color: variables.$forestNight;
