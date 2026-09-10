@@ -25,8 +25,22 @@
 
 
 // globals
+// The document itself must never scroll: .wrapper.background is fixed and
+// covers the viewport, and every page that needs to scroll already does so
+// internally (#about/#work/#services set their own overflow-y: scroll). If
+// html/body stay scrollable, iOS's elastic rubber-band effect can bounce the
+// whole viewport past that fixed layer, revealing blank space and shoving
+// real content toward the wrong edge of the screen.
+html {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 body {
-  overflow: auto;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
   // matches the fixed .wrapper.background layer that covers the viewport. Never
   // visible (that layer sits on top), but it gives the page a real opaque
   // backdrop in the DOM so contrast tooling resolves text against dark, not the
